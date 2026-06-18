@@ -119,39 +119,54 @@
       
 <br><br> <div style="background-color:#f1f1f1; padding:20px; margin-top:50px;"> <p style="color:#555;">Built by Ordinary-person824 in Mwanza, Tanzania © 2026</p> </div> </center>
 </body>      
+      
+<!-- Kili Chatbot - GUARANTEED FLOAT -->
+<div id="kili-float-wrap">
 <style>
-<!-- Kili Chatbot Start -->
-<style>
-.aman-chat-btn {
-  position: fixed; bottom: 20px; right: 20px;
-  background: #0F4C3A; color: white; border: none;
-  padding: 15px 20px; border-radius: 50px; font-size: 16px;
-  cursor: pointer; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+#kili-float-wrap.aman-chat-btn {
+  position: fixed!important; 
+  bottom: 20px!important; 
+  right: 20px!important;
+  background: #0F4C3A!important; 
+  color: white!important; 
+  border: none!important;
+  padding: 15px 20px!important; 
+  border-radius: 50px!important; 
+  font-size: 16px!important;
+  cursor: pointer!important; 
+  z-index: 999999!important; 
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3)!important;
 }
-.aman-chat-box {
-  display: none; position: fixed; bottom: 90px; right: 20px;
-  width: 320px; background: white; border-radius: 15px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.3); z-index: 9999; 
-  font-family: Arial, sans-serif;
+#kili-float-wrap.aman-chat-box {
+  display: none; 
+  position: fixed!important; 
+  bottom: 90px!important; 
+  right: 20px!important;
+  width: 320px!important; 
+  background: white!important; 
+  border-radius: 15px!important;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3)!important; 
+  z-index: 999999!important; 
+  font-family: Arial, sans-serif!important;
 }
-.aman-header {
-  background: #0F4C3A; color: white; padding: 15px; 
-  border-radius: 15px 15px 0 0; font-weight: bold;
+#kili-float-wrap.aman-header {
+  background: #0F4C3A!important; color: white!important; padding: 15px!important; 
+  border-radius: 15px 15px 0 0!important; font-weight: bold!important;
 }
-.aman-body {
-  padding: 15px; font-size: 14px; max-height: 350px; overflow-y: auto;
+#kili-float-wrap.aman-body {
+  padding: 15px!important; font-size: 14px!important; max-height: 350px!important; overflow-y: auto!important;
 }
-.aman-msg { 
-  background: #f1f1f1; padding: 10px; border-radius: 10px; 
-  margin: 5px 0; max-width: 90%;
+#kili-float-wrap.aman-msg { 
+  background: #f1f1f1!important; padding: 10px!important; border-radius: 10px!important; 
+  margin: 5px 0!important; max-width: 90%!important;
 }
-.aman-question {
-  background: #DCF8C6; margin-left: auto; text-align: right;
+#kili-float-wrap.aman-question {
+  background: #DCF8C6!important; margin-left: auto!important; text-align: right!important;
 }
-.aman-btn { 
-  display: block; width: 100%; background: #0F4C3A; color: white; 
-  border: none; padding: 10px; margin: 5px 0; border-radius: 8px; 
-  cursor: pointer; text-align: left;
+#kili-float-wrap.aman-btn { 
+  display: block!important; width: 100%!important; background: #0F4C3A!important; color: white!important; 
+  border: none!important; padding: 10px!important; margin: 5px 0!important; border-radius: 8px!important; 
+  cursor: pointer!important; text-align: left!important;
 }
 </style>
 
@@ -175,32 +190,26 @@
 <script>
 function toggleAman() {
   var box = document.getElementById('amanBox');
-  if (box.style.display === 'block') {
-    box.style.display = 'none';
-  } else {
-    box.style.display = 'block';
-  }
+  box.style.display = box.style.display === 'block'? 'none' : 'block';
 }
-
 function askAman(topic) {
   var chat = document.getElementById('amanChat');
   var answers = {
-    price: "Kilimanjaro: $1800-2800 for 6-8 days. Includes guide, porters, park fees, meals, tents. Machame route most popular.",
-    routes: "Machame: Scenic, 6-7 days. Marangu: Huts, 5-6 days. Lemosho: Less crowded, 7-8 days. I recommend Machame for first-timers.",
-    days: "5 days minimum via Marangu. 6-7 days ideal via Machame for acclimatization. 8 days Lemosho = highest success rate.",
-    season: "Jan-Mar: Warm, less crowded. Jun-Oct: Dry season, busiest. Avoid Apr-May heavy rains.",
+    price: "Kilimanjaro: $1800-2800 for 6-8 days. Includes guide, porters, park fees, meals, tents.",
+    routes: "Machame: Scenic, 6-7 days. Marangu: Huts, 5-6 days. Lemosho: Less crowded, 7-8 days.",
+    days: "5 days minimum via Marangu. 6-7 days ideal via Machame. 8 days Lemosho = best success rate.",
+    season: "Jan-Mar: Warm, less crowded. Jun-Oct: Dry season, busiest. Avoid Apr-May rains.",
     whatsapp: "Opening WhatsApp to human Aman...",
   };
-
   chat.innerHTML += '<div class="aman-msg aman-question">' + event.target.innerText + '</div>';
   chat.innerHTML += '<div class="aman-msg">' + answers[topic] + '</div>';
-
   if(topic === 'whatsapp') {
-    window.open('https://wa.me/255699004685?text=Hi%20Aman%20-%20Kilimanjaro%20inquiry%20from%20your%20website', '_blank');
+    window.open('https://wa.me/255699004685?text=Hi%20Aman%20-%20Kilimanjaro%20inquiry', '_blank');
   }
-
   chat.scrollTop = chat.scrollHeight;
 }
 </script>
+</div>
 <!-- Kili Chatbot End -->
+
 </htmL>
