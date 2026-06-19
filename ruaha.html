@@ -289,34 +289,49 @@
         </div>
     </div>
 
-<!-- Aman Chatbot Start -->
+<!-- AI Employee Start -->
 <style>
 .aman-chat-btn {
   position: fixed; bottom: 90px; right: 20px; background: #0B3D20; color: white;
   border: 2px solid #D4AF37; border-radius: 50px; padding: 12px 20px; font-size: 14px;
   font-weight: bold; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 999;
+  font-family: 'Lato', sans-serif;
 }
 .aman-chat-box {
-  display: none; position: fixed; bottom: 150px; right: 20px; width: 320px;
+  display: none; position: fixed; bottom: 150px; right: 20px; width: 340px;
   background: white; border-radius: 15px; box-shadow: 0 5px 25px rgba(0,0,0,0.3);
   z-index: 999; font-family: 'Lato', sans-serif;
 }
 .aman-header {
-  background: #0B3D20; color: #D4AF37; padding: 15px; border-radius: 15px 15px 0 0; font-weight: bold;
+  background: #0B3D20; color: #D4AF37; padding: 15px; border-radius: 15px 15px 0 0; 
+  font-weight: bold; font-size: 16px;
 }
-.aman-body { padding: 15px; max-height: 400px; overflow-y: auto; }
+.aman-body { padding: 15px; max-height: 450px; overflow-y: auto; }
 .aman-msg {
-  background: #f1f1f1; padding: 10px; border-radius: 10px; margin: 8px 0;
-  font-size: 14px; color: #333;
+  background: #f1f1f1; padding: 12px; border-radius: 10px; margin: 8px 0;
+  font-size: 14px; color: #333; line-height: 1.5;
 }
-.aman-question { background: #DCF8C6; text-align: right; margin-left: 40px; }
+.aman-question { background: #DCF8C6; text-align: right; margin-left: 30px; }
 .aman-btn {
   display: block; width: 100%; text-align: left; background: #f8f8f8; border: 1px solid #ddd;
-  padding: 10px; margin: 5px 0; border-radius: 8px; cursor: pointer; font-size: 14px;
+  padding: 12px; margin: 6px 0; border-radius: 8px; cursor: pointer; font-size: 14px;
+  transition: 0.2s;
+}
+.aman-btn:hover { background: #D4AF37; color: #0B3D20; font-weight: bold; }
+.aman-input-area {
+  display: none; padding: 10px; border-top: 1px solid #ddd;
+}
+.aman-input-area input {
+  width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px; 
+  font-size: 14px; margin-bottom: 8px;
+}
+.aman-send-btn {
+  background: #25D366; color: white; border: none; padding: 10px; 
+  width: 100%; border-radius: 8px; font-weight: bold; cursor: pointer;
 }
 </style>
 
-<button class="aman-chat-btn" onclick="toggleAman()">💬 Ask Aman AI</button>
+<button class="aman-chat-btn" onclick="toggleAman()">💬 Ask Aman AI 24/7</button>
 
 <div class="aman-chat-box" id="amanBox">
   <div class="aman-header">
@@ -324,12 +339,17 @@
     <span style="float:right; cursor:pointer;" onclick="toggleAman()">✕</span>
   </div>
   <div class="aman-body" id="amanChat">
-  <div class="aman-msg">I’m Aman. Ruaha is Tanzania’s wildest park. 90% fewer tourists than Serengeti. My AI answers anytime! 👇</div>
-    <button class="aman-btn" onclick="askAman('price')">💰 Ruaha prices?</button>
+    <div class="aman-msg">Habari! I’m Aman’s AI Employee. Aman is at school/guiding, but I work 24/7. I can quote you, check dates, and hold your spot for Ruaha. What do you need? 👇</div>
+    <button class="aman-btn" onclick="askAman('quote')">💰 Get Instant Ruaha Price Quote</button>
+    <button class="aman-btn" onclick="askAman('dates')">📅 Check June-October Dates</button>
+    <button class="aman-btn" onclick="askAman('book')">✅ Hold My Spot - $100 Deposit</button>
     <button class="aman-btn" onclick="askAman('why')">🦁 Why Ruaha vs Serengeti?</button>
-    <button class="aman-btn" onclick="askAman('season')">📅 Best time to visit?</button>
-    <button class="aman-btn" onclick="askAman('whatsapp')">📱 Chat human Aman</button>
-    <button class="aman-btn" onclick="askAman('get')">🚗 How to get there?</button>
+    <button class="aman-btn" onclick="askAman('get')">🚗 How to get to Ruaha?</button>
+    <button class="aman-btn" onclick="askAman('human')">📱 Talk to Human Aman</button>
+  </div>
+  <div class="aman-input-area" id="amanInputArea">
+    <input type="text" id="amanUserInput" placeholder="Type: Dates + #People + #Days">
+    <button class="aman-send-btn" onclick="sendToWhatsApp()">Send to Aman on WhatsApp →</button>
   </div>
 </div>
 
@@ -338,24 +358,44 @@ function toggleAman() {
   var box = document.getElementById('amanBox');
   box.style.display = box.style.display === 'block'? 'none' : 'block';
 }
+
 function askAman(topic) {
   var chat = document.getElementById('amanChat');
+  var inputArea = document.getElementById('amanInputArea');
   var answers = {
-    price: "Ruaha: $400-550 per day. Includes guide, 4x4, park fees, meals. 45% cheaper than Serengeti tours.",
-    why: "90% fewer tourists. 10,000+ elephants. Biggest lion prides. Wild dogs. No traffic jams. Real wilderness.",
-    season: "June-October DRY season only. Animals crowd at Ruaha River. Nov-May roads are bad - we don't recommend.",
-    whatsapp: "Opening WhatsApp to human Aman...",
-    get: "10hr drive from Arusha OR $300 flight to Ruaha airstrip. We arrange both. Flight saves 2 days.",
+    quote: "RUAHA 4-DAY SAFARI = $400-550/day per person. All include guide, 4x4, park fees, meals, camping/lodge. Exact quote depends on dates + group size. To get YOUR price, click 'Talk to Human Aman' and send: 1. DATES 2. #PEOPLE 3. #DAYS. Aman replies after 4PM daily.",
+    dates: "DRY SEASON June-October: BEST game viewing. All animals at Ruaha River. Books out 4 months early. WET SEASON Nov-May: Roads difficult, we don't recommend. To hold dates, click 'Hold My Spot' or send Aman your dates now.",
+    book: "Smart! $100 deposit holds your date + price. Balance paid 30 days before trip. No risk - full refund if you cancel 60+ days out. To hold spot NOW, click 'Talk to Human Aman' and type: 'HOLD JULY 10, 2 PEOPLE, 4 DAYS RUAHA'. Aman will send payment link by 6PM.",
+    why: "90% fewer tourists than Serengeti. 10,000+ elephants. Biggest lion prides in Tanzania. Wild dogs. No traffic jams. Real wilderness. 45% cheaper. Serengeti is famous - Ruaha is WILD.",
+    get: "10hr drive from Arusha OR $300 flight to Ruaha airstrip. We arrange both. Flight saves 2 days travel. Most clients fly in, game drive out.",
+    human: "Connecting you to Human Aman... He replies after 4PM Mon-Fri, within 1 hour on weekends. FOR FASTEST QUOTE: Type your DATES + #PEOPLE + #DAYS below and click Send. This goes straight to his WhatsApp."
   };
+  
   chat.innerHTML += '<div class="aman-msg aman-question">' + event.target.innerText + '</div>';
   chat.innerHTML += '<div class="aman-msg">' + answers[topic] + '</div>';
-  if(topic === 'whatsapp') {
-    window.open('https://wa.me/255699004685?text=Hi%20Aman%20-%20Ruaha%20safari%20inquiry', '_blank');
+  
+  if(topic === 'human' || topic === 'book' || topic === 'quote') {
+    inputArea.style.display = 'block';
+  } else {
+    inputArea.style.display = 'none';
   }
+  
   chat.scrollTop = chat.scrollHeight;
 }
+
+function sendToWhatsApp() {
+  var userText = document.getElementById('amanUserInput').value;
+  if(userText === '') {
+    alert('Tafadhali andika Dates + #People + #Days first');
+    return;
+  }
+  var whatsappMsg = 'Hi Aman - From your Ruaha website AI: ' + encodeURIComponent(userText);
+  window.open('https://wa.me/255699004685?text=' + whatsappMsg, '_blank');
+  document.getElementById('amanUserInput').value = '';
+  document.getElementById('amanChat').innerHTML += '<div class="aman-msg">✅ Sent to Aman! He’ll reply after 4PM with your quote + date confirmation. Asante!</div>';
+}
 </script>
-<!-- Aman Chatbot End -->
+<!-- AI Employee End -->
 
 <script>
 // Month selector script
@@ -379,13 +419,13 @@ function showRuaha() {
   result.innerHTML = data[month] || "";
 }
 
-// Currency converter script - SAME AS KILI
+// Currency converter script - FIXED
 function convertCurrency(curr) {
   const rates = {USD: 1, GBP: 0.79, EUR: 0.92};
   const basePrice = 400;
-  const converted = Math.round(basePrice * rates);
+  const converted = Math.round(basePrice * rates[curr]);
   const symbols = {USD: '$', GBP: '£', EUR: '€'};
-  document.getElementById('price').innerText = symbols + converted + ' per day';
+  document.getElementById('price').innerText = symbols[curr] + converted + ' per day';
 
   // Highlight active button
   document.querySelectorAll('.curr-btn').forEach(btn => {
@@ -396,9 +436,5 @@ function convertCurrency(curr) {
   event.target.style.color = '#0B3D20';
 }
 </script>
-
-<div style="background:#0B3D20; padding:20px; text-align:center; margin-top:50px;">
-    <p style="color:#D4AF37;">© 2026 Kilimanjaro Direct | Licensed Tanzania Tour Operator</p>
-</div>
 </body>
 </html>
