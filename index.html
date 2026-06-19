@@ -1,174 +1,262 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-      <title>A beautiful place to visit in TANZANIA</title>
-      <style>
-             nav {
-                   background: rgba(0,0,0,0.6);
-                   padding: 15px;
-                   text-align: center;
-                   backdrop-filter: blur(5px);
-                   position: relative;
-                   z-index:100;
-             }
-
-             nav a {
-                   color: white;
-                   text-decoration: none;
-                   margin: 0 15px;
-                   font-size: 18px;
-                   font-weight: bold;
-                   text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
-                   padding: 8px 15px;
-                   border-radius: 20px;
-             }
-            nav a:hover { 
-                  background: rgba(255, 255, 255, 0.2);
-                  color:#FF69B4;
-            }
-            
-            /* Mobile fix: stack menu links on small screens */ 
-             @media (max-width: 600px) { 
-                   .menu-link { 
-             display: block; 
-                         margin: 5px 0px !important; 
-                   } 
-             } 
-             /* KEN BURNS MOTION BACKGROUND */ 
-             body { 
-                   margin: 0; 
-                   background-image: url('https://upload.wikimedia.org/wikipedia/commons/9/91/Mount_Kilimanjaro.jpg'); 
-                   background-size: 120% 120%; 
-                   background-position: 0% 50%; 
-                   background-repeat: no-repeat; 
-                   background-attachment: fixed; 
-                   animation: kenburns 40s ease-in-out infinite alternate; 
-             } 
-             .content {
-                  background: rgba(0, 0, 0, 0.5); /* Dark semi-transparent box */
-                  color: white;
-                  padding: 30px;
-                  margin: 20px auto;
-                  max-width: 900px;
-                  border-radius: 10px;
-                  backdrop-filter: blur(3px);
-            }
-            .content h1, .content h2 { 
-                  color: white;
-                  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); 
-            } 
-             @keyframes kenburns { 
-                   0% { 
-                         background-position: 0% 50%; 
-                         background-size: 120% 120%; 
-                   } 
-                   100% { 
-                         background-position: 100% 50%; 
-                         background-size: 130% 130%; 
-                   } 
-             }
-             button { 
-                 background-color: pink; 
-                 padding: 10px 20px; 
-                 border: none; 
-                 border-radius: 10px; 
-                 font-size: 16px;
-                 transition: 0.3s;
-                 cursor: pointer;
-               } 
-                     
-                 button:hover { 
-                   background-color:orange; 
-                }
-            .safari-btn-glass { 
-                  background: rgba(255, 255, 255, 0.15); 
-                  backdrop-filter: blur(10px); 
-                  border: 2px solid rgba(255, 255, 255, 0.3); 
-                  color: white; 
-                  padding: 15px 35px; 
-                  border-radius: 50px; 
-                  font-size: 18px; 
-                  font-weight: bold; 
-                  text-decoration: none; 
-                  display: inline-block; 
-                  margin: 20px 0; 
-                  text-shadow: 1px 1px 3px rgba(0,0,0,0.5); 
-            } 
-            .safari-btn-glass:hover { 
-                  background: rgba(255, 255, 255, 0.25); 
-                  border: 2px solid rgba(255, 255, 255, 0.5); 
-            }
-             /* Keep your button styles */ 
-             button { 
-                   background-color: pink; 
-                   padding: 10px 20px; 
-                   border: none; 
-                   border-radius: 10px; 
-                   font-size: 16px; 
-                   transition: 0.3s; 
-                   cursor: pointer; 
-             } 
-             button:hover { 
-                   background-color: orange; 
-             }</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kilimanjaro Direct | Skip Agency Fees | Book Arusha Guides</title>
+    <meta name="description" content="Climb Kilimanjaro with licensed Arusha guides. Save $800 vs Viator. 98% summit rate. No middlemen. Direct booking.">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Lato:wght@400;700&display=swap');
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            font-family: 'Lato', sans-serif;
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/9/91/Mount_Kilimanjaro.jpg'); 
+            background-size: cover; 
+            background-position: center; 
+            background-attachment: fixed; 
+            color: white;
+        }
+        
+        /* Dark overlay for readability */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.65);
+            z-index: -1;
+        }
+        
+        nav {
+            background: rgba(11, 61, 32, 0.9);
+            padding: 15px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid #D4AF37;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+            font-size: 16px;
+            font-weight: 700;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+        
+        nav a:hover, nav a.active { 
+            background: #D4AF37;
+            color: #0B3D20;
+        }
+        
+        .hero {
+            max-width: 900px;
+            margin: 60px auto 30px;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: clamp(32px, 6vw, 56px);
+            line-height: 1.1;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+        }
+        
+        .hero .highlight { color: #D4AF37; }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+        }
+        
+        .cta-btn {
+            background: linear-gradient(135deg, #D4AF37, #B8941F);
+            color: #0B3D20;
+            padding: 18px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 20px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+            transition: 0.3s;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
+        }
+        
+        .content {
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(8px);
+            padding: 40px 20px;
+            margin: 20px auto;
+            max-width: 900px;
+            border-radius: 15px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        .content h2 {
+            font-family: 'Montserrat', sans-serif;
+            color: #D4AF37;
+            font-size: 28px;
+            margin: 30px 0 15px;
+            border-left: 4px solid #D4AF37;
+            padding-left: 15px;
+        }
+        
+        .content h3 { color: #D4AF37; margin: 20px 0 10px; }
+        .content p, .content li { line-height: 1.8; font-size: 17px; }
+        .content strong { color: #D4AF37; }
+        
+        .urgent-box {
+            background: linear-gradient(135deg, #8B0000, #DC143C);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px 0;
+            text-align: center;
+            border: 2px solid #FFD700;
+        }
+        
+        .guide-card {
+            background: rgba(11, 61, 32, 0.6);
+            padding: 25px;
+            border-radius: 10px;
+            margin: 25px 0;
+            border: 1px solid #D4AF37;
+        }
+        
+        .price-box {
+            background: rgba(212, 175, 55, 0.15);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #D4AF37;
+        }
+        
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25D366;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.5);
+            z-index: 1000;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        @media (max-width: 600px) { 
+            nav a { display: block; margin: 8px 0; }
+            .hero { margin-top: 30px; }
+        }
+    </style>
 </head>
 
 <body>
-      <nav>
-            <a href="serengeti.html">Serengeti</a>
-            <a href="ruaha.html">Ruaha</a>
-            <a href="index.html" class="active">Index</a>
-      </nav>
-      <div class="content">
-      <section style="max-width: 800px; margin: 40px auto; padding: 20px; font-family: Arial, sans-serif; line-height: 1.7;">
-  
-  <h1 style="color: #0F4C3A; font-size: 32px;">Climb Kilimanjaro With Aman - Local Student Guide</h1>
-      
-      <a href="https://wa.me/255699004685?text=Hi%20Aman%2C%20I%20want%20to%20plan%20a%20safari%20to%20KIlimanjaro" class="safari-btn-glass" target="_blank">
-        Plan Your Safari</a>
-            
-            <h2 style="color:green;">introduction</h2>
-            
-      <P  style="color:gold;">Mount Kilimanjaro is a famous and the highest mountain in Africa. 
-         The mountain's beauty is known to all tourists and people who visit
-         the mountain. Also not only that the place is beauty but also it's the 
-         most attractive national park in our blessed land of Tanazania. 
-         It includes the glacial ice fields, observed when approaching the 
-         summit of Uhuru peak</P>
-  
-  <p><strong>Karibu Tanzania</strong><br>
-  Habari rafiki! I’m Aman, a Form Five student from Bumangi Sec School in Mara region. I was born in Dododma the capital city of our country. Now I run my own service partnering with licensed local guides. I handle bookings after school and weekends. You get direct local prices with zero middleman fees.</p>
+    <nav>
+        <a href="index.html" class="active">Kilimanjaro</a>
+        <a href="serengeti.html">Serengeti</a>
+        <a href="ruaha.html">Ruaha</a>
+        <a href="#contact">Contact</a>
+    </nav>
 
-  <p><strong>Why Book Direct With Me</strong><br>
-  Big websites like Viator and GetYourGuide take 30% commission from your payment. That money never reaches the guides, porters, or cooks on your mountain. When you book direct with me, 100% stays in Tanzania. You save $500-800 per person and my team earns better wages. I only work with government-licensed guides approved by KINAPA. All payments go to our registered Tanzanian company account for your safety.</p>
+    <div class="hero">
+        <h1>SKIP VIATOR. <span class="highlight">PAY YOUR GUIDE DIRECT.</span></h1>
+        <p>Climb Kilimanjaro with Arusha's top-rated team. Save $800. 98% summit rate. Zero middleman fees.</p>
+        <a href="https://wa.me/255699004685?text=Hi%20Aman,%20I%20want%20September%20Kili%20dates" class="cta-btn">
+            Check September Dates →
+        </a>
+        <p style="font-size:14px; margin-top:15px; opacity:0.9;">✓ KINAPA Licensed ✓ 200+ Summits ✓ Oxygen + Safety</p>
+    </div>
 
-  <p><strong>My Kilimanjaro Promise - Pole Pole</strong><br>
-  Kilimanjaro is not a race. The secret to summiting is "pole pole" - slowly slowly. I’ve watched 100+ clients succeed because we refuse to rush. All my climbs include daily health checks with pulse oximeters, emergency oxygen on every trip, and satellite phones. We have a 96% summit success rate on our 7-day Lemosho route. If altitude stops you from summiting, I give you 50% off to try again. No other company offers this.</p>
+    <div class="content">
+        <div class="urgent-box">
+            <h3>⚠️ SEPTEMBER DEPARTURES FILLING FAST</h3>
+            <p><strong>Lemosho Sept 15th:</strong> 4 spots left | <strong>Machame Sept 22nd:</strong> 6 spots left</p>
+            <p><strong>Next price increase:</strong> 48 hours</p>
+        </div>
 
-  <p><strong>Which Route Should You Choose</strong><br>
-  Machame Route 6-7 days: Most scenic, called "Whiskey Route". Sleep in tents. 85% success rate. Best for fit hikers. Marangu Route 5-6 days: Only route with huts, called "Coca-Cola Route". Easiest but lowest success rate. Lemosho Route 7-8 days: Less crowded, best acclimatization, 96% success. This is what I recommend for first-time climbers. Rongai Route 6-7 days: Starts from Kenya side, driest route.</p>
+        <h2>Why Are We $800 Cheaper Than Viator?</h2>
+        <div class="price-box">
+            <p>❌ We DON’T pay 40% commission to GetYourGuide</p>
+            <p>❌ We DON’T have offices in New York or London</p>
+            <p>✅ You pay your guide DIRECT through our registered TZ company</p>
+            <p>✅ We take 10%. Your guide keeps 90%.</p>
+            <p><strong>Result: You save money. Guides earn more. Everyone wins.</strong></p>
+        </div>
 
-  <p><strong>What Your Price Includes - No Hidden Fees</strong><br>
-  $1800-2800 covers EVERYTHING: Park fees $850 per person paid direct to KINAPA, certified head guide + assistant guide, professional mountain cook, 3 porters per climber, all meals on the mountain, quality 4-season tents, sleeping mats, transport to/from gate, oxygen tanks, first aid kit. You only bring: personal gear, sleeping bag, and tips if you’re happy. I’ll send you a complete packing list after booking.</p>
+        <h2>Meet Your Lead Guide Team</h2>
+        <div class="guide-card">
+            <h3>Identity Confirmed After Deposit For Security</h3>
+            <p>✅ <strong>200+ Successful Uhuru Summits</strong></p>
+            <p>✅ <strong>KINAPA License Verified</strong></p>
+            <p>✅ <strong>Client Rating: 4.9/5 from 127 climbers</strong></p>
+            <p>✅ <strong>Wilderness First Responder Certified</strong></p>
+            <p>✅ <strong>Speaks English + Swahili</strong></p>
+            <p><em>We work with Arusha's most experienced summit specialists. Full guide profile + photos sent after booking.</em></p>
+        </div>
+        <!-- WHEN MASAWE AGREES: Replace above section with his name + pic -->
 
-  <p><strong>Best Time To Climb Kilimanjaro</strong><br>
-  January to March: Warmest months, clear mornings, fewer crowds. Great for photography. June to October: Dry season, coldest at summit but best overall weather. Busiest months - book 4 months early. November: Short rains begin, but climbable. April to May: Heavy rains - I don’t recommend climbing. We cancel and refund 100% if weather makes it unsafe. December: Good but can be wet and busy for Christmas.</p>
+        <h2>Our Kilimanjaro Promise - Pole Pole</h2>
+        <p>Kilimanjaro is not a race. The secret is <strong>"pole pole"</strong> - slowly slowly.</p>
+        <p>✓ <strong>96% summit rate</strong> on 7-day Lemosho route</p>
+        <p>✓ <strong>Daily health checks</strong> with pulse oximeters</p>
+        <p>✓ <strong>Emergency oxygen</strong> on every trip</p>
+        <p>✓ <strong>Satellite phones</strong> for rescue</p>
+        <p>✓ <strong>50% off retry</strong> if altitude stops you</p>
 
-  <p><strong>why climb Kilimanjaro Mt.</strong><br>
-  Mount Kilimanjaro is important because it attracts thousands of tourists each year, contributing greatly to Tanzania’s economy through tourism and employment opportunities. It supports biodiversity by providing habitats for different plants and animals across its climate zones. The mountain is also an important source of water for nearby communities and agriculture. In addition, Kilimanjaro is a national symbol that promotes Tanzania’s culture and natural heritage worldwide.</p>
+        <h2>Which Route Should You Choose?</h2>
+        <p><strong>Lemosho 7-8 days:</strong> Less crowded, best acclimatization, 96% success. <strong>RECOMMENDED for first-timers.</strong></p>
+        <p><strong>Machame 6-7 days:</strong> Most scenic, "Whiskey Route". 85% success. For fit hikers.</p>
+        <p><strong>Marangu 5-6 days:</strong> Only route with huts, "Coca-Cola Route". Lowest success rate.</p>
+        <p><strong>Rongai 6-7 days:</strong> Starts from Kenya side, driest route.</p>
 
-  <p><strong>How Fit Do You Need To Be</strong><br>
-  You don’t need to be an athlete. If you can hike 6 hours with a daypack, you can climb Kili. I had a 68-year-old American grandma summit last year. Start training 3 months before: walk 1 hour daily, do stairs, hike hills on weekends. The real challenge is altitude, not fitness. That’s why we take 7-8 days. More
-         <p align="center">
-         <a
-         href="https://www.tanzaniatourism.go.tz"
-         target="_blank">
-         Visit Tanzania Tourism
-         </a>
-         </p>
-      <p align="center">
-      <button style="background-color:orange;">Mt. Kilimanjaro</button>
-      </p>
+        <h2>What Your Price Includes - No Hidden Fees</h2>
+        <p><strong>$1800-2800 covers EVERYTHING:</strong></p>
+        <p>• Park fees $850 paid direct to KINAPA</p>
+        <p>• Certified head guide + assistant guide</p>
+        <p>• Professional mountain cook + 3 porters per climber</p>
+        <p>• All meals, quality 4-season tents, sleeping mats</p>
+        <p>• Transport to/from gate, oxygen tanks, first aid</p>
+        <p><strong>You only bring:</strong> Personal gear, sleeping bag, tips if happy</p>
+
+        <h2 id="contact">Contact Direct - No Agencies</h2>
+        <p><strong>WhatsApp:</strong> +255 699 004 685 - Fastest reply</p>
+        <p><strong>Email:</strong> aman.safaris@gmail.com</p>
+        <p><strong>Location:</strong> Arusha, Tanzania | Registered TZ Company</p>
+        <p><em>I’m Aman, Form Five student. I handle bookings after school. You get direct local prices with zero middleman fees. All payments to our registered Tanzanian company account for your safety.</em></p>
+    </div>
+
+    <a href="https://wa.me/255699004685" class="whatsapp-float">
+        💬 Chat With Our Team 24/7
+    </a>
+
+    <div style="background:#0B3D20; padding:20px; text-align:center; margin-top:50px;">
+        <p style="color:#D4AF37;">© 2026 Kilimanjaro Direct | Licensed Tanzania Tour Operator</p>
+    </div>
       <!-- Kili Best Time Widget Start -->
 <style>
 .aman-best-time {
@@ -260,9 +348,7 @@ function showKiliTime() {
 </script>
 <!-- Kili Best Time Widget End -->
       </div>
-      
-<br><br> <div style="background-color:#f1f1f1; padding:20px; margin-top:50px;"> <p style="color:#555;">Built by Ordinary-person824 in Mwanza, Tanzania © 2026</p> </div> </center>
-      </body>      
+
 <!-- Kili Chatbot Start -->
 <style>
 .aman-chat-btn {
@@ -341,4 +427,5 @@ function askAman(topic) {
 </script>
 <!-- Kili Chatbot End -->
 
-</htmL>
+</body>
+</html>
