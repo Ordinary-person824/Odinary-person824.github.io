@@ -1,6 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Kilimanjaro Climb $2495 | Save $800 vs Viator | KINAPA Licensed Guide</title>
+<meta name="description" content="Book Kilimanjaro direct for $2495. Oxygen + pulse oximeter included. 98% success rate. 200+ summits. WhatsApp guide now. 3 Sept spots left.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "7-Day Machame Kilimanjaro Climb",
+  "description": "KINAPA licensed guided climb with oxygen included",
+  "brand": "Aman Kilimanjaro Guides",
+  "offers": {
+    "@type": "Offer",
+    "price": "2495",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/LimitedAvailability"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "200"
+  }
+}
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kilimanjaro Direct | Skip Agency Fees | Book Arusha Guides</title>
@@ -456,5 +478,34 @@ function sendToWhatsApp() {
 }
 </script>
 <!-- AI Employee End -->
+    <div id="exitPopup" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);z-index:9999;text-align:center">
+  <div style="background:white;max-width:400px;margin:15% auto;padding:30px;border-radius:12px">
+    <h2>WAIT! Don’t Miss This 🎁</h2>
+    <p>Get my FREE Kilimanjaro Packing List + $100 OFF code</p>
+    <a href="https://wa.me/255699004685?text=PACKING" style="background:#25D366;color:white;padding:12px 25px;border-radius:8px;text-decoration:none;font-weight:bold;display:inline-block;margin-top:10px">Get on WhatsApp</a>
+    <p style="margin-top:15px;font-size:12px;cursor:pointer" onclick="document.getElementById('exitPopup').style.display='none'">No thanks</p>
+  </div>
+</div>
+
+<script>
+document.addEventListener('mouseleave', function(e) {
+  if(e.clientY < 0 && !sessionStorage.getItem('popupShown')) {
+    document.getElementById('exitPopup').style.display = 'block';
+    sessionStorage.setItem('popupShown', 'true');
+  }
+});
+</script>
+<div style="text-align:center;margin:10px">
+  <button onclick="convertCurrency('USD')">USD $</button>
+  <button onclick="convertCurrency('GBP')">GBP £</button>
+  <button onclick="convertCurrency('EUR')">EUR €</button>
+</div>
+<script>
+function convertCurrency(curr) {
+  const rates = {USD:1, GBP:0.79, EUR:0.92};
+  const price = 2495 * rates[curr];
+  document.getElementById('price').innerText = curr + ' ' + Math.round(price);
+}
+</script>
 </body>
 </html>
