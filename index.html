@@ -3,53 +3,309 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aman Safari | Tanzania Safari Tours & Kilimanjaro Climbs</title>
-    <meta name="description" content="Book direct with Aman Safari. Serengeti safaris, Kilimanjaro climbs, Ruaha tours. Licensed local guides from Arusha. Save $800 vs agencies.">
+    <title>Aman Safari | Tanzania Safari Tours & Kilimanjaro Climbs | Book Direct</title>
+    <meta name="description" content="Book direct with Aman Safari. Serengeti safaris, Kilimanjaro climbs, Ruaha tours. Licensed local guides from Arusha. Save $800 vs international agencies.">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230B3D20'/><text x='50' y='58' font-family='Montserrat,Arial,sans-serif' font-size='28' font-weight='700' fill='%23D4AF37' text-anchor='middle'>AMAN</text></svg>">
+    
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Lato:wght@400;700&display=swap');
+        
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            font-family: 'Lato', sans-serif;
-            background: #0B3D20; 
-            color: white;
-            text-align: center;
-            padding: 50px 20px;
+        
+        :root {
+            --forest-green: #0B3D20;
+            --gold: #D4AF37;
+            --cream: #F5F1E8;
+            --deep-brown: #4A2C2A;
         }
-        h1 { font-family: 'Montserrat', sans-serif; font-size: 48px; color: #D4AF37; margin-bottom: 20px; }
+        
+        body {
+            font-family: 'Lato', sans-serif;
+            background: var(--forest-green);
+            color: white;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            padding: 20px 0;
+            border-bottom: 2px solid var(--gold);
+        }
+        
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 32px;
+            font-weight: 900;
+            color: var(--gold);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: white;
+            font-size: 18px;
+            display: block;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+        
+        /* Hero */
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+            background: linear-gradient(rgba(11,61,32,0.9), rgba(11,61,32,0.9)), 
+                        url('https://images.unsplash.com/photo-1516426122078-c23e76319801?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 52px;
+            font-weight: 900;
+            color: var(--gold);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 22px;
+            margin-bottom: 15px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .badge {
+            background: var(--gold);
+            color: var(--forest-green);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+        
+        /* Tours Grid */
+        .tours {
+            padding: 80px 0;
+            background: var(--cream);
+            color: var(--deep-brown);
+        }
+        
+        .tours h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 42px;
+            text-align: center;
+            color: var(--forest-green);
+            margin-bottom: 50px;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .card-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .kili { background-image: url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); }
+        .serengeti { background-image: url('https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); }
+        .ruaha { background-image: url('https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); }
+        
+        .card-content {
+            padding: 25px;
+        }
+        
+        .card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            color: var(--forest-green);
+            margin-bottom: 10px;
+        }
+        
+        .price {
+            font-size: 28px;
+            font-weight: 900;
+            color: var(--gold);
+            margin: 15px 0;
+        }
+        
         .btn {
-            background: #D4AF37;
-            color: #0B3D20;
-            padding: 15px 30px;
+            background: var(--gold);
+            color: var(--forest-green);
+            padding: 14px 28px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 700;
             display: inline-block;
-            margin: 10px;
+            transition: all 0.3s;
+            border: 2px solid var(--gold);
         }
-        nav { margin: 30px 0; }
-        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: 700; }
+        
+        .btn:hover {
+            background: transparent;
+            color: var(--gold);
+        }
+        
+        /* Why Book Direct */
+        .why {
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .why h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 42px;
+            color: var(--gold);
+            margin-bottom: 50px;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .feature h3 {
+            font-size: 22px;
+            color: var(--gold);
+            margin: 15px 0;
+        }
+        
+        /* Footer */
+        footer {
+            background: #062013;
+            padding: 50px 0 20px;
+            text-align: center;
+            border-top: 2px solid var(--gold);
+        }
+        
+        .whatsapp {
+            background: #25D366;
+            color: white;
+            padding: 16px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            display: inline-block;
+            margin: 20px 0;
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 36px; }
+            .hero p { font-size: 18px; }
+        }
     </style>
 </head>
 <body>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="kilimanjaro.html">Kilimanjaro</a>
-        <a href="serengeti.html">Serengeti</a>
-        <a href="ruaha.html">Ruaha</a>
-    </nav>
-    
-    <h1>AMAN SAFARI TANZANIA</h1>
-    <p style="font-size: 20px; margin-bottom: 30px;">Licensed Local Guides | Direct Bookings | Save $800</p>
-    
-    <a href="kilimanjaro.html" class="btn">Climb Kilimanjaro $2495</a>
-    <a href="serengeti.html" class="btn">Serengeti Safari</a>
-    <a href="ruaha.html" class="btn">Ruaha Safari</a>
-    
-    <div style="margin-top: 50px;">
-        <p><strong>WhatsApp:</strong> +255 699 004 685</p>
-        <p><strong>Email:</strong> amannelson824@gmail.com</p>
-        <p><strong>Location:</strong> Arusha, Tanzania</p>
-    </div>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                AMAN SAFARI
+                <span>TANZANIA</span>
+            </a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="badge">LICENSED LOCAL OPERATOR • ARUSHA, TANZANIA</div>
+            <h1>BOOK TANZANIA DIRECT<br>SAVE $800 PER PERSON</h1>
+            <p>Skip international agencies. Climb Kilimanjaro and explore Serengeti with licensed local guides from Arusha.</p>
+            <p><strong>Same 5-star service. Zero middleman markup.</strong></p>
+            <a href="https://wa.me/255699004685?text=Hello%20Aman%20Safari,%20I%20want%20to%20book%20direct" class="whatsapp">Chat on WhatsApp Now</a>
+        </div>
+    </section>
+
+    <section class="tours">
+        <div class="container">
+            <h2>Our Tanzania Adventures</h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-img kili"></div>
+                    <div class="card-content">
+                        <h3>Kilimanjaro Climbs</h3>
+                        <p>Machame, Lemosho, Marangu routes. 98% summit success rate with certified guides.</p>
+                        <div class="price">From $2,495</div>
+                        <a href="kilimanjaro.html" class="btn">View Kili Routes</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-img serengeti"></div>
+                    <div class="card-content">
+                        <h3>Serengeti Safari</h3>
+                        <p>Witness the Great Migration. Private 4x4 Land Cruisers with expert driver-guides.</p>
+                        <div class="price">From $1,890</div>
+                        <a href="serengeti.html" class="btn">Coming Soon</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-img ruaha"></div>
+                    <div class="card-content">
+                        <h3>Ruaha Safari</h3>
+                        <p>Tanzania's largest park. Biggest elephant herds. No crowds, pure wilderness.</p>
+                        <div class="price">From $1,650</div>
+                        <a href="ruaha.html" class="btn">Coming Soon</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="why">
+        <div class="container">
+            <h2>Why Book Direct With Aman Safari?</h2>
+            <div class="features">
+                <div class="feature">
+                    <h3>Save $800+ Per Person</h3>
+                    <p>International agencies add 40% markup. Book direct and keep your money for the experience.</p>
+                </div>
+                <div class="feature">
+                    <h3>Licensed Local Guides</h3>
+                    <p>We live in Arusha. We know every trail, every lodge, every shortcut. Born here, guiding since 2015.</p>
+                </div>
+                <div class="feature">
+                    <h3>24/7 WhatsApp Support</h3>
+                    <p>Talk directly to me, Aman. No call centers. I respond personally within minutes, before and during your trip.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <h3 style="color: var(--gold); font-size: 28px; margin-bottom: 20px;">Ready to Book Direct?</h3>
+            <a href="https://wa.me/255699004685?text=Hello%20Aman%20Safari,%20I%20want%20to%20plan%20my%20Tanzania%20trip" class="whatsapp">WhatsApp: +255 699 004 685</a>
+            <p style="margin-top: 30px;">Email: amannelson824@gmail.com</p>
+            <p>Location: Arusha, Tanzania</p>
+            <p style="margin-top: 30px; opacity: 0.7;">© 2026 Aman Safari Tanzania. Licensed Tour Operator.</p>
+        </div>
+    </footer>
 </body>
-  </html>
+    </html>
