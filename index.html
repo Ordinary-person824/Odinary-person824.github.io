@@ -54,6 +54,10 @@
             letter-spacing: 2px;
         }
         
+        nav a:hover {
+            color: var(--gold) !important;
+        }
+        
         /* Hero */
         .hero {
             padding: 80px 0;
@@ -133,6 +137,8 @@
         .kili { background-image: url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); }
         .serengeti { background-image: url('https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); }
         .ruaha { background-image: url('https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); }
+        .ngorongoro { background-image: url('https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); }
+        .tarangire { background-image: url('https://images.unsplash.com/photo-1575550959106-5a7defe28b56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); }
         
         .card-content {
             padding: 25px;
@@ -167,6 +173,14 @@
         .btn:hover {
             background: transparent;
             color: var(--gold);
+        }
+        
+        /* Northern Circuit Banner */
+        .northern-banner {
+            background: var(--forest-green);
+            padding: 50px 20px;
+            text-align: center;
+            color: white;
         }
         
         /* Why Book Direct */
@@ -218,6 +232,7 @@
         @media (max-width: 768px) {
             h1 { font-size: 36px; }
             .hero p { font-size: 18px; }
+            nav { gap: 15px !important; font-size: 14px; }
         }
     </style>
 </head>
@@ -229,18 +244,17 @@
                 AMAN SAFARI
                 <span>TANZANIA</span>
             </a>
-            <nav style="display:flex; gap:25px; margin-top:10px;">
+            <nav style="display:flex; gap:25px; margin-top:10px; flex-wrap:wrap;">
                 <a href="index.html" style="color:white; text-decoration:none; font-weight:700;">Home</a>
                 <a href="kilimanjaro.html" style="color:white; text-decoration:none; font-weight:700;">Kilimanjaro</a>
                 <a href="serengeti.html" style="color:white; text-decoration:none; font-weight:700;">Serengeti</a>
-                <a href="ruaha.html" style="color;white; text-decoration:none; font-weight:700";>Ruaha</a>
-                <a href="ngorongoro.html" style="color;white; text-decoration: font-weight:700";>Ngorongoro</a>
-                <a href="tarangire.html" style="color;white; text-decoration: font-weight:700";>Tarangire</a>
+                <a href="ngorongoro.html" style="color:white; text-decoration:none; font-weight:700;">Ngorongoro</a>
+                <a href="tarangire.html" style="color:white; text-decoration:none; font-weight:700;">Tarangire</a>
+                <a href="ruaha.html" style="color:white; text-decoration:none; font-weight:700;">Ruaha</a>
                 <a href="about.html" style="color:white; text-decoration:none; font-weight:700;">About Us</a>
                 <a href="https://wa.me/255699004685" style="color:#D4AF37; text-decoration:none; font-weight:700;">Contact</a>
             </nav>
         </div>
-    </div>
     </header>
 
     <section class="hero">
@@ -250,6 +264,20 @@
             <p>Skip international agencies. Climb Kilimanjaro and explore Serengeti with licensed local guides from Arusha.</p>
             <p><strong>Same 5-star service. Zero middleman markup.</strong></p>
             <a href="https://wa.me/255699004685?text=Hello%20Aman%20Safari,%20I%20want%20to%20book%20direct" class="whatsapp">Chat on WhatsApp Now</a>
+        </div>
+    </section>
+
+    <!-- NEW: Northern Circuit Banner -->
+    <section class="northern-banner">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; color: var(--gold); margin-bottom: 15px;">Best Seller: 6 Days Northern Circuit</h2>
+            <p style="max-width: 700px; margin: 0 auto 25px; font-size: 1.1rem;">
+                Combine <strong>Tarangire + Ngorongoro Crater + Serengeti</strong> in one trip. 
+                See 3000 elephants, black rhino, and the Great Migration.
+            </p>
+            <a href="ngorongoro.html" class="btn" style="background:var(--gold); color:var(--forest-green);">
+                View 6 Day Itinerary & Prices
+            </a>
         </div>
     </section>
 
@@ -273,7 +301,27 @@
                         <h3>Serengeti Safari</h3>
                         <p>Witness the Great Migration. Private 4x4 Land Cruisers with expert driver-guides.</p>
                         <div class="price">From $1,890</div>
-                        <a href="serengeti.html" class="btn">Coming Soon</a>
+                        <a href="serengeti.html" class="btn">View Serengeti Tours</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-img ngorongoro"></div>
+                    <div class="card-content">
+                        <h3>Ngorongoro Crater</h3>
+                        <p>See the Big 5 in one day inside a volcanic caldera. UNESCO World Heritage Site.</p>
+                        <div class="price">From $350</div>
+                        <a href="ngorongoro.html" class="btn">Explore Ngorongoro</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-img tarangire"></div>
+                    <div class="card-content">
+                        <h3>Tarangire National Park</h3>
+                        <p>3000+ elephants and giant baobab trees. Best park for elephants in Africa.</p>
+                        <div class="price">From $320</div>
+                        <a href="tarangire.html" class="btn">Explore Tarangire</a>
                     </div>
                 </div>
                 
@@ -283,29 +331,11 @@
                         <h3>Ruaha Safari</h3>
                         <p>Tanzania's largest park. Biggest elephant herds. No crowds, pure wilderness.</p>
                         <div class="price">From $1,650</div>
-                        <a href="ruaha.html" class="btn">Coming Soon</a>
+                        <a href="ruaha.html" class="btn">View Ruaha Tours</a>
                     </div>
                 </div>
             </div>
-
-    <!-- ADD THIS NEW NGORONGORO CARD -->
-    <div class="tour-card">
-        <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=600" alt="Ngorongoro Crater">
-        <h3>Ngorongoro Crater</h3>
-        <p>See the Big 5 in one day inside a volcanic caldera. UNESCO site.</p>
-        <a href="ngorongoro.html" class="btn">Explore Ngorongoro</a>
-    </div>
-
-    <!-- ADD THIS TARANGIRE CARD TOO -->
-    <div class="tour-card">
-        <img src="https://images.unsplash.com/photo-1575550959106-5a7defe28b56?w=600" alt="Tarangire">
-        <h3>Tarangire National Park</h3>
-        <p>3000+ elephants and giant baobab trees. Best park for elephants.</p>
-        <a href="tarangire.html" class="btn">Explore Tarangire</a>
-    </div>
-
-</div>
-    </div>
+        </div>
     </section>
 
     <section class="why">
@@ -338,4 +368,4 @@
         </div>
     </footer>
 </body>
-    </html>
+                        </html>
