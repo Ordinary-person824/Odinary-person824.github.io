@@ -6,7 +6,7 @@
     <title>Kilimanjaro Climb $2495 | KINAPA Licensed Guides | Aman Safari</title>
     <meta name="description" content="Climb Kilimanjaro direct from Arusha for $2495. Save $800 vs Viator. Oxygen + pulse oximeter included. 98% summit rate. Book with Aman Safari local guides.">
     
-    <!-- AMAN Favicon - Gold on Green -->
+    <!-- AMAN Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230B3D20'/><text x='50' y='58' font-family='Montserrat,Arial,sans-serif' font-size='28' font-weight='700' fill='%23D4AF37' text-anchor='middle'>AMAN</text></svg>">
     
     <script type="application/ld+json">
@@ -43,7 +43,6 @@
             color: white;
         }
         
-        /* Dark overlay for readability */
         body::before {
             content: '';
             position: fixed;
@@ -52,14 +51,26 @@
             z-index: -1;
         }
         
+        /* Scarcity Bar */
+      .scarcity-bar {
+            background: #ff4444;
+            color: white;
+            text-align: center;
+            padding: 8px;
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+        
         nav {
             background: rgba(11, 61, 32, 0.9);
             padding: 15px;
             text-align: center;
             backdrop-filter: blur(10px);
             position: sticky;
-            top: 0;
-            z-index: 100;
+            top: 36px;
+            z-index: 998;
             border-bottom: 2px solid #D4AF37;
         }
         
@@ -79,14 +90,14 @@
             color: #0B3D20;
         }
         
-       .hero {
+      .hero {
             max-width: 900px;
             margin: 60px auto 30px;
             padding: 40px 20px;
             text-align: center;
         }
         
-       .hero h1 {
+      .hero h1 {
             font-family: 'Montserrat', sans-serif;
             font-weight: 900;
             font-size: clamp(32px, 6vw, 56px);
@@ -95,15 +106,15 @@
             text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
         }
         
-       .hero.highlight { color: #D4AF37; }
+      .hero.highlight { color: #D4AF37; }
         
-       .hero p {
+      .hero p {
             font-size: 20px;
             margin-bottom: 30px;
             text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
         }
         
-       .cta-btn {
+      .cta-btn {
             background: linear-gradient(135deg, #D4AF37, #B8941F);
             color: #0B3D20;
             padding: 18px 40px;
@@ -119,12 +130,12 @@
             font-family: 'Montserrat', sans-serif;
         }
         
-       .cta-btn:hover {
+      .cta-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
         }
         
-       .content {
+      .content {
             background: rgba(0, 0, 0, 0.7);
             backdrop-filter: blur(8px);
             padding: 40px 20px;
@@ -134,7 +145,7 @@
             border: 1px solid rgba(212, 175, 55, 0.3);
         }
         
-       .content h2 {
+      .content h2 {
             font-family: 'Montserrat', sans-serif;
             color: #D4AF37;
             font-size: 28px;
@@ -143,11 +154,11 @@
             padding-left: 15px;
         }
         
-       .content h3 { color: #D4AF37; margin: 20px 0 10px; }
-       .content p,.content li { line-height: 1.8; font-size: 17px; }
-       .content strong { color: #D4AF37; }
+      .content h3 { color: #D4AF37; margin: 20px 0 10px; }
+      .content p,.content li { line-height: 1.8; font-size: 17px; }
+      .content strong { color: #D4AF37; }
         
-       .urgent-box {
+      .urgent-box {
             background: linear-gradient(135deg, #8B0000, #DC143C);
             padding: 20px;
             border-radius: 10px;
@@ -156,7 +167,7 @@
             border: 2px solid #FFD700;
         }
         
-       .guide-card {
+      .guide-card {
             background: rgba(11, 61, 32, 0.6);
             padding: 25px;
             border-radius: 10px;
@@ -164,7 +175,7 @@
             border: 1px solid #D4AF37;
         }
         
-       .price-box {
+      .price-box {
             background: rgba(212, 175, 55, 0.15);
             padding: 20px;
             border-radius: 10px;
@@ -172,7 +183,7 @@
             border-left: 4px solid #D4AF37;
         }
         
-       .whatsapp-float {
+      .whatsapp-float {
             position: fixed;
             bottom: 20px;
             right: 20px;
@@ -187,59 +198,128 @@
             animation: pulse 2s infinite;
         }
         
+        /* Currency Converter */
+      .currency-converter {
+            background: rgba(255, 255, 255, 0.95);
+            color: #333;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+      .currency-converter select {
+            padding: 10px;
+            border-radius: 5px;
+            border: 2px solid #1a3a1a;
+            font-size: 16px;
+            margin-top: 10px;
+            width: 100%;
+        }
+        
+        /* Best Time Widget */
+      .month-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 8px;
+            margin: 20px 0;
+        }
+      .month {
+            padding: 10px 5px;
+            text-align: center;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+      .best { background: #4caf50; color: white; }
+      .good { background: #ffc107; color: #333; }
+      .avoid { background: #f44336; color: white; }
+        
         @keyframes pulse {
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.05); }
         }
         
         @media (max-width: 600px) { 
+            nav { top: 60px; }
             nav a { display: block; margin: 8px 0; }
-           .hero { margin-top: 30px; }
+          .hero { margin-top: 30px; }
+          .month-grid { grid-template-columns: repeat(4, 1fr); }
         }
-    /* Currency Converter */
-.currency-converter {
-    background: white;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-.currency-converter select {
-    padding: 10px;
-    border-radius: 5px;
-    border: 2px solid #1a3a1a;
-    font-size: 16px;
-    margin-top: 10px;
-    }
-    
     </style>
 </head>
 
 <body>
-    <div style="background:#0B3D20; padding:15px; text-align:center; border-bottom:2px solid #D4AF37;">
-  <a href="index.html" style="color:#D4AF37; text-decoration:none; font-weight:700; font-family:Montserrat,Arial;">← BACK TO AMAN SAFARI HOME</a>
+    <!-- SCARCITY BAR -->
+    <div class="scarcity-bar">
+        ⛰️ JAN-FEB 2027: Only 6 spots left. Prices rise $200 in 48hrs ↓
     </div>
-    <!-- Hidden image for SEO -->
-    <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Mount_Kilimanjaro.jpg" alt="Mount Kilimanjaro summit Uhuru Peak Tanzania" style="display:none;">
+
+    <div style="background:#0B3D20; padding:15px; text-align:center; border-bottom:2px solid #D4AF37;">
+        <a href="index.html" style="color:#D4AF37; text-decoration:none; font-weight:700; font-family:Montserrat,Arial;">← BACK TO AMAN SAFARI HOME</a>
+    </div>
     
     <nav>
         <a href="index.html">Home</a>
         <a href="kilimanjaro.html" class="active">Kilimanjaro</a>
         <a href="serengeti.html">Serengeti</a>
         <a href="ruaha.html">Ruaha</a>
-        <a href="#contact">Contact</a>
+        <a href="ngorongoro.html">Ngorongoro</a>
+        <a href="tarangire.html">Tarangire</a>
     </nav>
 
     <div class="hero">
-    <h1>KILIMANJARO CLIMBS <span class="highlight">DIRECT FROM ARUSHA</span></h1>
-    <p>Climb with licensed local guides. Save $800. 98% summit rate. Zero middleman fees.</p>
-    <a href="https://wa.me/255699004685?text=Hi%20Aman,%20I%20want%20Kilimanjaro%20dates" class="cta-btn">
-        Check Next Departure Dates →
-    </a>
-    <p style="font-size:14px; margin-top:15px; opacity:0.9;">✓ KINAPA Licensed ✓ 200+ Summits ✓ Oxygen + Safety</p>
-</div>
+        <h1>KILIMANJARO CLIMBS <span class="highlight">DIRECT FROM ARUSHA</span></h1>
+        <p>Climb with licensed local guides. Save $800. 98% summit rate. Zero middleman fees.</p>
+        <a href="https://wa.me/255699004685?text=Hi%20Aman%20Safari%20AI,%20I%20want%20Kilimanjaro%20dates" class="cta-btn">
+            Check Next Departure Dates →
+        </a>
+        <p style="font-size:14px; margin-top:15px; opacity:0.9;">✓ KINAPA Licensed ✓ 200+ Summits ✓ Oxygen + Safety</p>
+    </div>
+
+    <!-- AI EMPLOYEE NOTICE -->
+    <div style="background:#fff3cd; border-left:4px solid #ffc107; padding:20px; margin:20px auto; max-width:900px; text-align:center; border-radius:10px;">
+        <p style="margin:0; color:#856404; font-weight:600; font-size:1rem;">
+            🤖 <strong>Instant Response:</strong> Our AI assistant handles quotes + bookings 24/7. 
+            Aman replies personally on Weekends & Holidays 8am-8pm EAT. 
+            All bookings confirmed within 2 hours.
+        </p>
+    </div>
 
     <div class="content">
+        <!-- CURRENCY CONVERTER -->
+        <div class="currency-converter">
+            <h2 style="color:#1a3a1a; border:none; padding:0;">💱 Live Price Converter</h2>
+            <select id="currency" onchange="convertPrice()">
+                <option value="USD">USD $ - US Dollar</option>
+                <option value="EUR">EUR € - Euro</option>
+                <option value="GBP">GBP £ - British Pound</option>
+                <option value="TZS">TZS - Tanzanian Shilling</option>
+            </select>
+            <p style="margin-top:10px; color:#333;">7-Day Machame: <strong id="price-display">$2,495</strong> per person</p>
+        </div>
+
+        <!-- BEST TIME WIDGET -->
+        <div class="guide-card">
+            <h2>📅 Best Time to Climb Kilimanjaro</h2>
+            <div class="month-grid">
+                <div class="month best">Jan</div>
+                <div class="month best">Feb</div>
+                <div class="month good">Mar</div>
+                <div class="month avoid">Apr</div>
+                <div class="month avoid">May</div>
+                <div class="month best">Jun</div>
+                <div class="month best">Jul</div>
+                <div class="month best">Aug</div>
+                <div class="month best">Sep</div>
+                <div class="month best">Oct</div>
+                <div class="month good">Nov</div>
+                <div class="month good">Dec</div>
+            </div>
+            <p><span style="color:#4caf50;">● Green = Best:</span> Dry, clear summit | 
+               <span style="color:#ffc107;">● Yellow = Good:</span> Short rains | 
+               <span style="color:#f44336;">● Red = Avoid:</span> Heavy rains, dangerous</p>
+        </div>
+
         <div class="urgent-box">
             <h3>⚠️ DRY SEASON DEPARTURES FILLING FAST</h3>
             <p><strong>Lemosho Route:</strong> 4 spots left | <strong>Machame Route:</strong> 6 spots left</p>
@@ -248,298 +328,78 @@
 
         <h2>Why Are We $800 Cheaper Than Viator?</h2>
         <div class="price-box">
-  <h3 id="price" style="color:#D4AF37;font-size:32px;margin-bottom:15px;text-align:center">$2,495 per person</h3>
-  <div style="text-align:center;margin-bottom:20px">
-    <button onclick="convertCurrency('USD')" class="curr-btn" style="margin:2px;padding:8px 16px;border:1px solid #D4AF37;border-radius:6px;cursor:pointer;background:#D4AF37;color:#0B3D20;">$ USD</button>
-    <button onclick="convertCurrency('GBP')" class="curr-btn" style="margin:2px;padding:8px 16px;border:1px solid #D4AF37;border-radius:6px;cursor:pointer;background:#0B3D20;color:white;">£ GBP</button>
-    <button onclick="convertCurrency('EUR')" class="curr-btn" style="margin:2px;padding:8px 16px;border:1px solid #D4AF37;border-radius:6px;cursor:pointer;background:#0B3D20;color:white;">€ EUR</button>
-  </div>
-  <p>❌ We DON'T pay 40% commission to GetYourGuide</p>
-  <p>❌ We DON'T have offices in New York or London</p>
-  <p>✅ You pay your guide DIRECT through our registered TZ company</p>
-  <p>✅ We take 10%. Your guide keeps 90%.</p>
-  <p><strong>Result: You save money. Guides earn more. Everyone wins.</strong></p>
-</div>
+            <h3 id="price" style="color:#D4AF37;font-size:32px;margin-bottom:15px;text-align:center" class="price-usd" data-usd="2495">$2,495 per person</h3>
+            <p>❌ We DON'T pay 40% commission to GetYourGuide</p>
+            <p>❌ We DON'T have offices in New York or London</p>
+            <p>✅ You pay your guide DIRECT through our registered TZ company</p>
+            <p>✅ We take 10%. Your guide keeps 90%.</p>
+            <p><strong>Result: You save money. Guides earn more. Everyone wins.</strong></p>
+        </div>
 
-       <div class="guide-card">
-  <h2>Our Kilimanjaro Promise - Pole Pole</h2>
-  <p>Kilimanjaro is not a race. The secret is <strong>"pole pole"</strong> - slowly slowly.</p>
-  <p>✓ <strong>96% summit rate</strong> on 7-day Lemosho route</p>
-  <p>✓ <strong>Daily health checks</strong> with pulse oximeters</p>
-  <p>✓ <strong>Emergency oxygen</strong> on every trip</p>
-  <p>✓ <strong>Satellite phones</strong> for rescue</p>
-  <p>✓ <strong>50% off retry</strong> if altitude stops you</p>
-</div>
+        <div class="guide-card">
+            <h2>Our Kilimanjaro Promise - Pole Pole</h2>
+            <p>Kilimanjaro is not a race. The secret is <strong>"pole pole"</strong> - slowly slowly.</p>
+            <p>✓ <strong>96% summit rate</strong> on 7-day Lemosho route</p>
+            <p>✓ <strong>Daily health checks</strong> with pulse oximeters</p>
+            <p>✓ <strong>Emergency oxygen</strong> on every trip</p>
+            <p>✓ <strong>Satellite phones</strong> for rescue</p>
+            <p>✓ <strong>50% off retry</strong> if altitude stops you</p>
+        </div>
 
-<div class="guide-card">
-  <h2>Which Route Should You Choose?</h2>
-  <p><strong>Lemosho 7-8 days:</strong> Less crowded, best acclimatization, 96% success. <strong>RECOMMENDED for first-timers.</strong></p>
-  <p><strong>Machame 6-7 days:</strong> Most scenic, "Whiskey Route". 85% success. For fit hikers.</p>
-  <p><strong>Marangu 5-6 days:</strong> Only route with huts, "Coca-Cola Route". Lowest success rate.</p>
-  <p><strong>Rongai 6-7 days:</strong> Starts from Kenya side, driest route.</p>
-</div>
+        <div class="guide-card">
+            <h2>Which Route Should You Choose?</h2>
+            <p><strong>Lemosho 7-8 days:</strong> Less crowded, best acclimatization, 96% success. <strong class="price-usd" data-usd="2695">$2,695</strong> RECOMMENDED for first-timers.</p>
+            <p><strong>Machame 6-7 days:</strong> Most scenic, "Whiskey Route". 85% success. <strong class="price-usd" data-usd="2495">$2,495</strong> For fit hikers.</p>
+            <p><strong>Marangu 5-6 days:</strong> Only route with huts, "Coca-Cola Route". Lowest success rate. <strong class="price-usd" data-usd="2295">$2,295</strong></p>
+            <p><strong>Rongai 6-7 days:</strong> Starts from Kenya side, driest route. <strong class="price-usd" data-usd="2595">$2,595</strong></p>
+        </div>
 
-<div class="guide-card">
-  <h2>What Your Price Includes - No Hidden Fees</h2>
-  <p><strong>$2495 covers EVERYTHING:</strong></p>
-  <p>• Park fees $850 paid direct to KINAPA</p>
-  <p>• Certified head guide + assistant guide</p>
-  <p>• Professional mountain cook + 3 porters per climber</p>
-  <p>• All meals, quality 4-season tents, sleeping mats</p>
-  <p>• Transport to/from gate, oxygen tanks, first aid</p>
-  <p><strong>You only bring:</strong> Personal gear, sleeping bag, tips if happy</p>
-</div>
+        <div class="guide-card">
+            <h2>What Your Price Includes - No Hidden Fees</h2>
+            <p><strong>$2495 covers EVERYTHING:</strong></p>
+            <p>• Park fees $850 paid direct to KINAPA</p>
+            <p>• Certified head guide + assistant guide</p>
+            <p>• Professional mountain cook + 3 porters per climber</p>
+            <p>• All meals, quality 4-season tents, sleeping mats</p>
+            <p>• Transport to/from gate, oxygen tanks, first aid</p>
+            <p><strong>You only bring:</strong> Personal gear, sleeping bag, tips if happy</p>
+        </div>
 
-<div class="guide-card">
-  <h2 id="contact">Contact Direct - No Agencies</h2>
-  <p><strong>WhatsApp:</strong> +255 699 004 685 - Fastest reply</p>
-  <p><strong>Email:</strong> amannelson824@gmail.com</p>
-  <p><strong>Location:</strong> Operating from Arusha & Moshi, Tanzania | Registered TZ Company</p>
-  <p><em>I'm Aman. I handle bookings direct. You get local prices with zero middleman fees. All payments to our registered Tanzanian company account for your safety.</em></p>
-</div>
+        <div class="guide-card">
+            <h2 id="contact">Contact Direct - No Agencies</h2>
+            <p><strong>WhatsApp:</strong> +255 699 004 685 - Fastest reply</p>
+            <p><strong>Email:</strong> amannelson824@gmail.com</p>
+            <p><strong>Location:</strong> Operating from Arusha & Moshi, Tanzania | Registered TZ Company</p>
+            <p><em>I'm Aman. I handle bookings direct. You get local prices with zero middleman fees. All payments to our registered Tanzanian company account for your safety.</em></p>
+        </div>
     </div>
-    <a href="https://wa.me/255699004685" class="whatsapp-float">
-        💬 Chat With Our Team 24/7
+    
+    <a href="https://wa.me/255699004685?text=Hi%20Aman%20Safari%20AI,%20I%20saw%20your%20Kili%20site.%20Is%20Feb%202027%20available?" class="whatsapp-float">
+        💬 Chat Now
     </a>
 
     <div style="background:#0B3D20; padding:20px; text-align:center; margin-top:50px;">
         <p style="color:#D4AF37;">© 2026 Aman Safari | Licensed Tanzania Tour Operator</p>
     </div>
-      <!-- Kili Best Time Widget Start -->
-<style>
-.aman-best-time {
-  max-width: 800px; margin: 40px auto; padding: 0 20px; font-family: Arial, sans-serif;
-}
-.aman-time-box {
-  background: #1a1a1a!important; color: white!important; padding: 25px!important;
-  border-radius: 10px!important; box-shadow: 0 4px 15px rgba(0,0,0,0.4)!important;
-}
-.aman-time-box h2 {
-  margin: 0 0 15px 0!important; font-size: 22px!important; color: white!important;
-}
-.aman-time-box h3 {
-  margin: 25px 0 15px 0!important; font-size: 20px!important; color: white!important;
-}
-.aman-time-box p {
-  margin: 8px 0!important; color: #ddd!important;
-}
-.aman-time-box select {
-  width: 100%!important; padding: 12px!important; border-radius: 6px!important;
-  border: none!important; font-size: 16px!important; margin: 10px 0!important;
-  background: white!important; color: #333!important;
-}
-.aman-result {
-  background: #0F4C3A!important; padding: 15px!important; border-radius: 8px!important;
-  margin-top: 15px!important; display: none;
-}
-.aman-result h4 {
-  margin: 0 0 8px 0!important; color: #DCF8C6!important;
-}
-</style>
 
-<div class="aman-best-time">
-  <div class="aman-time-box">
-    <h2>Contact Information</h2>
-    <p>Location: Operating from Arusha & Moshi, Tanzania</p>
-    <p>E-mail: amannelson824@gmail.com</p>
-    <p>Phone/WhatsApp: +255 699 004 685</p>
-
-    <h3>When Is The Best Time To Climb Kilimanjaro?</h3>
-    <label style="color: #ccc; font-size: 14px;">Select your travel month:</label>
-    <select id="kiliMonth" onchange="showKiliTime()">
-      <option value="">-- Pick a month --</option>
-      <option value="jan">January</option>
-      <option value="feb">February</option>
-      <option value="mar">March</option>
-      <option value="apr">April</option>
-      <option value="may">May</option>
-      <option value="jun">June</option>
-      <option value="jul">July</option>
-      <option value="aug">August</option>
-      <option value="sep">September</option>
-      <option value="oct">October</option>
-      <option value="nov">November</option>
-      <option value="dec">December</option>
-    </select>
-
-    <div class="aman-result" id="kiliResult"></div>
-  </div>
-</div>
-
-<script>
-function showKiliTime() {
-  var month = document.getElementById('kiliMonth').value;
-  var result = document.getElementById('kiliResult');
-
-  var kiliData = {
-    jan: "<h4>January - EXCELLENT</h4>Warmest month on Kili. Clear mornings, good visibility. Less crowded than summer. Shoulder season pricing. Success rate: 85%+ on 7-day routes.",
-    feb: "<h4>February - BEST</h4>Driest and warmest month. Perfect weather. Peak season - book 4 months early. Highest summit success rates. Most expensive month.",
-    mar: "<h4>March - VERY GOOD</h4>Last month before long rains. Still warm and dry. Fewer crowds than Feb. Good deals available. Success rate: 80%+",
-    apr: "<h4>April - NOT RECOMMENDED</h4>Heavy long rains start. Muddy trails, poor visibility. Cold and wet. Many operators close. We don't run climbs this month for safety.",
-    may: "<h4>May - NOT RECOMMENDED</h4>Peak of long rains. Trails dangerous and slippery. Low visibility. Highest risk of altitude issues. We refund 100% if you book by mistake.",
-    jun: "<h4>June - GOOD</h4>Dry season starts. Cold but clear skies. Fewer crowds than July-Aug. Prices start rising. Great for budget climbers who want good weather.",
-    jul: "<h4>July - EXCELLENT</h4>Peak dry season. Coldest month but clearest skies. Busiest month of year. Book 5 months early. Amazing starry nights at high camps.",
-    aug: "<h4>August - BEST</h4>Peak dry season continues. Very cold at summit but no rain. Busiest + most expensive. 90%+ success rate on 8-day Lemosho. Book now!",
-    sep: "<h4>September - EXCELLENT</h4>End of dry season. Still cold and clear. Crowds start dropping. Best month for balance of weather + price + availability.",
-    oct: "<h4>October - VERY GOOD</h4>Last dry month before short rains. Warming up. Great deals as peak season ends. Still 80%+ success rates. My personal favorite month.",
-    nov: "<h4>November - FAIR</h4>Short rains begin mid-month. First 2 weeks OK, last 2 weeks wet. Cheapest month. Only for experienced hikers with good gear.",
-    dec: "<h4>December - GOOD</h4>Short rains end early Dec. Christmas week busy + expensive. Late Dec great weather. New Year summit is popular but very cold."
-  };
-
-  if(month) {
-    result.innerHTML = kiliData[month] + '<p style="margin-top:10px;"><strong>WhatsApp me:</strong> "KILI ' + month.toUpperCase() + '" to +255 699 004 685 for dates & prices</p>';
-    result.style.display = 'block';
-  } else {
-    result.style.display = 'none';
-  }
-}
-</script>
-<!-- Kili Best Time Widget End -->
-
-<!-- AI Employee Start -->
-<style>
-.aman-chat-btn {
-  position: fixed; bottom: 90px; right: 20px; background: #0B3D20; color: white;
-  border: 2px solid #D4AF37; border-radius: 50px; padding: 12px 20px; font-size: 14px;
-  font-weight: bold; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 999;
-  font-family: 'Lato', sans-serif;
-}
-.aman-chat-box {
-  display: none; position: fixed; bottom: 150px; right: 20px; width: 340px;
-  background: white; border-radius: 15px; box-shadow: 0 5px 25px rgba(0,0,0,0.3);
-  z-index: 999; font-family: 'Lato', sans-serif;
-}
-.aman-header {
-  background: #0B3D20; color: #D4AF37; padding: 15px; border-radius: 15px 15px 0 0;
-  font-weight: bold; font-size: 16px;
-}
-.aman-body { padding: 15px; max-height: 450px; overflow-y: auto; }
-.aman-msg {
-  background: #f1f1f1; padding: 12px; border-radius: 10px; margin: 8px 0;
-  font-size: 14px; color: #333; line-height: 1.5;
-}
-.aman-question { background: #DCF8C6; text-align: right; margin-left: 30px; }
-.aman-btn {
-  display: block; width: 100%; text-align: left; background: #f8f8f8; border: 1px solid #ddd;
-  padding: 12px; margin: 6px 0; border-radius: 8px; cursor: pointer; font-size: 14px;
-  transition: 0.2s;
-}
-.aman-btn:hover { background: #D4AF37; color: #0B3D20; font-weight: bold; }
-.aman-input-area {
-  display: none; padding: 10px; border-top: 1px solid #ddd;
-}
-.aman-input-area input {
-  width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px;
-  font-size: 14px; margin-bottom: 8px;
-}
-.aman-send-btn {
-  background: #25D366; color: white; border: none; padding: 10px;
-  width: 100%; border-radius: 8px; font-weight: bold; cursor: pointer;
-}
-</style>
-
-<button class="aman-chat-btn" onclick="toggleAman()">💬 Ask Aman AI 24/7</button>
-
-<div class="aman-chat-box" id="amanBox">
-  <div class="aman-header">
-    Aman AI - Your Safari Expert
-    <span style="float:right; cursor:pointer;" onclick="toggleAman()">✕</span>
-  </div>
-  <div class="aman-body" id="amanChat">
-    <div class="aman-msg">Habari! I'm Aman's AI assistant. Aman is at school/guiding, but I work 24/7. I can quote you, check dates, and hold your spot. What do you need? 👇</div>
-    <button class="aman-btn" onclick="askAman('quote')">💰 Get Instant Price Quote</button>
-    <button class="aman-btn" onclick="askAman('dates')">📅 Check Next Departure Dates</button>
-    <button class="aman-btn" onclick="askAman('book')">✅ Hold My Spot - $100 Deposit</button>
-    <button class="aman-btn" onclick="askAman('safety')">⛑️ Is It Safe? Oxygen Included?</button>
-    <button class="aman-btn" onclick="askAman('difference')">🤔 Why Not Book Viator?</button>
-    <button class="aman-btn" onclick="askAman('human')">📱 Talk to Human Aman</button>
-  </div>
-  <div class="aman-input-area" id="amanInputArea">
-    <input type="text" id="amanUserInput" placeholder="Type: Dates + #People + Route">
-    <button class="aman-send-btn" onclick="sendToWhatsApp()">Send to Aman on WhatsApp →</button>
-  </div>
-</div>
-
-<script>
-function toggleAman() {
-  var box = document.getElementById('amanBox');
-  box.style.display = box.style.display === 'block'? 'none' : 'block';
-}
-
-function askAman(topic) {
-  var chat = document.getElementById('amanChat');
-  var inputArea = document.getElementById('amanInputArea');
-  var answers = {
-    quote: "KILI 7-DAY MACHAME = $2495/person. SERENGETI 4-DAY = $400/day. RUAHA 4-DAY = $500/day. All include guide, fees, meals, gear. Exact quote depends on dates + group size. To get YOUR price, click 'Talk to Human Aman' and send: 1. DATES 2. #PEOPLE 3. ROUTE. Aman replies after 4PM daily.",
-    dates: "NEXT DEPARTURES: Limited spots left - fills FAST. DRY SEASON = BEST months June-Oct. To hold dates, click 'Hold My Spot' or send Aman your dates now. He confirms in 1 hour after school.",
-    book: "Smart! $100 deposit holds your date + price. Balance paid 30 days before trip. No risk - full refund if you cancel 60+ days out. To hold spot NOW, click 'Talk to Human Aman' and type: 'HOLD [DATE], [NUMBER] PEOPLE, MACHAME'. Aman will send payment link by 6PM.",
-    safety: "YES. 100% SAFE. Includes: 1. Emergency oxygen on every climb 2. Pulse oximeter checks 2x daily 3. KINAPA licensed guides with 200+ summits 4. Emergency evacuation plan 5. 98% summit success rate. Your safety = our #1 job. No Viator agency can say that.",
-    difference: "VIATOR: $3300, you never meet guide, 20% goes to USA company. US: $2495, you chat direct with Aman, 90% stays in Tanzania to pay guides/porters. Same mountain, same safety, but $800 cheaper + you support locals. Easy choice.",
-    human: "Connecting you to Human Aman... He replies after 4PM Mon-Fri, within 1 hour on weekends. FOR FASTEST QUOTE: Type your DATES + #PEOPLE + ROUTE below and click Send. This goes straight to his WhatsApp."
-  };
-
-  chat.innerHTML += '<div class="aman-msg aman-question">' + event.target.innerText + '</div>';
-  chat.innerHTML += '<div class="aman-msg">' + answers[topic] + '</div>';
-
-  if(topic === 'human' || topic === 'book' || topic === 'quote') {
-    inputArea.style.display = 'block';
-  } else {
-    inputArea.style.display = 'none';
-  }
-
-  chat.scrollTop = chat.scrollHeight;
-}
-
-function sendToWhatsApp() {
-  var userText = document.getElementById('amanUserInput').value;
-  if(userText === '') {
-    alert('Please type Dates + #People + Route first');
-    return;
-  }
-  var whatsappMsg = 'Hi Aman - From your website AI: ' + encodeURIComponent(userText);
-  window.open('https://wa.me/255699004685?text=' + whatsappMsg, '_blank');
-  document.getElementById('amanUserInput').value = '';
-  document.getElementById('amanChat').innerHTML += '<div class="aman-msg">✅ Sent to Aman! He will reply after 4PM with your quote + date confirmation. Thank you!</div>';
-}
-</script>
-<!-- AI Employee End -->
-
-    <div id="exitPopup" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);z-index:9999;text-align:center">
-  <div style="background:white;max-width:400px;margin:15% auto;padding:30px;border-radius:12px">
-    <h2>WAIT! Don't Miss This 🎁</h2>
-    <p>Get my FREE Kilimanjaro Packing List + $100 OFF code</p>
-    <a href="https://wa.me/255699004685?text=PACKING" style="background:#25D366;color:white;padding:12px 25px;border-radius:8px;text-decoration:none;font-weight:bold;display:inline-block;margin-top:10px">Get on WhatsApp</a>
-    <p style="margin-top:15px;font-size:12px;cursor:pointer" onclick="document.getElementById('exitPopup').style.display='none'">No thanks</p>
-  </div>
-</div>
-
-<script>
-// Exit popup script
-document.addEventListener('mouseleave', function(e) {
-  if(e.clientY < 0 &&!sessionStorage.getItem('popupShown')) {
-    document.getElementById('exitPopup').style.display = 'block';
-    sessionStorage.setItem('popupShown', 'true');
-  
-<!-- CURRENCY CONVERTER -->
-<div class="currency-converter">
-    <h2>💱 Live Price Converter</h2>
-    <select id="currency" onchange="convertPrice()">
-        <option value="USD">USD $ - US Dollar</option>
-        <option value="EUR">EUR € - Euro</option>
-        <option value="GBP">GBP £ - British Pound</option>
-        <option value="TZS">TZS - Tanzanian Shilling</option>
-    </select>
-    <p style="margin-top:10px;">7-Day Machame: <strong id="price-display">$2,495</strong> per person</p>
-</div>
-      
-  // Highlight active button
-  document.querySelectorAll('.curr-btn').forEach(btn => {
-    btn.style.background = '#0B3D20';
-    btn.style.color = 'white';
-  });
-  event.target.style.background = '#D4AF37';
-  event.target.style.color = '#0B3D20';
-}
-</script>
+    <!-- CURRENCY CONVERTER SCRIPT -->
+    <script>
+        const rates = { USD: 1, EUR: 0.92, GBP: 0.79, TZS: 2500 };
+        const symbols = { USD: '$', EUR: '€', GBP: '£', TZS: 'TZS ' };
+        
+        function convertPrice() {
+            const currency = document.getElementById('currency').value;
+            const rate = rates[currency];
+            const symbol = symbols[currency];
+            
+            document.querySelectorAll('.price-usd').forEach(el => {
+                const usd = parseFloat(el.dataset.usd);
+                const converted = (usd * rate).toFixed(0);
+                el.textContent = symbol + converted.toLocaleString();
+            });
+            
+            document.getElementById('price-display').textContent = symbol + (2495 * rate).toFixed(0).toLocaleString();
+        }
+    </script>
 </body>
-</html>
+            </html>
