@@ -121,3 +121,50 @@ nav a:hover {
     padding: 0 15px;
   }
   }
+/* TOUR CARDS */
+
+.section-title{
+font-size:2rem;
+margin-bottom:20px;
+color:var(--gold);
+text-align:center;
+}
+
+.tour-card{
+display:block;
+
+font-size:22px;
+
+padding:24px;
+
+margin:18px 0;
+
+background:rgba(255,255,255,0.08);
+
+border-radius:18px;
+
+text-decoration:none;
+
+color:white;
+
+transition:0.3s;
+
+border:1px solid rgba(255,255,255,0.1);
+}
+
+.tour-card:hover{
+transform:translateY(-4px);
+
+background:rgba(212,175,55,0.15);
+
+color:var(--gold);
+}
+
+@media(max-width:768px){
+
+.tour-card{
+font-size:20px;
+padding:22px;
+}
+
+  }
