@@ -1,371 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aman Safari | Tanzania Safari Tours & Kilimanjaro Climbs | Book Direct</title>
-    <meta name="description" content="Book direct with Aman Safari. Serengeti safaris, Kilimanjaro climbs, Ruaha tours. Licensed local guides from Arusha. Save $800 vs international agencies.">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230B3D20'/><text x='50' y='58' font-family='Montserrat,Arial,sans-serif' font-size='28' font-weight='700' fill='%23D4AF37' text-anchor='middle'>AMAN</text></svg>">
-    
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Lato:wght@400;700&display=swap');
-        
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        :root {
-            --forest-green: #0B3D20;
-            --gold: #D4AF37;
-            --cream: #F5F1E8;
-            --deep-brown: #4A2C2A;
-        }
-        
-        body {
-            font-family: 'Lato', sans-serif;
-            background: var(--forest-green);
-            color: white;
-            line-height: 1.6;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Header */
-        header {
-            padding: 20px 0;
-            border-bottom: 2px solid var(--gold);
-        }
-        
-        .logo {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 32px;
-            font-weight: 900;
-            color: var(--gold);
-            text-decoration: none;
-        }
-        
-        .logo span {
-            color: white;
-            font-size: 18px;
-            display: block;
-            font-weight: 700;
-            letter-spacing: 2px;
-        }
-        
-        nav a:hover {
-            color: var(--gold) !important;
-        }
-        
-        /* Hero */
-        .hero {
-            padding: 80px 0;
-            text-align: center;
-            background: linear-gradient(rgba(11,61,32,0.9), rgba(11,61,32,0.9)), 
-                        url('https://images.unsplash.com/photo-1516426122078-c23e76319801?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
-        }
-        
-        h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 52px;
-            font-weight: 900;
-            color: var(--gold);
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-        
-        .hero p {
-            font-size: 22px;
-            margin-bottom: 15px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .badge {
-            background: var(--gold);
-            color: var(--forest-green);
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-weight: 700;
-            display: inline-block;
-            margin-bottom: 30px;
-        }
-        
-        /* Tours Grid */
-        .tours {
-            padding: 80px 0;
-            background: var(--cream);
-            color: var(--deep-brown);
-        }
-        
-        .tours h2 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 42px;
-            text-align: center;
-            color: var(--forest-green);
-            margin-bottom: 50px;
-        }
-        
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-        
-        .card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .card-img {
-            height: 200px;
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .kili { background-image: url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); }
-        .serengeti { background-image: url('https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); }
-        .ruaha { background-image: url('https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); }
-        .ngorongoro { background-image: url('https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); }
-        .tarangire { background-image: url('https://images.unsplash.com/photo-1575550959106-5a7defe28b56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); }
-        
-        .card-content {
-            padding: 25px;
-        }
-        
-        .card h3 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 24px;
-            color: var(--forest-green);
-            margin-bottom: 10px;
-        }
-        
-        .price {
-            font-size: 28px;
-            font-weight: 900;
-            color: var(--gold);
-            margin: 15px 0;
-        }
-        
-        .btn {
-            background: var(--gold);
-            color: var(--forest-green);
-            padding: 14px 28px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            display: inline-block;
-            transition: all 0.3s;
-            border: 2px solid var(--gold);
-        }
-        
-        .btn:hover {
-            background: transparent;
-            color: var(--gold);
-        }
-        
-        /* Northern Circuit Banner */
-        .northern-banner {
-            background: var(--forest-green);
-            padding: 50px 20px;
-            text-align: center;
-            color: white;
-        }
-        
-        /* Why Book Direct */
-        .why {
-            padding: 80px 0;
-            text-align: center;
-        }
-        
-        .why h2 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 42px;
-            color: var(--gold);
-            margin-bottom: 50px;
-        }
-        
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-top: 40px;
-        }
-        
-        .feature h3 {
-            font-size: 22px;
-            color: var(--gold);
-            margin: 15px 0;
-        }
-        
-        /* Footer */
-        footer {
-            background: #062013;
-            padding: 50px 0 20px;
-            text-align: center;
-            border-top: 2px solid var(--gold);
-        }
-        
-        .whatsapp {
-            background: #25D366;
-            color: white;
-            padding: 16px 35px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 18px;
-            display: inline-block;
-            margin: 20px 0;
-        }
-        
-        @media (max-width: 768px) {
-            h1 { font-size: 36px; }
-            .hero p { font-size: 18px; }
-            nav { gap: 15px !important; font-size: 14px; }
-        }
-    </style>
+<title>Aman Safari | Kilimanjaro & Tanzania Tours</title>
+<link rel="stylesheet" href="assets/style.css">
 </head>
+
 <body>
-    <header>
-    <div class="container">
-        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;">
-            <a href="index.html" class="logo">
-                AMAN SAFARI
-                <span>TANZANIA</span>
-            </a>
-            <nav style="display:flex; gap:25px; margin-top:10px; flex-wrap:wrap;">
-                <a href="index.html" style="color:white; text-decoration:none; font-weight:700;">Home</a>
-                <a href="kilimanjaro.html" style="color:white; text-decoration:none; font-weight:700;">Kilimanjaro</a>
-                <a href="serengeti.html" style="color:white; text-decoration:none; font-weight:700;">Serengeti</a>
-                <a href="ngorongoro.html" style="color:white; text-decoration:none; font-weight:700;">Ngorongoro</a>
-                <a href="tarangire.html" style="color:white; text-decoration:none; font-weight:700;">Tarangire</a>
-                <a href="ruaha.html" style="color:white; text-decoration:none; font-weight:700;">Ruaha</a>
-                <a href="about.html" style="color:white; text-decoration:none; font-weight:700;">About Us</a>
-                <a href="https://wa.me/255699004685" style="color:#D4AF37; text-decoration:none; font-weight:700;">Contact</a>
-            </nav>
-        </div>
-    </header>
 
-    <section class="hero">
-        <div class="container">
-            <div class="badge">LICENSED LOCAL OPERATOR • ARUSHA, TANZANIA</div>
-            <h1>BOOK TANZANIA DIRECT<br>SAVE $800 PER PERSON</h1>
-            <p>Skip international agencies. Climb Kilimanjaro and explore Serengeti with licensed local guides from Arusha.</p>
-            <p><strong>Same 5-star service. Zero middleman markup.</strong></p>
-            <a href="https://wa.me/255699004685?text=Hello%20Aman%20Safari,%20I%20want%20to%20book%20direct" class="whatsapp">Chat on WhatsApp Now</a>
-        </div>
-    </section>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="kilimanjaro.html">Kilimanjaro</a>
+  <a href="serengeti.html">Serengeti</a>
+  <a href="ngorongoro.html">Ngorongoro</a>
+  <a href="tarangire.html">Tarangire</a>
+  <a href="ruaha.html">Ruaha</a>
+  <a href="safari.html">Safaris</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</nav>
 
-    <!-- NEW: Northern Circuit Banner -->
-    <section class="northern-banner">
-        <div class="container">
-            <h2 style="font-size: 2.5rem; color: var(--gold); margin-bottom: 15px;">Best Seller: 6 Days Northern Circuit</h2>
-            <p style="max-width: 700px; margin: 0 auto 25px; font-size: 1.1rem;">
-                Combine <strong>Tarangire + Ngorongoro Crater + Serengeti</strong> in one trip. 
-                See 3000 elephants, black rhino, and the Great Migration.
-            </p>
-            <a href="ngorongoro.html" class="btn" style="background:var(--gold); color:var(--forest-green);">
-                View 6 Day Itinerary & Prices
-            </a>
-        </div>
-    </section>
+<div class="hero">
+  <div class="hero-content">
+    <h1>Explore Tanzania with Local Experts</h1>
+    <p>Climb Kilimanjaro • See Serengeti Migration • Travel with Licensed Guides</p>
+    <a class="btn" href="kilimanjaro.html">Start Your Adventure</a>
+  </div>
+</div>
 
-    <section class="tours">
-        <div class="container">
-            <h2>Our Tanzania Adventures</h2>
-            <div class="grid">
-                <div class="card">
-                    <div class="card-img kili"></div>
-                    <div class="card-content">
-                        <h3>Kilimanjaro Climbs</h3>
-                        <p>Machame, Lemosho, Marangu routes. 98% summit success rate with certified guides.</p>
-                        <div class="price">From $2,495</div>
-                        <a href="kilimanjaro.html" class="btn">View Kili Routes</a>
-                    </div>
-                </div>
-                
-                <div class="card">
-                    <div class="card-img serengeti"></div>
-                    <div class="card-content">
-                        <h3>Serengeti Safari</h3>
-                        <p>Witness the Great Migration. Private 4x4 Land Cruisers with expert driver-guides.</p>
-                        <div class="price">From $1,890</div>
-                        <a href="serengeti.html" class="btn">View Serengeti Tours</a>
-                    </div>
-                </div>
-                
-                <div class="card">
-                    <div class="card-img ngorongoro"></div>
-                    <div class="card-content">
-                        <h3>Ngorongoro Crater</h3>
-                        <p>See the Big 5 in one day inside a volcanic caldera. UNESCO World Heritage Site.</p>
-                        <div class="price">From $350</div>
-                        <a href="ngorongoro.html" class="btn">Explore Ngorongoro</a>
-                    </div>
-                </div>
+<div class="section">
+  <h2>Why Travel With Aman Safari?</h2>
 
-                <div class="card">
-                    <div class="card-img tarangire"></div>
-                    <div class="card-content">
-                        <h3>Tarangire National Park</h3>
-                        <p>3000+ elephants and giant baobab trees. Best park for elephants in Africa.</p>
-                        <div class="price">From $320</div>
-                        <a href="tarangire.html" class="btn">Explore Tarangire</a>
-                    </div>
-                </div>
-                
-                <div class="card">
-                    <div class="card-img ruaha"></div>
-                    <div class="card-content">
-                        <h3>Ruaha Safari</h3>
-                        <p>Tanzania's largest park. Biggest elephant herds. No crowds, pure wilderness.</p>
-                        <div class="price">From $1,650</div>
-                        <a href="ruaha.html" class="btn">View Ruaha Tours</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  <div class="card">✔ Licensed Tanzania Tour Operator</div>
+  <div class="card">✔ Local Guides (No Middlemen)</div>
+  <div class="card">✔ Safe Payments via CRDB + Cards</div>
+  <div class="card">✔ 98% Summit Success Rate</div>
+</div>
 
-    <section class="why">
-        <div class="container">
-            <h2>Why Book Direct With Aman Safari?</h2>
-            <div class="features">
-                <div class="feature">
-                    <h3>Save $800+ Per Person</h3>
-                    <p>International agencies add 40% markup. Book direct and keep your money for the experience.</p>
-                </div>
-                <div class="feature">
-                    <h3>Licensed Local Guides</h3>
-                    <p>We live in Arusha. We know every trail, every lodge, every shortcut. Born here, guiding since 2015.</p>
-                </div>
-                <div class="feature">
-                    <h3>24/7 WhatsApp Support</h3>
-                    <p>Talk directly to me, Aman. No call centers. I respond personally within minutes, before and during your trip.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <h3 style="color: var(--gold); font-size: 28px; margin-bottom: 20px;">Ready to Book Direct?</h3>
-            <a href="https://wa.me/255699004685?text=Hello%20Aman%20Safari,%20I%20want%20to%20plan%20my%20Tanzania%20trip" class="whatsapp">WhatsApp: +255 699 004 685</a>
-            <p style="margin-top: 30px;">Email: amannelson824@gmail.com</p>
-            <p>Location: Arusha, Tanzania</p>
-            <p style="margin-top: 30px; opacity: 0.7;">© 2026 Aman Safari Tanzania. Licensed Tour Operator.</p>
-        </div>
-    </footer>
 </body>
-                        </html>
+</html>
