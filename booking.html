@@ -19,7 +19,10 @@
 
 <h2 class="section-title">Book Your Adventure</h2>
 
-<select id="tour" style="width:100%; padding:12px; margin:10px 0;">
+<select
+id="tour"
+onchange="updatePrice()"
+style="width:100%; padding:12px; margin:10px 0;">
   <option value="Kilimanjaro">🏔️ Kilimanjaro Climb</option>
   <option value="Serengeti">🦁 Serengeti Safari</option>
   <option value="Ngorongoro">🌋 Ngorongoro Crater</option>
@@ -44,8 +47,25 @@ style="width:100%; padding:12px; margin:10px 0;">
 id="people"
 type="number"
 min="1"
+oninput="updatePrice()"
 placeholder="Number of People"
 style="width:100%; padding:12px; margin:10px 0;">
+  <div id="priceBox"
+style="
+padding:15px;
+margin:15px 0;
+border-radius:12px;
+background:rgba(212,175,55,0.15);
+text-align:center;
+font-size:1.1rem;
+">
+
+Estimated Price:
+<strong id="priceOutput">
+Select trip + people
+</strong>
+
+  </div>
 <button class="btn" onclick="sendBooking()" style="width:100%;">
 Get Instant Quote →
 </button>
@@ -60,6 +80,40 @@ opacity:0.8;
 
 </div>
 <script>
+  <script>
+function updatePrice(){
+
+const prices={
+Kilimanjaro:2495,
+Serengeti:650,
+Ngorongoro:450,
+Tarangire:350
+};
+
+const tour=
+document.getElementById("tour").value;
+
+const people=
+Number(
+document.getElementById("people").value
+)||0;
+
+if(!people){
+document.getElementById("priceOutput")
+.innerHTML=
+"Select trip + people";
+
+return;
+}
+
+const total=
+prices[tour]*people;
+
+document.getElementById("priceOutput")
+.innerHTML=
+"$"+total.toLocaleString();
+
+}
 function sendBooking() {
   const name = document.getElementById('name').value;
   const email = document.getElementById('email').value;
