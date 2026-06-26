@@ -82,8 +82,14 @@ Your Selection
 <p id="summaryText"></p>
 
   </div>
-<button class="btn" onclick="sendBooking()" style="width:100%;">
+<button
+id="bookBtn"
+class="btn"
+onclick="sendBooking()"
+style="width:100%;">
+
 Get Instant Quote →
+
 </button>
   <p style="
 text-align:center;
@@ -161,13 +167,29 @@ Email: ${email}
 Date: ${date}
 People: ${people}
 
-Please con⁶firm availability + price.`;
+Please confirm availability + price.`;
 
   
-  window.open("https://wa.me/255699004685?text=" + encodeURIComponent(msg),
-             "_blanked"
-             );
-}
+  const btn =
+document.getElementById("bookBtn");
+
+btn.innerHTML =
+"Opening WhatsApp...";
+
+btn.disabled = true;
+
+window.open(
+"https://wa.me/255699004685?text=" +
+encodeURIComponent(msg),
+"_blank"
+);
+
+setTimeout(() => {
+btn.innerHTML =
+"Get Instant Quote →";
+
+btn.disabled = false;
+}, 3000);
 </script>
 
 
