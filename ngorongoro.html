@@ -1,154 +1,427 @@
-           <!DOCTYPE html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Ngorongoro Crater Safari | Aman Safari</title>
 
 <style>
-body {font-family: Arial; margin:0; background:#f5f5f5;}
-.header {
-  background:#0B3D20;
-  color:white;
-  text-align:center;
-  padding:60px 20px;
-}
-.section {
-  max-width:1000px;
-  margin:20px auto;
-  background:white;
-  padding:20px;
-  border-radius:10px;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
-/* BUTTON */
-.btn {
-  background:#D4AF37;
-  padding:12px;
-  border:none;
-  color:#000;
-  font-weight:bold;
-  border-radius:8px;
-  cursor:pointer;
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:#f4f6f8;
+color:#1f2933;
+line-height:1.6;
+}
+
+.header{
+min-height:70vh;
+background:
+linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
+url(""https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=1200" (https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=1200)") center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:#fff;
+padding:24px;
+}
+
+.hero{
+max-width:760px;
+}
+
+.hero h1{
+font-size:clamp(2.2rem,5vw,3.5rem);
+margin-bottom:12px;
+font-weight:700;
+letter-spacing:.3px;
+}
+
+.hero p{
+font-size:1.15rem;
+opacity:.95;
+margin-bottom:8px;
+}
+
+.btn{
+display:inline-block;
+margin-top:22px;
+background:#d4af37;
+padding:14px 28px;
+border-radius:10px;
+text-decoration:none;
+color:#111;
+font-weight:700;
+transition:transform .2s ease, box-shadow .2s ease;
+box-shadow:0 8px 18px rgba(0,0,0,.18);
+}
+
+.btn:hover{
+transform:translateY(-2px);
+box-shadow:0 12px 22px rgba(0,0,0,.22);
+}
+
+.section{
+max-width:1000px;
+margin:28px auto;
+background:#fff;
+padding:32px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(15,23,42,.08);
+}
+
+.section h2{
+margin-bottom:14px;
+color:#0b3d20;
+font-size:1.6rem;
+}
+
+.section p{
+font-size:1.02rem;
+color:#374151;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+gap:16px;
+margin-top:22px;
+}
+
+.card{
+background:#fafafa;
+padding:22px;
+border-radius:14px;
+text-align:center;
+border:1px solid #e5e7eb;
+transition:transform .2s ease, box-shadow .2s ease;
+}
+
+.card:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 20px rgba(15,23,42,.08);
+}
+
+.card h3{
+color:#0b3d20;
+margin-bottom:8px;
+font-size:1.05rem;
+}
+
+.card p{
+color:#4b5563;
+font-size:.98rem;
 }
 
 /* CHAT */
-.chat-btn {
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#0B3D20;
-  color:white;
-  padding:12px 18px;
-  border-radius:50px;
-  cursor:pointer;
+
+.chat-btn{
+position:fixed;
+right:20px;
+bottom:20px;
+background:#0b3d20;
+color:#fff;
+padding:14px 22px;
+border-radius:50px;
+cursor:pointer;
+box-shadow:0 10px 24px rgba(0,0,0,.2);
+z-index:1000;
+font-weight:700;
 }
 
-.chat-box {
-  position:fixed;
-  bottom:80px;
-  right:20px;
-  width:300px;
-  background:white;
-  border-radius:10px;
-  display:none;
-  box-shadow:0 5px 20px rgba(0,0,0,0.2);
+.chat-box{
+display:none;
+position:fixed;
+right:20px;
+bottom:80px;
+width:340px;
+background:#fff;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 14px 36px rgba(0,0,0,.22);
+z-index:1000;
+border:1px solid #e5e7eb;
 }
 
-.chat-header {
-  background:#0B3D20;
-  color:white;
-  padding:10px;
-  border-radius:10px 10px 0 0;
+.chat-header{
+background:#0b3d20;
+padding:14px 16px;
+color:#fff;
+font-weight:700;
 }
 
-.chat-body {
-  padding:10px;
-  max-height:300px;
-  overflow:auto;
+.chat-body{
+padding:14px;
+height:280px;
+overflow:auto;
+background:#f9fafb;
 }
 
-.msg {
-  background:#eee;
-  padding:8px;
-  margin:6px 0;
-  border-radius:6px;
+.msg{
+background:#eef2f7;
+padding:10px 12px;
+margin:8px 0;
+border-radius:10px;
+font-size:.95rem;
+color:#1f2933;
 }
 
-.user {background:#DCF8C6;}
+.user{
+background:#dcf8c6;
+}
 
-input {
-  width:90%;
-  padding:8px;
-  margin:5px;
+.quick{
+width:100%;
+padding:10px 12px;
+margin:6px 0;
+border:none;
+background:#fff;
+border-radius:10px;
+cursor:pointer;
+text-align:left;
+border:1px solid #e5e7eb;
+transition:background .2s ease, transform .2s ease;
+}
+
+.quick:hover{
+background:#f3f4f6;
+transform:translateY(-1px);
+}
+
+.input{
+display:flex;
+padding:12px;
+gap:8px;
+background:#fff;
+border-top:1px solid #e5e7eb;
+}
+
+.input input{
+flex:1;
+padding:11px 12px;
+border:1px solid #d1d5db;
+border-radius:10px;
+outline:none;
+font-size:.95rem;
+}
+
+.input input:focus{
+border-color:#0b3d20;
+box-shadow:0 0 0 3px rgba(11,61,32,.12);
+}
+
+.input button{
+background:#d4af37;
+border:none;
+padding:11px 16px;
+border-radius:10px;
+font-weight:700;
+cursor:pointer;
+color:#111;
+}
+
+@media(max-width:700px){
+
+.section{
+margin:18px 14px;
+padding:24px;
+}
+
+.hero h1{
+font-size:2.2rem;
+}
+
+.chat-box{
+width:92%;
+right:4%;
+}
+
+.chat-btn{
+right:14px;
+bottom:14px;
+}
+
 }
 </style>
+
 </head>
 
 <body>
 
-<div class="header">
+<header class="header">
+<div class="hero">
 <h1>Ngorongoro Crater Safari</h1>
-<p>Big 5 in one day</p>
-</div>
+<p>Experience the Big Five in a single day</p>
 
-<div class="section">
+<a class="btn"
+href=""https://wa.me/255699004685" (https://wa.me/255699004685)">
+Book Now
+</a>
+
+</div>
+</header>
+
+<section class="section">
 <h2>Overview</h2>
-<p>See lions, rhinos, elephants in a natural volcanic crater.</p>
-<button class="btn">Book Now</button>
+
+<p>
+Descend into the world’s largest intact volcanic crater and enjoy exceptional wildlife viewing, including lions, elephants, rhinos, and breathtaking panoramic scenery.
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>Why Visit?</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>🦁 Big Five</h3>
+<p>Excellent chances of wildlife sightings</p>
 </div>
 
-<!-- CHAT -->
-<div class="chat-btn" onclick="toggleChat()">💬 Chat AI</div>
+<div class="card">
+<h3>📷 Scenic Views</h3>
+<p>Ideal for photography and sightseeing</p>
+</div>
 
-<div class="chat-box" id="chatBox">
-  <div class="chat-header">Aman AI Assistant</div>
+<div class="card">
+<h3>🚙 4x4 Safari</h3>
+<p>Travel in a comfortable safari jeep</p>
+</div>
 
-  <div class="chat-body" id="chatBody">
-    <div class="msg">Hi 👋 I can help with price, booking, or dates.</div>
+<div class="card">
+<h3>🎒 Included</h3>
+<p>Professional guide and park fees</p>
+</div>
 
-    <button onclick="reply('price')">💰 Price</button>
-    <button onclick="reply('dates')">📅 Dates</button>
-    <button onclick="reply('book')">🧾 Book</button>
-  </div>
+</div>
 
-  <div>
-    <input id="userInput" placeholder="Ask something...">
-    <button onclick="send()">Send</button>
-  </div>
+</section>
+
+<div class="chat-btn"
+onclick="toggleChat()">
+💬 Chat AI
+</div>
+
+<div class="chat-box"
+id="chat">
+
+<div class="chat-header">
+Aman Safari AI
+</div>
+
+<div class="chat-body"
+id="body">
+
+<div class="msg">
+Hello 👋 Ask about pricing, dates, or booking details.
+</div>
+
+<button class="quick"
+onclick="reply('price')">
+💰 Price
+</button>
+
+<button class="quick"
+onclick="reply('dates')">
+📅 Dates
+</button>
+
+<button class="quick"
+onclick="reply('book')">
+🧾 Booking
+</button>
+
+</div>
+
+<div class="input">
+
+<input
+id="input"
+placeholder="Type your question...">
+
+<button
+onclick="send()">
+→
+</button>
+
+</div>
+
 </div>
 
 <script>
+
 function toggleChat(){
-  let box = document.getElementById("chatBox");
-  box.style.display = box.style.display === "block" ? "none" : "block";
+
+let c=
+document.getElementById("chat");
+
+c.style.display=
+c.style.display==="block"
+?
+"none"
+:
+"block";
+
 }
 
 function reply(type){
-  let chat = document.getElementById("chatBody");
 
-  let answers = {
-    price: "💰 Price starts from $350 per person (all included)",
-    dates: "📅 Best time is June–Oct (dry season)",
-    book: "🧾 To book, send name + dates + email"
-  };
+let body=
+document.getElementById("body");
 
-  chat.innerHTML += `<div class='msg user'>${type}</div>`;
-  chat.innerHTML += `<div class='msg'>${answers[type]}</div>`;
+const data={
+
+price:
+"Prices start from $350 per person.",
+
+dates:
+"Best season: June to October.",
+
+book:
+"Please send your name, preferred dates, and email address."
+
+};
+
+body.innerHTML+=
+`<div class='msg user'>${type}</div>`;
+
+body.innerHTML+=
+`<div class='msg'>${data[type]}</div>`;
+
 }
 
 function send(){
-  let input = document.getElementById("userInput");
-  let chat = document.getElementById("chatBody");
 
-  if(input.value.trim() === "") return;
+let input=
+document.getElementById("input");
 
-  chat.innerHTML += `<div class='msg user'>${input.value}</div>`;
-  chat.innerHTML += `<div class='msg'>I will help you with that 👍 (Next step: connect API later)</div>`;
+if(!input.value)
+return;
 
-  input.value = "";
+document
+.getElementById("body")
+.innerHTML+=
+`<div class='msg user'>${input.value}</div>
+
+<div class='msg'>
+AI responses will be available soon.
+</div>`;
+
+input.value="";
+
 }
+
 </script>
 
 </body>
-</html> 
+           </html>
