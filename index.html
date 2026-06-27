@@ -1,259 +1,167 @@
 <!DOCTYPE html>
+
 <html>
+
 <head>
-<title>Aman Safari | Cinematic Luxury</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+<meta charset="UTF-8">
 
-body{
-font-family:'Montserrat', sans-serif;
-background:#050b08;
-color:#fff;
-overflow-x:hidden;
-}
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1">
 
-/* CINEMATIC NAV */
-nav{
-position:fixed;
-top:0;
-width:100%;
-z-index:999;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:14px 6%;
-background:rgba(0,0,0,0.25);
-backdrop-filter:blur(16px);
-border-bottom:1px solid rgba(255,255,255,0.08);
-}
+<title>Aman Safari</title>
 
-.logo{
-font-family:'Playfair Display';
-font-size:20px;
-color:#d4af37;
-letter-spacing:1px;
-}
+<link
+rel="stylesheet"
+href="assets/css/main.css">
 
-nav ul{
-display:flex;
-gap:22px;
-list-style:none;
-}
-
-nav a{
-color:#ddd;
-text-decoration:none;
-font-size:13px;
-transition:0.3s;
-}
-
-nav a:hover{
-color:#d4af37;
-}
-
-/* CINEMATIC HERO */
-.hero{
-height:100vh;
-display:flex;
-align-items:center;
-padding:0 6%;
-position:relative;
-overflow:hidden;
-}
-
-/* dark cinematic overlay */
-.hero::before{
-content:"";
-position:absolute;
-inset:0;
-background:radial-gradient(circle at center, rgba(0,0,0,0.2), rgba(0,0,0,0.85));
-z-index:1;
-}
-
-/* animated background */
-.hero-bg{
-position:absolute;
-inset:0;
-background-size:cover;
-background-position:center;
-transform:scale(1.1);
-animation:zoom 20s infinite alternate;
-filter:contrast(1.1) brightness(0.8);
-}
-
-@keyframes zoom{
-0%{transform:scale(1.1);}
-100%{transform:scale(1.25);}
-}
-
-.hero-content{
-position:relative;
-z-index:2;
-max-width:650px;
-animation:fadeIn 1.5s ease;
-}
-
-@keyframes fadeIn{
-from{opacity:0;transform:translateY(30px);}
-to{opacity:1;transform:translateY(0);}
-}
-
-h1{
-font-family:'Playfair Display';
-font-size:clamp(34px,5vw,70px);
-line-height:1.1;
-}
-
-h1 span{
-color:#d4af37;
-}
-
-p{
-color:#ddd;
-margin-top:15px;
-font-size:15px;
-line-height:1.7;
-}
-
-.btn{
-display:inline-block;
-margin-top:25px;
-padding:12px 22px;
-border-radius:8px;
-text-decoration:none;
-font-weight:600;
-font-size:13px;
-transition:0.3s;
-}
-
-.btn-gold{
-background:#d4af37;
-color:#000;
-}
-
-.btn-outline{
-border:1px solid #d4af37;
-color:#d4af37;
-margin-left:10px;
-}
-
-.btn:hover{
-transform:translateY(-2px);
-}
-
-/* SECTIONS */
-.section{
-padding:90px 6%;
-}
-
-.title{
-font-family:'Playfair Display';
-font-size:32px;
-margin-bottom:30px;
-}
-
-/* CARDS */
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:18px;
-}
-
-.card{
-background:rgba(255,255,255,0.04);
-padding:22px;
-border-radius:14px;
-border:1px solid rgba(255,255,255,0.08);
-transition:0.4s;
-}
-
-.card:hover{
-transform:translateY(-8px);
-border-color:#d4af37;
-}
-
-/* CINEMATIC CTA */
-.cta{
-background:linear-gradient(135deg,#d4af37,#8a6a1f);
-color:#000;
-padding:70px 6%;
-text-align:center;
-border-radius:20px;
-}
-
-/* FOOTER */
-footer{
-padding:40px;
-text-align:center;
-color:#aaa;
-border-top:1px solid rgba(255,255,255,0.08);
-}
-
-/* MOBILE */
-@media(max-width:768px){
-nav ul{display:none;}
-.section{padding:60px 6%;}
-}
-</style>
 </head>
 
 <body>
 
-<nav>
-<div class="logo">AMAN SAFARI</div>
-<ul>
+<nav class="nav">
+
+<div class="container nav-inner">
+
+<div class="logo">
+
+AMAN SAFARI
+
+</div>
+
+<ul class="links">
+
 <li><a href="index.html">Home</a></li>
+
 <li><a href="serengeti.html">Serengeti</a></li>
+
 <li><a href="tarangire.html">Tarangire</a></li>
+
 <li><a href="ngorongoro.html">Ngorongoro</a></li>
+
 <li><a href="ruaha.html">Ruaha</a></li>
+
 <li><a href="kilimanjaro.html">Kilimanjaro</a></li>
+
 </ul>
+
+</div>
+
 </nav>
 
 <section class="hero">
-<div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80')"></div>
+
+<video
+class="hero-video"
+autoplay
+muted
+loop
+playsinline>
+
+<source
+src="assets/video/safari.mp4"
+type="video/mp4">
+
+</video>
+
+<div class="hero-overlay"></div>
+
+<div class="container">
 
 <div class="hero-content">
-<h1>Discover <span>Wild Africa</span> in Luxury</h1>
-<p>Private safari journeys across Serengeti, Ngorongoro, Tarangire, Ruaha and Kilimanjaro. Designed for cinematic experiences.</p>
 
-<a class="btn btn-gold" href="serengeti.html">Start Journey</a>
-<a class="btn btn-outline" href="tarangire.html">Explore Parks</a>
+<h1>
+
+Explore
+<span class="gold">
+
+Luxury Tanzania
+
+</span>
+
+</h1>
+
+<p>
+
+Private journeys.
+Premium experiences.
+World-class safari.
+
+</p>
+
+<div class="cta">
+
+<a
+class="btn primary"
+href="serengeti.html">
+
+Explore
+
+</a>
+
+<a
+class="btn secondary"
+href="#parks">
+
+Discover
+
+</a>
+
 </div>
+
+</div>
+
+</div>
+
 </section>
 
-<section class="section">
-<h2 class="title">Tanzania Destinations</h2>
+<section
+id="parks"
+class="section">
+
+<div class="container">
 
 <div class="grid">
-<div class="card">🦁 Serengeti Migration</div>
-<div class="card">🐘 Tarangire Elephants</div>
-<div class="card">🌋 Ngorongoro Crater</div>
-<div class="card">🌿 Ruaha Wilderness</div>
-<div class="card">🏔 Kilimanjaro Summit</div>
+
+<div class="card">
+
+🦁 Serengeti
+
 </div>
+
+<div class="card">
+
+🐘 Tarangire
+
+</div>
+
+<div class="card">
+
+🌋 Ngorongoro
+
+</div>
+
+<div class="card">
+
+🌿 Ruaha
+
+</div>
+
+<div class="card">
+
+🏔 Kilimanjaro
+
+</div>
+
+</div>
+
+</div>
+
 </section>
 
-<section class="section">
-<div class="cta">
-<h2>Plan Your Luxury Safari</h2>
-<p>Speak with our travel experts and design your private African journey.</p>
-<a class="btn btn-gold" href="https://wa.me/255699004685">Contact WhatsApp</a>
-</div>
-</section>
-
-<footer>
-© 2026 Aman Safari — Cinematic Luxury Travel
-</footer>
+<script src="assets/js/app.js"></script>
 
 </body>
-</html>
+
+  </html>
