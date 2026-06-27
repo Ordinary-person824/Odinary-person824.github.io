@@ -1,24 +1,188 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 
 <head>
-  .booking{
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-background:#0f1814;
+<title>Aman Safari</title>
 
-padding:50px;
+<style>
 
-border-radius:28px;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
 
+body{
+background:#07130e;
+color:white;
+overflow-x:hidden;
+}
+
+/* NAV */
+
+nav{
+position:fixed;
+top:0;
+left:0;
+right:0;
+
+padding:18px 6%;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+background:rgba(0,0,0,.3);
+
+backdrop-filter:blur(10px);
+
+z-index:1000;
+}
+
+.logo{
+color:#d4af37;
+font-weight:700;
+font-size:20px;
+}
+
+.links{
+display:flex;
+gap:20px;
+list-style:none;
+}
+
+.links a{
+color:white;
+text-decoration:none;
+font-size:14px;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+
+position:relative;
+
+display:flex;
+
+align-items:center;
+
+padding:0 6%;
+
+background:
+linear-gradient(
+rgba(0,0,0,.55),
+rgba(0,0,0,.55)
+),
+
+url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=80");
+
+background-size:cover;
+
+background-position:center;
+}
+
+.hero-content{
+max-width:650px;
+}
+
+.hero h1{
+
+font-size:
+clamp(40px,8vw,85px);
+
+line-height:1;
+}
+
+.gold{
+color:#d4af37;
+}
+
+.hero p{
+
+margin-top:20px;
+
+font-size:17px;
+
+color:#ddd;
+
+max-width:520px;
+}
+
+/* BUTTONS */
+
+.cta{
+margin-top:28px;
+
+display:flex;
+
+gap:15px;
+
+flex-wrap:wrap;
+}
+
+.btn{
+padding:14px 26px;
+
+border-radius:999px;
+
+text-decoration:none;
+
+transition:.3s;
+}
+
+.primary{
+background:#d4af37;
+
+color:black;
+
+font-weight:700;
+}
+
+.secondary{
+border:1px solid #fff;
+
+color:white;
+}
+
+.btn:hover{
+transform:translateY(-4px);
+}
+
+/* BOOKING */
+
+.section{
+padding:90px 6%;
+}
+
+.booking{
+
+background:#111c16;
+
+padding:35px;
+
+border-radius:24px;
+
+box-shadow:
+0 20px 70px rgba(0,0,0,.4);
+}
+
+.booking h2{
+margin-bottom:20px;
 }
 
 .booking form{
 
 display:grid;
 
-gap:18px;
-
+gap:15px;
 }
 
 .booking input,
@@ -26,54 +190,107 @@ gap:18px;
 
 padding:16px;
 
+background:#1a2720;
+
 border:none;
 
-border-radius:14px;
-
-background:#16211c;
+border-radius:12px;
 
 color:white;
-
 }
 
 .booking button{
 
 padding:16px;
 
-background:#d4af37;
-
 border:none;
 
-font-weight:700;
+background:#d4af37;
 
 border-radius:999px;
 
+font-weight:bold;
+
+cursor:pointer;
 }
 
-<meta charset="UTF-8">
+/* PARKS */
 
-<meta
-name="viewport"
-content="width=device-width, initial-scale=1">
+.grid{
 
-<title>Aman Safari</title>
+display:grid;
 
-<link
-rel="stylesheet"
-href="assets/css/main.css">
+grid-template-columns:
+repeat(
+auto-fit,
+minmax(240px,1fr)
+);
+
+gap:20px;
+}
+
+.card{
+
+background:#111c16;
+
+padding:30px;
+
+border-radius:20px;
+
+text-decoration:none;
+
+color:white;
+
+transition:.4s;
+}
+
+.card:hover{
+
+transform:
+translateY(-10px);
+
+border:1px solid #d4af37;
+}
+
+.card h3{
+
+margin-top:15px;
+
+font-size:24px;
+}
+
+.card p{
+color:#bbb;
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+.links{
+display:none;
+}
+
+.hero{
+height:88vh;
+}
+
+.hero p{
+font-size:15px;
+}
+
+}
+
+</style>
 
 </head>
 
 <body>
 
-<nav class="nav">
-
-<div class="container nav-inner">
+<nav>
 
 <div class="logo">
-
 AMAN SAFARI
-
 </div>
 
 <ul class="links">
@@ -92,34 +309,18 @@ AMAN SAFARI
 
 </ul>
 
-</div>
-
 </nav>
 
+<!-- HERO -->
+
 <section class="hero">
-
-<video
-class="hero-video"
-autoplay
-muted
-loop
-playsinline>
-
-<source
-src="assets/video/safari.mp4"
-type="video/mp4">
-
-</video>
-
-<div class="hero-overlay"></div>
-
-<div class="container">
 
 <div class="hero-content">
 
 <h1>
 
 Explore
+
 <span class="gold">
 
 Luxury Tanzania
@@ -130,40 +331,33 @@ Luxury Tanzania
 
 <p>
 
-Private journeys.
-Premium experiences.
-World-class safari.
+Private safari journeys across Serengeti, Tarangire, Ngorongoro, Ruaha and Kilimanjaro.
 
 </p>
 
 <div class="cta">
 
-<a
-class="btn primary"
-href="serengeti.html">
+<a class="btn primary" href="#parks">
 
 Explore
 
 </a>
 
-<a
-class="btn secondary"
-href="#parks">
+<a class="btn secondary" href="#booking">
 
-Discover
+Book
 
 </a>
-
-</div>
 
 </div>
 
 </div>
 
 </section>
-  <section class="section">
 
-<div class="container">
+<!-- BOOKING -->
+
+<section id="booking" class="section">
 
 <div class="booking">
 
@@ -175,34 +369,27 @@ Build Your Journey
 
 <form>
 
-<input
-placeholder="Full Name">
+<input placeholder="Full Name">
 
-<input
-placeholder="Email">
+<input placeholder="Email">
 
 <select>
 
-<option>
-Choose Park
-</option>
+<option>Choose Park</option>
 
-<option>
-Serengeti
-</option>
+<option>Serengeti</option>
 
-<option>
-Tarangire
-</option>
+<option>Tarangire</option>
 
-<option>
-Ruaha
-</option>
+<option>Ngorongoro</option>
+
+<option>Ruaha</option>
+
+<option>Kilimanjaro</option>
 
 </select>
 
-<input
-type="date">
+<input type="date">
 
 <button>
 
@@ -214,57 +401,47 @@ Reserve Safari
 
 </div>
 
-</div>
+</section>
 
-  </section>
+<!-- PARKS -->
 
-<section
-id="parks"
-class="section">
-
-<div class="container">
+<section id="parks" class="section">
 
 <div class="grid">
 
 <a class="card" href="serengeti.html">
 
 🦁
+
 <h3>Serengeti</h3>
 
-<p>
-Great Migration
-</p>
+<p>Great Migration</p>
 
 </a>
 
 <a class="card" href="tarangire.html">
 
 🐘
+
 <h3>Tarangire</h3>
 
-<p>
-Elephant Paradise
-</p>
+<p>Elephant Paradise</p>
 
 </a>
 
 <a class="card" href="ngorongoro.html">
 
 🌋
+
 <h3>Ngorongoro</h3>
 
-<p>
-Crater Experience
-</p>
+<p>Crater Experience</p>
 
 </a>
 
-  </div>
-  </div>
+</div>
 
 </section>
-
-<script src="assets/js/app.js"></script>
 
 </body>
 
