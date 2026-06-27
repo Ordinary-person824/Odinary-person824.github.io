@@ -1,50 +1,371 @@
 <!DOCTYPE html>
-<html>
-<head>
-<title>Tarangire Safari</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-body{margin:0;font-family:Arial;background:#07130e;color:#fff}
-nav{display:flex;justify-content:space-between;padding:15px 6%;background:rgba(0,0,0,0.6);position:fixed;width:100%;top:0}
-nav ul{display:flex;gap:15px;list-style:none}
-nav a{color:#ddd;text-decoration:none;font-size:13px}
-.logo{color:#d4af37;font-weight:bold}
+<html lang="en">
 
-.hero{
-height:90vh;
-background:url('https://images.unsplash.com/photo-1547970810-dc1eac37d174?auto=format&fit=crop&w=1600&q=80') center/cover;
-display:flex;align-items:center;padding:6%;
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tarangire | Aman Safari</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
-.hero h1{font-size:50px}
-.hero span{color:#d4af37}
+body{
+font-family:'Montserrat',sans-serif;
+background:#07130e;
+color:white;
+overflow-x:hidden;
+}
 
-.section{padding:60px 6%}
-.card{background:#14261d;padding:20px;border-radius:10px}
+/* NAV */
+
+nav{
+position:fixed;
+
+top:0;
+
+left:0;
+
+right:0;
+
+padding:18px 6%;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+background:rgba(0,0,0,.25);
+
+backdrop-filter:blur(12px);
+
+z-index:1000;
+}
+
+.logo{
+font-family:'Playfair Display';
+font-size:22px;
+color:#d4af37;
+}
+
+nav ul{
+display:flex;
+gap:20px;
+list-style:none;
+}
+
+nav a{
+color:#ddd;
+text-decoration:none;
+font-size:14px;
+}
+
+nav a:hover{
+color:#d4af37;
+}
+
+/* HERO */
+
+.hero{
+
+height:100vh;
+
+display:flex;
+
+align-items:center;
+
+padding:0 6%;
+
+position:relative;
+
+background:
+linear-gradient(
+rgba(0,0,0,.35),
+rgba(0,0,0,.75)
+),
+
+url("https://images.unsplash.com/photo-1547970810-dc1eac37d174?auto=format&fit=crop&w=1800&q=80");
+
+background-size:cover;
+
+background-position:center;
+}
+
+.hero::after{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background:
+radial-gradient(
+circle,
+transparent,
+rgba(0,0,0,.65)
+);
+
+}
+
+.hero-content{
+
+position:relative;
+
+z-index:2;
+
+max-width:700px;
+
+animation:fade 1.4s ease;
+}
+
+@keyframes fade{
+
+from{
+opacity:0;
+transform:translateY(40px);
+}
+
+to{
+opacity:1;
+transform:none;
+}
+
+}
+
+.hero h1{
+
+font-family:'Playfair Display';
+
+font-size:
+clamp(
+48px,
+8vw,
+95px
+);
+
+line-height:1;
+}
+
+.hero span{
+color:#d4af37;
+}
+
+.hero p{
+
+margin-top:20px;
+
+font-size:17px;
+
+color:#ddd;
+
+line-height:1.8;
+
+max-width:550px;
+}
+
+/* BUTTONS */
+
+.buttons{
+
+display:flex;
+
+gap:15px;
+
+margin-top:30px;
+
+flex-wrap:wrap;
+}
+
+.btn{
+
+padding:14px 26px;
+
+border-radius:999px;
+
+text-decoration:none;
+
+font-weight:700;
+
+transition:.3s;
+}
+
+.primary{
+
+background:#d4af37;
+
+color:black;
+}
+
+.secondary{
+
+border:1px solid white;
+
+color:white;
+}
+
+.btn:hover{
+
+transform:
+translateY(-4px);
+}
+
+/* SECTION */
+
+.section{
+
+padding:90px 6%;
+}
+
+.card{
+
+background:#111c16;
+
+padding:35px;
+
+border-radius:22px;
+
+max-width:900px;
+
+box-shadow:
+0 20px 70px rgba(0,0,0,.45);
+}
+
+.card h2{
+
+font-family:'Playfair Display';
+
+margin-bottom:20px;
+
+color:#d4af37;
+}
+
+.card p{
+
+line-height:1.9;
+
+color:#d7d7d7;
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+nav ul{
+display:none;
+}
+
+.hero{
+height:88vh;
+}
+
+.hero p{
+font-size:15px;
+}
+
+}
+
 </style>
+
 </head>
 
 <body>
 
 <nav>
-<div class="logo">AMAN SAFARI</div>
+
+<div class="logo">
+AMAN SAFARI
+</div>
+
 <ul>
+
 <li><a href="index.html">Home</a></li>
+
 <li><a href="serengeti.html">Serengeti</a></li>
+
 <li><a href="tarangire.html">Tarangire</a></li>
+
 <li><a href="ngorongoro.html">Ngorongoro</a></li>
+
 <li><a href="ruaha.html">Ruaha</a></li>
+
 <li><a href="kilimanjaro.html">Kilimanjaro</a></li>
+
 </ul>
+
 </nav>
-<div class="hero-bg"
-style="background:url('https://images.unsplash.com/photo-1547970810-dc1eac37d174?auto=format&fit=crop&w=1600&q=80')">
-<h1>Tarangire <span>Elephant Kingdom</span></h1>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>
+
+TARANGIRE
+
+<span>
+
+ELEPHANT KINGDOM
+
+</span>
+
+</h1>
+
+<p>
+
+Discover giant elephant herds, iconic baobab landscapes and peaceful safari moments across Northern Tanzania.
+
+</p>
+
+<div class="buttons">
+
+<a class="btn primary" href="ngorongoro.html">
+
+Next Park
+
+</a>
+
+<a class="btn secondary" href="serengeti.html">
+
+Previous
+
+</a>
+
+</div>
+
+</div>
+
 </section>
 
 <section class="section">
-<div class="card">Largest elephant population in Northern Tanzania</div>
+
+<div class="card">
+
+<h2>
+
+Why Tarangire?
+
+</h2>
+
+<p>
+
+Tarangire is known for enormous elephant populations, open landscapes and unforgettable wildlife experiences in a quieter safari atmosphere.
+
+</p>
+
+</div>
+
 </section>
 
 </body>
+
     </html>
