@@ -370,74 +370,74 @@ margin-top:8px;
 color:#cfcfcf;
 }
 
-/* CHAT */
-
-#chat{
-
+#chatBox{
 position:fixed;
-
-right:18px;
-
-bottom:18px;
-
+bottom:15px;
+right:15px;
 width:320px;
-
-background:
-
-rgba(
-10,
-20,
-15,
-.85
-);
-
-backdrop-filter:blur(20px);
-
-padding:16px;
-
-border-radius:24px;
-
-border:
-1px solid rgba(255,255,255,.08);
-
+height:420px;
+background:#0b141a;
+border-radius:18px;
+display:flex;
+flex-direction:column;
+overflow:hidden;
+border:1px solid #1f2c33;
 }
 
-#msg{
-
-width:100%;
-
-padding:14px;
-
-border:none;
-
-border-radius:14px;
-
-margin-bottom:10px;
+#messages{
+flex:1;
+padding:10px;
+overflow-y:auto;
+display:flex;
+flex-direction:column;
+gap:10px;
 }
 
-#chat button{
-
-width:100%;
-
-padding:14px;
-
-border:none;
-
-border-radius:14px;
-
-background:var(--gold);
-
-}
-
-#reply{
-
-margin-top:10px;
-
-color:#ddd;
-
+.msg{
+padding:10px 12px;
+border-radius:12px;
+max-width:75%;
 font-size:14px;
+line-height:1.4;
 }
 
+.user{
+align-self:flex-end;
+background:#005c4b;
+color:white;
+}
+
+.ai{
+align-self:flex-start;
+background:#202c33;
+color:#e9edef;
+}
+
+.inputBox{
+display:flex;
+padding:8px;
+background:#111b21;
+gap:8px;
+}
+
+.inputBox input{
+flex:1;
+padding:10px;
+border:none;
+border-radius:10px;
+outline:none;
+background:#202c33;
+color:white;
+}
+
+.inputBox button{
+background:#00a884;
+border:none;
+color:white;
+padding:10px 14px;
+border-radius:10px;
+cursor:pointer;
+}
 /* MOBILE */
 
 @media(max-width:800px){
@@ -600,10 +600,18 @@ Reserve Safari
 </div>
 
 </section>
- <div id="chat">
+<div id="chatBox">
 
-<div id="reply">
-Hello 👋 Ask anything about safari.
+<div id="messages"></div>
+
+<div class="inputBox">
+
+<input id="msg" placeholder="Type a message..." />
+
+<button onclick="sendAI()">Send</button>
+
+</div>
+
 </div>
 
 <input id="msg" placeholder="Ask about safari...">
@@ -611,53 +619,39 @@ Hello 👋 Ask anything about safari.
 
 async function sendAI(){
 
-const text =
-document.getElementById("msg").value;
+const input = document.getElementById("msg");
+const messages = document.getElementById("messages");
 
-if(!text)return;
+const text = input.value.trim();
+if(!text) return;
 
-const reply =
-document.getElementById("reply");
+// USER message bubble
+messages.innerHTML += `
+<div class="msg user">${text}</div>
+`;
 
-reply.innerHTML="Thinking...";
+input.value = "";
 
-try{
+// scroll down
+messages.scrollTop = messages.scrollHeight;
 
-const res =
-await fetch(
-"http://localhost:3000/chat",
-{
+// call backend
+const res = await fetch("http://localhost:3000/chat",{
 method:"POST",
-headers:{
-"Content-Type":
-"application/json"
-},
-body:JSON.stringify({
-message:text
-})
+headers:{"Content-Type":"application/json"},
+body:JSON.stringify({message:text})
+});
+
+const data = await res.json();
+
+// AI message bubble
+messages.innerHTML += `
+<div class="msg ai">${data.reply}</div>
+`;
+
+messages.scrollTop = messages.scrollHeight;
 }
-);
-
-const data =
-await res.json();
-
-reply.innerHTML =
-data.reply;
-
-}
-catch(err){
-
-reply.innerHTML =
-"Cannot connect to backend";
-
-}
-
-}
-
 </script>
-<button onclick="sendAI()">
-Send
-</button>
 
 </div>
 
