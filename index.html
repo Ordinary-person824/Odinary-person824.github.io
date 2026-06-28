@@ -528,7 +528,7 @@ Discover
 
 <textarea placeholder="Special requests"></textarea>
 
-<button>
+<button type="button" onclick="reserveSafari()">
 Reserve Safari
 </button>
 
@@ -700,6 +700,37 @@ reply.scrollHeight;
 }
 
 </script>
+  <script>
+
+function reserveSafari(){
+
+const park =
+document.querySelector("select").value;
+
+const people =
+document.querySelector('input[type="number"]').value;
+
+alert(
+"Your safari request was prepared."
+);
+
+window.open(
+
+"https://wa.me/255699004685?text=" +
+
+encodeURIComponent(
+`Hello Aman Safari.
+I want to reserve:
+
+Park: ${park}
+People: ${people}`
+)
+
+);
+
+}
+
+  </script>
 
 </body>
 
