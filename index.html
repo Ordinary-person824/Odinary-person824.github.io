@@ -565,141 +565,38 @@ Reserve Safari
 </section>
 
 
-<!-- AI CHAT -->
-
-<div id="chat">
-
-<div id="reply">
-Hello 👋 Ask me anything.
-</div>
-
-<input
-id="msg"
-placeholder="Ask anything..."
->
-
-<button onclick="sendAI()">
-Send
-</button>
-
-</div>
-
 <script>
 
-function sendAI(){
+async function sendAI(){
 
-const input =
-document.getElementById("msg");
+const input = document.getElementById("msg");
+const reply = document.getElementById("reply");
 
-const reply =
-document.getElementById("reply");
+const text = input.value.trim();
+if(!text) return;
 
-const text =
-input.value.trim();
+reply.innerHTML += `<br><br><b>You:</b> ${text}`;
+input.value = "";
 
-if(!text)return;
+reply.innerHTML += `<br><b>AI:</b> thinking...`;
 
-reply.innerHTML +=
-"<br><br><b>You:</b> "
-+ text;
+const res = await fetch("http://localhost:3000/chat", {
+method: "POST",
+headers: {"Content-Type":"application/json"},
+body: JSON.stringify({ message: text })
+});
 
-input.value="";
+const data = await res.json();
 
-const q =
-text.toLowerCase();
+reply.innerHTML += `<br><b>AI:</b> ${data.reply}`;
 
-let answer =
-"I don't know that yet, but our team can help.";
-
-
-/* greetings */
-
-if(
-q.includes("hello") ||
-q.includes("hi")
-){
-
-answer =
-"Hello 👋 Welcome to Aman Safari.";
-
-}
-
-
-/* safari */
-
-else if(
-q.includes("serengeti")
-){
-
-answer =
-"Serengeti is famous for wildlife and migration.";
-
-}
-
-
-/* booking */
-
-else if(
-q.includes("book")
-){
-
-answer =
-"Open the booking section and reserve your safari.";
-
-}
-
-
-/* price */
-
-else if(
-q.includes("price") ||
-q.includes("cost")
-){
-
-answer =
-"Pricing depends on destination and group size.";
-
-}
-
-
-/* coding */
-
-else if(
-q.includes("html") ||
-q.includes("website")
-){
-
-answer =
-"I can help with websites and coding too.";
-
-}
-
-
-/* general */
-
-else if(
-q.includes("school")
-){
-
-answer =
-"Good luck preparing before July.";
-
-}
-
-setTimeout(()=>{
-
-reply.innerHTML +=
-"<br><b>AI:</b> "
-+ answer;
-
-reply.scrollTop =
-reply.scrollHeight;
-
-},400);
+reply.scrollTop = reply.scrollHeight;
 
 }
 
 </script>
+
+
   <script>
 
 function reserveSafari(){
