@@ -563,7 +563,19 @@ Reserve Safari
 </div>
 
 </section>
+ <div id="chat">
 
+<div id="reply">
+Hello 👋 Ask anything about safari.
+</div>
+
+<input id="msg" placeholder="Ask about safari...">
+
+<button onclick="sendAI()">
+Send
+</button>
+
+</div>
 
 <script>
 
@@ -575,10 +587,10 @@ const reply = document.getElementById("reply");
 const text = input.value.trim();
 if(!text) return;
 
-reply.innerHTML += `<br><br><b>You:</b> ${text}`;
+reply.innerHTML += <br><br><b>You:</b> ${text};
 input.value = "";
 
-reply.innerHTML += `<br><b>AI:</b> thinking...`;
+reply.innerHTML += <br><b>AI:</b> thinking...;
 
 const res = await fetch("http://localhost:3000/chat", {
 method: "POST",
@@ -588,46 +600,11 @@ body: JSON.stringify({ message: text })
 
 const data = await res.json();
 
-reply.innerHTML += `<br><b>AI:</b> ${data.reply}`;
-
-reply.scrollTop = reply.scrollHeight;
+reply.innerHTML += <br><b>AI:</b> ${data.reply};
 
 }
 
 </script>
-
-
-  <script>
-
-function reserveSafari(){
-
-const park =
-document.querySelector("select").value;
-
-const people =
-document.querySelector('input[type="number"]').value;
-
-alert(
-"Your safari request was prepared."
-);
-
-window.open(
-
-"https://wa.me/255699004685?text=" +
-
-encodeURIComponent(
-`Hello Aman Safari.
-I want to reserve:
-
-Park: ${park}
-People: ${people}`
-)
-
-);
-
-}
-
-  </script>
 
 </body>
 
