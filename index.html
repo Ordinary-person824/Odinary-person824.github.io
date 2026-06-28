@@ -2,8 +2,9 @@
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
 <title>Aman Safari</title>
 
@@ -16,6 +17,11 @@ box-sizing:border-box;
 font-family:Arial,sans-serif;
 }
 
+:root{
+--gold:#d4af37;
+--glass:rgba(255,255,255,.05);
+}
+
 body{
 background:#07130e;
 color:white;
@@ -25,9 +31,13 @@ overflow-x:hidden;
 /* NAV */
 
 nav{
+
 position:fixed;
+
 top:0;
+
 left:0;
+
 right:0;
 
 padding:18px 6%;
@@ -38,37 +48,52 @@ justify-content:space-between;
 
 align-items:center;
 
-background:rgba(0,0,0,.3);
+background:rgba(0,0,0,.25);
 
-backdrop-filter:blur(10px);
+backdrop-filter:blur(12px);
 
 z-index:1000;
 }
 
 .logo{
-color:#d4af37;
+
+color:var(--gold);
+
+font-size:22px;
+
 font-weight:700;
-font-size:20px;
+
 }
 
 .links{
+
 display:flex;
-gap:20px;
+
+gap:22px;
+
 list-style:none;
 }
 
 .links a{
+
 color:white;
+
 text-decoration:none;
+
 font-size:14px;
+}
+
+.links a:hover{
+
+color:var(--gold);
+
 }
 
 /* HERO */
 
 .hero{
-height:100vh;
 
-position:relative;
+height:100vh;
 
 display:flex;
 
@@ -77,9 +102,10 @@ align-items:center;
 padding:0 6%;
 
 background:
+
 linear-gradient(
-rgba(0,0,0,.55),
-rgba(0,0,0,.55)
+rgba(0,0,0,.20),
+rgba(0,0,0,.45)
 ),
 
 url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=80");
@@ -90,19 +116,24 @@ background-position:center;
 }
 
 .hero-content{
+
 max-width:650px;
 }
 
 .hero h1{
 
 font-size:
-clamp(40px,8vw,85px);
+clamp(
+42px,
+8vw,
+92px
+);
 
 line-height:1;
 }
 
 .gold{
-color:#d4af37;
+color:var(--gold);
 }
 
 .hero p{
@@ -111,25 +142,29 @@ margin-top:20px;
 
 font-size:17px;
 
-color:#ddd;
+line-height:1.8;
 
 max-width:520px;
+
+color:#ececec;
 }
 
-/* BUTTONS */
+/* BUTTON */
 
 .cta{
-margin-top:28px;
 
 display:flex;
 
 gap:15px;
 
+margin-top:30px;
+
 flex-wrap:wrap;
 }
 
 .btn{
-padding:14px 26px;
+
+padding:14px 28px;
 
 border-radius:999px;
 
@@ -139,7 +174,8 @@ transition:.3s;
 }
 
 .primary{
-background:#d4af37;
+
+background:var(--gold);
 
 color:black;
 
@@ -147,69 +183,99 @@ font-weight:700;
 }
 
 .secondary{
-border:1px solid #fff;
+
+border:1px solid white;
 
 color:white;
 }
 
 .btn:hover{
-transform:translateY(-4px);
+
+transform:
+translateY(-3px);
+
+}
+
+/* SECTION */
+
+.section{
+
+padding:90px 6%;
 }
 
 /* BOOKING */
 
-.section{
-padding:90px 6%;
-}
-
 .booking{
 
-background:#111c16;
+background:var(--glass);
 
-padding:35px;
+backdrop-filter:blur(18px);
 
-border-radius:24px;
+padding:34px;
 
-box-shadow:
-0 20px 70px rgba(0,0,0,.4);
+border-radius:34px;
+
+border:
+1px solid rgba(255,255,255,.08);
+
 }
 
 .booking h2{
-margin-bottom:20px;
+
+margin-bottom:28px;
+
+font-size:38px;
 }
 
 .booking form{
 
 display:grid;
 
-gap:15px;
+grid-template-columns:1fr 1fr;
+
+gap:16px;
 }
 
 .booking input,
-.booking select{
+.booking select,
+.booking textarea{
 
-padding:16px;
+padding:18px;
 
-background:#1a2720;
+background:
+rgba(255,255,255,.05);
 
 border:none;
 
-border-radius:12px;
+border-radius:18px;
 
 color:white;
+
+width:100%;
+}
+
+.booking textarea{
+
+grid-column:span 2;
+
+height:120px;
+
+resize:none;
 }
 
 .booking button{
 
-padding:16px;
+grid-column:span 2;
+
+padding:18px;
+
+background:var(--gold);
 
 border:none;
 
-background:#d4af37;
-
 border-radius:999px;
 
-font-weight:bold;
+font-weight:700;
 
 cursor:pointer;
 }
@@ -223,7 +289,7 @@ display:grid;
 grid-template-columns:
 repeat(
 auto-fit,
-minmax(240px,1fr)
+minmax(230px,1fr)
 );
 
 gap:20px;
@@ -231,36 +297,108 @@ gap:20px;
 
 .card{
 
-background:#111c16;
+background:var(--glass);
 
 padding:30px;
 
-border-radius:20px;
+border-radius:26px;
+
+backdrop-filter:blur(10px);
 
 text-decoration:none;
 
 color:white;
 
-transition:.4s;
+transition:.35s;
 }
 
 .card:hover{
 
 transform:
-translateY(-10px);
+translateY(-8px);
 
-border:1px solid #d4af37;
 }
 
 .card h3{
 
 margin-top:15px;
 
-font-size:24px;
+font-size:28px;
 }
 
 .card p{
-color:#bbb;
+
+margin-top:8px;
+
+color:#cfcfcf;
+}
+
+/* CHAT */
+
+#chat{
+
+position:fixed;
+
+right:18px;
+
+bottom:18px;
+
+width:320px;
+
+background:
+
+rgba(
+10,
+20,
+15,
+.85
+);
+
+backdrop-filter:blur(20px);
+
+padding:16px;
+
+border-radius:24px;
+
+border:
+1px solid rgba(255,255,255,.08);
+
+}
+
+#msg{
+
+width:100%;
+
+padding:14px;
+
+border:none;
+
+border-radius:14px;
+
+margin-bottom:10px;
+}
+
+#chat button{
+
+width:100%;
+
+padding:14px;
+
+border:none;
+
+border-radius:14px;
+
+background:var(--gold);
+
+}
+
+#reply{
+
+margin-top:10px;
+
+color:#ddd;
+
+font-size:14px;
 }
 
 /* MOBILE */
@@ -275,8 +413,19 @@ display:none;
 height:88vh;
 }
 
-.hero p{
-font-size:15px;
+.booking form{
+grid-template-columns:1fr;
+}
+
+.booking textarea,
+.booking button{
+grid-column:auto;
+}
+
+#chat{
+
+width:calc(100% - 36px);
+
 }
 
 }
@@ -295,23 +444,15 @@ AMAN SAFARI
 
 <ul class="links">
 
-<li><a href="index.html">Home</a></li>
-
 <li><a href="serengeti.html">Serengeti</a></li>
-
 <li><a href="tarangire.html">Tarangire</a></li>
-
 <li><a href="ngorongoro.html">Ngorongoro</a></li>
-
 <li><a href="ruaha.html">Ruaha</a></li>
-
 <li><a href="kilimanjaro.html">Kilimanjaro</a></li>
 
 </ul>
 
 </nav>
-
-<!-- HERO -->
 
 <section class="hero">
 
@@ -331,22 +472,18 @@ Luxury Tanzania
 
 <p>
 
-Private safari journeys across Serengeti, Tarangire, Ngorongoro, Ruaha and Kilimanjaro.
+Premium safari experiences across Tanzania.
 
 </p>
 
 <div class="cta">
 
-<a class="btn primary" href="#parks">
-
-Explore
-
+<a class="btn primary" href="#booking">
+Reserve
 </a>
 
-<a class="btn secondary" href="#booking">
-
-Book
-
+<a class="btn secondary" href="#parks">
+Discover
 </a>
 
 </div>
@@ -355,23 +492,19 @@ Book
 
 </section>
 
-<!-- BOOKING -->
-
 <section id="booking" class="section">
 
 <div class="booking">
 
-<h2>
-
-Build Your Journey
-
-</h2>
+<h2>Book Your Safari</h2>
 
 <form>
 
 <input placeholder="Full Name">
 
 <input placeholder="Email">
+
+<input placeholder="WhatsApp Number">
 
 <select>
 
@@ -391,10 +524,12 @@ Build Your Journey
 
 <input type="date">
 
+<input type="number" placeholder="Number of People">
+
+<textarea placeholder="Special requests"></textarea>
+
 <button>
-
 Reserve Safari
-
 </button>
 
 </form>
@@ -403,121 +538,47 @@ Reserve Safari
 
 </section>
 
-<!-- PARKS -->
-
 <section id="parks" class="section">
 
 <div class="grid">
 
 <a class="card" href="serengeti.html">
-
 🦁
-
 <h3>Serengeti</h3>
-
 <p>Great Migration</p>
-
 </a>
 
 <a class="card" href="tarangire.html">
-
 🐘
-
 <h3>Tarangire</h3>
-
 <p>Elephant Paradise</p>
-
 </a>
 
 <a class="card" href="ngorongoro.html">
-
 🌋
-
 <h3>Ngorongoro</h3>
-
 <p>Crater Experience</p>
-
 </a>
 
 </div>
-  <section class="booking">
-
-<h2>Book Your Luxury Safari</h2>
-
-<input id="name" placeholder="Full Name">
-<input id="email" placeholder="Email">
-<input id="phone" placeholder="WhatsApp Number">
-
-<select id="park">
-<option>Serengeti</option>
-<option>Tarangire</option>
-<option>Ngorongoro</option>
-<option>Ruaha</option>
-<option>Kilimanjaro</option>
-</select>
-
-<input id="date" type="date">
-<input id="people" type="number" placeholder="Number of People">
-
-<textarea id="message" placeholder="Special requests"></textarea>
-
-<button onclick="sendBooking()">Submit Booking</button>
 
 </section>
 
-<script>
-function sendBooking(){
+<div id="chat">
 
-fetch("http://localhost:3000/book",{
-method:"POST",
-headers:{"Content-Type":"application/json"},
-body:JSON.stringify({
-name:document.getElementById("name").value,
-email:document.getElementById("email").value,
-phone:document.getElementById("phone").value,
-park:document.getElementById("park").value,
-date:document.getElementById("date").value,
-people:document.getElementById("people").value,
-message:document.getElementById("message").value
-})
-})
-.then(res=>res.json())
-.then(data=>{
-alert("Booking sent successfully!");
-});
+<input id="msg" placeholder="Ask AI about safari">
 
-}
-</script>
-  <div id="chat">
+<button>
+Send
+</button>
 
-<input id="msg" placeholder="Ask about safari booking...">
+<div id="reply">
 
-<button onclick="sendAI()">Send</button>
-
-<div id="reply"></div>
+Safari assistant ready.
 
 </div>
 
-<script>
-function sendAI(){
-
-fetch("http://localhost:3000/ai",{
-method:"POST",
-headers:{"Content-Type":"application/json"},
-body:JSON.stringify({
-message:document.getElementById("msg").value
-})
-})
-.then(res=>res.json())
-.then(data=>{
-document.getElementById("reply").innerText = data.reply;
-});
-
-}
-</script>
-
-
-</section>
+</div>
 
 </body>
 
