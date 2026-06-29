@@ -1,737 +1,612 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-
-<title>Aman Safari</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kilimanjaro Luxury Expeditions - Tanzania's Premier Safaris</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
-
-:root{
---gold:#d4af37;
---dark:#07130e;
-}
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial;
-}
-
-body{
-background:#07130e;
-color:white;
-overflow-x:hidden;
-}
-
-/* NAV */
-
-nav{
-position:fixed;
-top:0;
-left:0;
-right:0;
-
-display:flex;
-justify-content:space-between;
-align-items:center;
-
-padding:18px 6%;
-
-background:rgba(0,0,0,.3);
-
-backdrop-filter:blur(12px);
-
-z-index:1000;
-}
-
-.logo{
-font-size:22px;
-font-weight:bold;
-color:var(--gold);
-}
-
-.links{
-display:flex;
-gap:18px;
-list-style:none;
-}
-
-.links a{
-color:white;
-text-decoration:none;
-}
-
-.links a:hover{
-color:var(--gold);
-}
-
-/* HERO */
-
-.hero{
-
-height:100vh;
-
-display:flex;
-
-align-items:center;
-
-padding:0 6%;
-
-background:
-linear-gradient(
-rgba(0,0,0,.25),
-rgba(0,0,0,.55)
-),
-
-url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=80");
-
-background-size:cover;
-background-position:center;
-
-}
-
-.hero-content{
-max-width:650px;
-}
-
-.hero h1{
-font-size:
-clamp(
-42px,
-8vw,
-90px
-);
-}
-
-.gold{
-color:var(--gold);
-}
-
-.hero p{
-
-margin-top:18px;
-
-line-height:1.8;
-
-color:#ddd;
-
-}
-
-/* BUTTON */
-
-.cta{
-margin-top:25px;
-display:flex;
-gap:15px;
-}
-
-.btn{
-
-padding:14px 26px;
-
-border-radius:999px;
-
-text-decoration:none;
-
-}
-
-.primary{
-background:var(--gold);
-color:black;
-}
-
-.secondary{
-
-border:1px solid white;
-
-color:white;
-
-}
-
-/* BOOKING */
-
-.section{
-padding:90px 6%;
-}
-
-.booking{
-
-background:
-rgba(255,255,255,.06);
-
-backdrop-filter:blur(20px);
-
-padding:35px;
-
-border-radius:30px;
-
-}
-
-.booking h2{
-margin-bottom:20px;
-}
-
-.booking form{
-
-display:grid;
-
-grid-template-columns:1fr 1fr;
-
-gap:15px;
-
-}
-
-.booking input,
-.booking select,
-.booking textarea{
-
-padding:16px;
-
-border:none;
-
-border-radius:14px;
-
-background:
-rgba(255,255,255,.05);
-
-color:white;
-
-}
-
-.booking textarea{
-
-grid-column:span 2;
-
-height:120px;
-
-}
-
-.booking button{
-
-grid-column:span 2;
-
-padding:16px;
-
-border:none;
-
-border-radius:999px;
-
-background:var(--gold);
-
-font-weight:bold;
-
-}
-
-/* PARKS */
-
-.grid{
-
-display:grid;
-
-grid-template-columns:
-repeat(
-auto-fit,
-minmax(220px,1fr)
-);
-
-gap:20px;
-
-}
-
-.card{
-
-background:
-rgba(255,255,255,.05);
-
-padding:28px;
-
-border-radius:24px;
-
-color:white;
-
-text-decoration:none;
-
-transition:.3s;
-
-}
-
-.card:hover{
-
-transform:
-translateY(-6px);
-
-}
-
-/* CHAT FLOAT */
-
-#chatBtn{
-
-position:fixed;
-
-bottom:20px;
-
-right:20px;
-
-width:58px;
-
-height:58px;
-
-border-radius:50%;
-
-background:#00a884;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-cursor:pointer;
-
-font-size:24px;
-
-}
-
-/* CHAT */
-
-#chatBox{
-
-position:fixed;
-
-bottom:90px;
-
-right:20px;
-
-width:330px;
-
-height:500px;
-
-background:#0b141a;
-
-display:none;
-
-flex-direction:column;
-
-border-radius:22px;
-
-overflow:hidden;
-
-}
-
-#topBar{
-
-background:#111b21;
-
-padding:14px;
-
-display:flex;
-
-justify-content:space-between;
-
-}
-
-#messages{
-
-flex:1;
-
-padding:12px;
-
-overflow:auto;
-
-display:flex;
-
-flex-direction:column;
-
-gap:10px;
-
-}
-
-.msg{
-
-padding:12px;
-
-border-radius:12px;
-
-max-width:75%;
-
-}
-
-.user{
-
-align-self:flex-end;
-
-background:#005c4b;
-
-}
-
-.ai{
-
-align-self:flex-start;
-
-background:#202c33;
-
-}
-
-.time{
-
-font-size:10px;
-
-opacity:.6;
-
-margin-top:4px;
-
-}
-
-#typing{
-
-padding:10px;
-
-font-size:12px;
-
-display:none;
-
-}
-
-.inputBox{
-
-display:flex;
-
-padding:10px;
-
-gap:8px;
-
-background:#111b21;
-
-}
-
-.inputBox input{
-
-flex:1;
-
-padding:12px;
-
-border:none;
-
-border-radius:12px;
-
-}
-
-.inputBox button{
-
-padding:12px;
-
-background:var(--gold);
-
-border:none;
-
-border-radius:12px;
-
-}
-
-/* MOBILE */
-
-@media(max-width:800px){
-
-.links{
-display:none;
-}
-
-.booking form{
-grid-template-columns:1fr;
-}
-
-.booking textarea,
-.booking button{
-grid-column:auto;
-}
-
-#chatBox{
-
-width:
-calc(100% - 30px);
-
-right:15px;
-
-}
-
-}
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body { 
+        font-family: 'Montserrat', sans-serif; 
+        color: #333;
+        overflow-x: hidden;
+    }
+    
+    h1, h2, h3 { font-family: 'Cormorant Garamond', serif; }
+    
+    /* Header */
+    header {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        padding: 20px 0;
+        transition: all 0.4s ease;
+    }
+    
+    header.scrolled {
+        background: rgba(26, 26, 26, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 15px 0;
+    }
+    
+    nav {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .logo {
+        color: #C9A961;
+        font-size: 28px;
+        font-weight: 600;
+        letter-spacing: 2px;
+    }
+    
+    .menu a {
+        color: white;
+        text-decoration: none;
+        margin-left: 35px;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: color 0.3s;
+    }
+    
+    .menu a:hover, .menu a.active { color: #C9A961; }
+    
+    /* Hero with Video Background */
+    .hero {
+        height: 100vh;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        overflow: hidden;
+    }
+    
+    .hero video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        transform: translate(-50%, -50%);
+        z-index: -2;
+        object-fit: cover;
+    }
+    
+    .hero::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6));
+        z-index: -1;
+    }
+    
+    .hero-content {
+        max-width: 900px;
+        padding: 0 30px;
+        z-index: 1;
+    }
+    
+    .hero h1 {
+        font-size: 72px;
+        font-weight: 300;
+        margin-bottom: 25px;
+        line-height: 1.2;
+    }
+    
+    .hero h1 span {
+        color: #C9A961;
+        font-weight: 600;
+    }
+    
+    .hero p {
+        font-size: 22px;
+        font-weight: 300;
+        margin-bottom: 40px;
+        opacity: 0.9;
+    }
+    
+    .btn {
+        background: linear-gradient(135deg, #C9A961 0%, #B89650 100%);
+        color: white;
+        padding: 18px 45px;
+        text-decoration: none;
+        border-radius: 50px;
+        display: inline-block;
+        border: none;
+        cursor: pointer;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 500;
+        transition: all 0.4s;
+        box-shadow: 0 10px 30px rgba(201, 169, 97, 0.3);
+    }
+    
+    .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 40px rgba(201, 169, 97, 0.5);
+    }
+    
+    /* Destinations Grid */
+    .destinations {
+        max-width: 1400px;
+        margin: 120px auto;
+        padding: 0 30px;
+    }
+    
+    .section-title {
+        text-align: center;
+        font-size: 48px;
+        font-weight: 300;
+        margin-bottom: 20px;
+        color: #3D2B1F;
+    }
+    
+    .section-subtitle {
+        text-align: center;
+        font-size: 18px;
+        color: #666;
+        margin-bottom: 70px;
+        font-weight: 300;
+    }
+    
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 40px;
+    }
+    
+    .card {
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+        transition: all 0.4s;
+        background: white;
+    }
+    
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+    }
+    
+    .card img {
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+    }
+    
+    .card-content {
+        padding: 30px;
+    }
+    
+    .card h3 {
+        font-size: 28px;
+        color: #3D2B1F;
+        margin-bottom: 15px;
+    }
+    
+    .card p {
+        color: #666;
+        line-height: 1.8;
+        margin-bottom: 25px;
+    }
+    
+    /* AI Chat Widget */
+    .ai-chat {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        z-index: 9999;
+    }
+    
+    .chat-toggle {
+        width: 65px;
+        height: 65px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #C9A961 0%, #B89650 100%);
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 10px 30px rgba(201, 169, 97, 0.4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s;
+    }
+    
+    .chat-toggle:hover {
+        transform: scale(1.1);
+    }
+    
+    .chat-toggle i {
+        color: white;
+        font-size: 28px;
+    }
+    
+    .chat-window {
+        position: absolute;
+        bottom: 80px;
+        right: 0;
+        width: 380px;
+        height: 550px;
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        display: none;
+        flex-direction: column;
+        overflow: hidden;
+    }
+    
+    .chat-window.active { display: flex; }
+    
+    .chat-header {
+        background: linear-gradient(135deg, #C9A961 0%, #B89650 100%);
+        color: white;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+    
+    .chat-header i { font-size: 24px; }
+    
+    .chat-header h4 {
+        font-size: 16px;
+        font-weight: 600;
+    }
+    
+    .chat-header p {
+        font-size: 12px;
+        opacity: 0.9;
+    }
+    
+    .chat-messages {
+        flex: 1;
+        padding: 20px;
+        overflow-y: auto;
+        background: #F8F5F0;
+    }
+    
+    .message {
+        margin-bottom: 15px;
+        display: flex;
+        gap: 10px;
+    }
+    
+    .message.bot { justify-content: flex-start; }
+    .message.user { justify-content: flex-end; }
+    
+    .message-content {
+        max-width: 75%;
+        padding: 12px 16px;
+        border-radius: 15px;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+    
+    .bot .message-content {
+        background: white;
+        color: #333;
+        border-bottom-left-radius: 3px;
+    }
+    
+    .user .message-content {
+        background: #C9A961;
+        color: white;
+        border-bottom-right-radius: 3px;
+    }
+    
+    .chat-input {
+        padding: 15px;
+        border-top: 1px solid #eee;
+        display: flex;
+        gap: 10px;
+    }
+    
+    .chat-input input {
+        flex: 1;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 25px;
+        font-size: 14px;
+    }
+    
+    .chat-input button {
+        background: #C9A961;
+        color: white;
+        border: none;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    
+    .quick-actions {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-top: 10px;
+    }
+    
+    .quick-btn {
+        background: white;
+        border: 1px solid #C9A961;
+        color: #C9A961;
+        padding: 6px 12px;
+        border-radius: 15px;
+        font-size: 12px;
+        cursor: pointer;
+    }
+    
+    /* Footer */
+    footer {
+        background: #1A1A1A;
+        color: #aaa;
+        text-align: center;
+        padding: 60px 30px;
+        margin-top: 120px;
+    }
+    
+    footer a { color: #C9A961; text-decoration: none; }
+    
+    /* Mobile */
+    @media (max-width: 768px) {
+        .hero h1 { font-size: 40px; }
+        .hero p { font-size: 18px; }
+        .menu { display: none; }
+        .chat-window { width: calc(100vw - 40px); right: -10px; }
+        .section-title { font-size: 36px; }
+    }
 </style>
-
 </head>
-
 <body>
 
-<nav>
-
-<div class="logo">
-AMAN SAFARI
-</div>
-
-<ul class="links">
-
-<li><a href="serengeti.html">Serengeti</a></li>
-
-<li><a href="tarangire.html">Tarangire</a></li>
-
-<li><a href="ngorongoro.html">Ngorongoro</a></li>
-
-<li><a href="ruaha.html">Ruaha</a></li>
-
-<li><a href="kilimanjaro.html">Kilimanjaro</a></li>
-
-</ul>
-
-</nav>
+<header id="navbar">
+    <nav>
+        <div class="logo">KILIMANJARO</div>
+        <div class="menu">
+            <a href="index.html" class="active">Home</a>
+            <a href="kilimanjaro.html">Kilimanjaro</a>
+            <a href="serengeti.html">Serengeti</a>
+            <a href="ngorongoro.html">Ngorongoro</a>
+            <a href="tarangire.html">Tarangire</a>
+            <a href="ruaha.html">Ruaha</a>
+            <a href="booking.html">Book Now</a>
+        </div>
+    </nav>
+</header>
 
 <section class="hero">
-
-<div class="hero-content">
-
-<h1>
-
-Explore
-
-<span class="gold">
-
-Luxury Tanzania
-
-</span>
-
-</h1>
-
-<p>
-
-Premium safari experiences.
-
-</p>
-
-<div class="cta">
-
-<a class="btn primary" href="#booking">
-
-Reserve
-
-</a>
-
-<a class="btn secondary" href="#parks">
-
-Discover
-
-</a>
-
-</div>
-
-</div>
-
+    <!-- Serengeti video background - replace with your own hosted MP4 -->
+    <video autoplay muted loop playsinline>
+        <source src="https://cdn.coverr.co/videos/coverr-wildebeest-migration-1837/1080p.mp4" type="video/mp4">
+    </video>
+    <div class="hero-content">
+        <h1>Experience <span>Tanzania</span> in Luxury</h1>
+        <p>From Kilimanjaro's summit to the Serengeti plains. Bespoke safaris crafted for the discerning traveler.</p>
+        <a href="#destinations" class="btn">Explore Destinations</a>
+    </div>
 </section>
 
-<section id="booking" class="section">
-
-<div class="booking">
-
-<h2>Book Your Safari</h2>
-
-<form>
-
-<input placeholder="Full Name">
-
-<input placeholder="Email">
-
-<select>
-
-<option>Choose Park</option>
-
-<option>Serengeti</option>
-
-<option>Tarangire</option>
-
-<option>Ngorongoro</option>
-
-</select>
-
-<input type="date">
-
-<textarea placeholder="Special requests"></textarea>
-
-<button>
-
-Reserve Safari
-
-</button>
-
-</form>
-
-</div>
-
+<section class="destinations" id="destinations">
+    <h2 class="section-title">Curated Expeditions</h2>
+    <p class="section-subtitle">Five iconic destinations. One unforgettable journey.</p>
+    
+    <div class="grid">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1575981841027-53fef6cb2d55?q=80&w=2670" alt="Kilimanjaro">
+            <div class="card-content">
+                <h3>Mt. Kilimanjaro</h3>
+                <p>Conquer Africa's highest peak. 5,895m of challenge and triumph with luxury camp support.</p>
+                <a href="kilimanjaro.html" class="btn" style="padding: 12px 30px; font-size: 13px;">Explore</a>
+            </div>
+        </div>
+        
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1516426122078-cd0988402c8b?q=80&w=2670" alt="Serengeti">
+            <div class="card-content">
+                <h3>Serengeti</h3>
+                <p>Witness the Great Migration. 2 million animals across endless plains. Big Five guaranteed.</p>
+                <a href="serengeti.html" class="btn" style="padding: 12px 30px; font-size: 13px;">Explore</a>
+            </div>
+        </div>
+        
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1575550959106-5a7defe28b56?q=80&w=2670" alt="Ngorongoro">
+            <div class="card-content">
+                <h3>Ngorongoro Crater</h3>
+                <p>World's largest intact caldera. Highest density of wildlife in Africa. UNESCO World Heritage.</p>
+                <a href="ngorongoro.html" class="btn" style="padding: 12px 30px; font-size: 13px;">Explore</a>
+            </div>
+        </div>
+        
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1615808479999-a41b4db6c317?q=80&w=2670" alt="Tarangire">
+            <div class="card-content">
+                <h3>Tarangire</h3>
+                <p>Ancient baobabs and Tanzania's largest elephant herds. Hidden gem with fewer crowds.</p>
+                <a href="tarangire.html" class="btn" style="padding: 12px 30px; font-size: 13px;">Explore</a>
+            </div>
+        </div>
+        
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?q=80&w=2670" alt="Ruaha">
+            <div class="card-content">
+                <h3>Ruaha</h3>
+                <p>Remote wilderness. 10% of Africa's lions. Exclusive fly-in safaris for true adventurers.</p>
+                <a href="ruaha.html" class="btn" style="padding: 12px 30px; font-size: 13px;">Explore</a>
+            </div>
+        </div>
+        
+        <div class="card" style="background: linear-gradient(135deg, #3D2B1F 0%, #1A1A1A 100%); color: white; display: flex; align-items: center; justify-content: center; text-align: center;">
+            <div class="card-content">
+                <h3 style="color: #C9A961;">Custom Safari</h3>
+                <p style="color: #ddd;">Combine multiple parks. We'll design your perfect Tanzania itinerary.</p>
+                <a href="booking.html" class="btn" style="padding: 12px 30px; font-size: 13px;">Plan My Trip</a>
+            </div>
+        </div>
+    </div>
 </section>
 
-<section id="parks" class="section">
-
-<div class="grid">
-
-<a class="card" href="serengeti.html">
-🦁 Serengeti
-</a>
-
-<a class="card" href="tarangire.html">
-🐘 Tarangire
-</a>
-
-<a class="card" href="ngorongoro.html">
-🌋 Ngorongoro
-</a>
-
+<!-- AI Chat Assistant -->
+<div class="ai-chat">
+    <button class="chat-toggle" onclick="toggleChat()">
+        <i class="fas fa-comments"></i>
+    </button>
+    
+    <div class="chat-window" id="chatWindow">
+        <div class="chat-header">
+            <i class="fas fa-robot"></i>
+            <div>
+                <h4>Safari Assistant</h4>
+                <p>Ask me anything about Tanzania</p>
+            </div>
+        </div>
+        
+        <div class="chat-messages" id="chatMessages">
+            <div class="message bot">
+                <div class="message-content">
+                    Jambo! I'm your Safari Assistant. I can help with routes, best times to visit, packing lists, or start your booking. What would you like to know?
+                    <div class="quick-actions">
+                        <button class="quick-btn" onclick="sendQuick('Best time to visit')">Best Time</button>
+                        <button class="quick-btn" onclick="sendQuick('Book a safari')">Book Now</button>
+                        <button class="quick-btn" onclick="sendQuick('Prices')">Prices</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="chat-input">
+            <input type="text" id="userInput" placeholder="Ask about safaris..." onkeypress="if(event.key==='Enter') sendMessage()">
+            <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
 </div>
 
-</section>
-
-<div id="chatBtn" onclick="toggleChat()">
-
-💬
-
-</div>
-
-<div id="chatBox">
-
-<div id="topBar">
-
-Aman AI
-
-<span onclick="toggleChat()">
-
-✕
-
-</span>
-
-</div>
-
-<div id="messages"></div>
-
-<div id="typing">
-
-Typing...
-
-</div>
-
-<div class="inputBox">
-
-<input id="msg">
-
-<button onclick="sendAI()">
-
-➤
-
-</button>
-
-</div>
-
-</div>
+<footer>
+    <p><strong>Kilimanjaro Luxury Expeditions</strong></p>
+    <p>Arusha, Tanzania</p>
+    <p>Phone: <a href="tel:+255699004685">+255 699 004 685</a> | 
+       Email: <a href="mailto:amannelson824@gmail.com">amannelson824@gmail.com</a> |
+       WhatsApp: <a href="https://wa.me/255699004685">Chat Now</a></p>
+    <p style="margin-top: 20px; font-size: 14px;">&copy; 2026 All rights reserved</p>
+</footer>
 
 <script>
-
-function toggleChat(){
-
-const c =
-document.getElementById("chatBox");
-
-c.style.display =
-c.style.display==="flex"
-?
-"none"
-:
-"flex";
-
-}
-
-function now(){
-
-const d =
-new Date();
-
-return d.getHours()+":"+
-String(
-d.getMinutes()
-).padStart(
-2,
-"0"
-);
-
-}
-
-async function sendAI(){
-
-const input =
-document.getElementById("msg");
-
-const box =
-document.getElementById("messages");
-
-const typing =
-document.getElementById("typing");
-
-const text =
-input.value.trim();
-
-if(!text)return;
-
-box.innerHTML+=
-`
-<div class="msg user">
-${text}
-<div class="time">${now()}</div>
-</div>
-`;
-
-input.value="";
-
-typing.style.display=
-"block";
-
-const res=
-await fetch(
-"http://localhost:3000/chat",
-{
-method:"POST",
-
-headers:{
-"Content-Type":
-"application/json"
-},
-
-body:
-JSON.stringify({
-message:text
-})
-}
-);
-
-const data=
-await res.json();
-
-typing.style.display=
-"none";
-
-box.innerHTML+=
-`
-<div class="msg ai">
-${data.reply}
-<div class="time">${now()}</div>
-</div>
-`;
-
-box.scrollTop=
-box.scrollHeight;
-
-}
-
-</script>
-
-</body>
-
-  </html>
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+        document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+    });
+    
+    // Chat functionality
+    let chatOpen = false;
+    let bookingMode = false;
+    let bookingData = {};
+    
+    function toggleChat() {
+        chatOpen = !chatOpen;
+        document.getElementById('chatWindow').classList.toggle('active');
+    }
+    
+    function sendQuick(text) {
+        document.getElementById('userInput').value = text;
+        sendMessage();
+    }
+    
+    function sendMessage() {
+        const input = document.getElementById('userInput');
+        const text = input.value.trim();
+        if (!text) return;
+        
+        addMessage(text, 'user');
+        input.value = '';
+        
+        setTimeout(() => {
+            handleBotResponse(text);
+        }, 600);
+    }
+    
+    function addMessage(text, sender) {
+        const messagesDiv = document.getElementById('chatMessages');
+        const msgDiv = document.createElement('div');
+        msgDiv.className = `message ${sender}`;
+        msgDiv.innerHTML = `<div class="message-content">${text}</div>`;
+        messagesDiv.appendChild(msgDiv);
+        messagesDiv.scrollTop = messagesDiv.scrollHeight;
+    }
+    
+    function handleBotResponse(userText) {
+        const text = userText.toLowerCase();
+        let response = '';
+        
+        if (bookingMode) {
+            handleBookingFlow(userText);
+            return;
+        }
+        
+        if (text.includes('book') || text.includes('reserve') || text.includes('plan')) {
+            bookingMode = true;
+            response = `Great! Let's plan your safari. What's your full name?`;
+        } else if (text.includes('best time') || text.includes('when')) {
+            response = `**Best Times:**<br><br>
+            **Kilimanjaro:** Jan-Mar & Jun-Oct (dry, clear skies)<br>
+            **Serengeti:** Jun-Oct (Great Migration)<br>
+            **Ngorongoro:** Jun-Oct (dry season, wildlife concentrated)<br>
+            **Tarangire:** Jun-Feb (elephant season)<br>
+            **Ruaha:** Jun-Oct (best predator sightings)<br><br>
+            Want me to help you book?`;
+        } else if (text.includes('price') || text.includes('cost') || text.includes('how much')) {
+            response = `**Pricing (per person):**<br><br>
+            **Kilimanjaro:** $2,500-$4,500 (7-9 days)<br>
+            **Serengeti Safari:** $400-$800/day<br>
+            **Ngorongoro:** $350-$600/day<br>
+            **Multi-park:** Custom quotes<br><br>
+            Prices include guides, park fees, meals, luxury accommodation. Ready to get a detailed quote?`;
+        } else if (text.includes('pack') || text.includes('bring') || text.includes('wear')) {
+            response = `**Packing List:**<br><br>
+            **Kilimanjaro:** Thermal layers, waterproof jacket, hiking boots, headlamp, daypack<br>
+            **Safari:** Neutral colors, hat, sunscreen, binoculars, camera<br>
+            **Both:** Malaria prophylaxis, yellow fever cert, travel insurance<br><br>
+            Need a detailed PDF list?`;
+        } else if (text.includes('kilimanjaro')) {
+            response = `**Kilimanjaro:** 5,895m, highest in Africa. 7-9 day treks via Machame or Lemosho routes. 95% success rate with our guides. Luxury camps with chef & private toilets. Want to book?`;
+        } else if (text.includes('serengeti')) {
+            response = `**Serengeti:** Home to Great Migration (Jun-Oct). 2M+ wildebeest. Big Five territory. Luxury mobile camps follow the herds. Hot air balloon safaris available. Interested?`;
+        } else {
+            response = `I can help with:<br>
+            • Best time to visit each park<br>
+            • Pricing & itineraries<br>
+            • Packing lists<br>
+            • Booking your safari<br><br>
+            What would you like to know?`;
+        }
+        
+        addMessage(response, 'bot');
+    }
+    
+    function handleBookingFlow(text) {
+        if (!bookingData.name) {
+            bookingData.name = text;
+            addMessage(`Thanks ${text}! What's your email?`, 'bot');
+        } else if (!bookingData.email) {
+            bookingData.email = text;
+            addMessage(`Got it. Which destination? (Kilimanjaro, Serengeti, Ngorongoro, Tarangire, Ruaha, or Multiple)`, 'bot');
+        } else if (!bookingData.route) {
+            bookingData.route = text;
+            addMessage(`Perfect.
