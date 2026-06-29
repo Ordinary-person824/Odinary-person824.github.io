@@ -1,368 +1,674 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Ngorongoro | Aman Safari</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-
+<title>Ngorongoro Crater Safari - Kilimanjaro Luxury Expeditions</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-body{
-font-family:'Montserrat',sans-serif;
-background:#050b08;
-color:#fff;
-overflow-x:hidden;
-}
-
-/* NAV */
-
-nav{
-position:fixed;
-top:0;
-left:0;
-right:0;
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-padding:18px 6%;
-
-background:rgba(0,0,0,.25);
-
-backdrop-filter:blur(14px);
-
-z-index:1000;
-}
-
-.logo{
-font-family:'Playfair Display';
-font-size:22px;
-color:#d4af37;
-}
-
-nav ul{
-display:flex;
-gap:20px;
-list-style:none;
-}
-
-nav a{
-color:#ddd;
-text-decoration:none;
-font-size:14px;
-}
-
-nav a:hover{
-color:#d4af37;
-}
-
-/* HERO */
-
-.hero{
-
-height:100vh;
-
-display:flex;
-
-align-items:center;
-
-padding:0 6%;
-
-position:relative;
-
-background:
-linear-gradient(
-rgba(0,0,0,.35),
-rgba(0,0,0,.75)
-),
-
-url("https://images.unsplash.com/photo-1604341525249-1c2c5f3f0d77?auto=format&fit=crop&w=1800&q=80");
-
-background-size:cover;
-
-background-position:center;
-}
-
-.hero::after{
-
-content:"";
-
-position:absolute;
-
-inset:0;
-
-background:
-radial-gradient(
-circle,
-transparent,
-rgba(0,0,0,.7)
-);
-
-}
-
-.hero-content{
-
-position:relative;
-
-z-index:2;
-
-max-width:700px;
-
-animation:fade 1.4s ease;
-}
-
-@keyframes fade{
-
-from{
-opacity:0;
-transform:translateY(40px);
-}
-
-to{
-opacity:1;
-transform:none;
-}
-
-}
-
-.hero h1{
-
-font-family:'Playfair Display';
-
-font-size:
-clamp(
-48px,
-8vw,
-95px
-);
-
-line-height:1;
-}
-
-.hero span{
-color:#d4af37;
-}
-
-.hero p{
-
-margin-top:20px;
-
-line-height:1.9;
-
-font-size:17px;
-
-color:#ddd;
-
-max-width:560px;
-}
-
-/* BUTTONS */
-
-.buttons{
-
-display:flex;
-
-gap:15px;
-
-margin-top:30px;
-
-flex-wrap:wrap;
-}
-
-.btn{
-
-padding:14px 26px;
-
-border-radius:999px;
-
-text-decoration:none;
-
-font-weight:700;
-
-transition:.3s;
-}
-
-.primary{
-
-background:#d4af37;
-
-color:black;
-}
-
-.secondary{
-
-border:1px solid white;
-
-color:white;
-}
-
-.btn:hover{
-
-transform:
-translateY(-4px);
-}
-
-/* SECTION */
-
-.section{
-
-padding:90px 6%;
-}
-
-.card{
-
-background:#101915;
-
-padding:35px;
-
-border-radius:22px;
-
-max-width:900px;
-
-box-shadow:
-0 20px 70px rgba(0,0,0,.45);
-}
-
-.card h2{
-
-font-family:'Playfair Display';
-
-margin-bottom:18px;
-
-color:#d4af37;
-}
-
-.card p{
-
-line-height:1.9;
-
-color:#d7d7d7;
-}
-
-/* MOBILE */
-
-@media(max-width:800px){
-
-nav ul{
-display:none;
-}
-
-.hero{
-height:88vh;
-}
-
-.hero p{
-font-size:15px;
-}
-
-}
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+        font-family: 'Montserrat', sans-serif;
+        color: #333;
+        overflow-x: hidden;
+    }
+
+    h1, h2, h3 { font-family: 'Cormorant Garamond', serif; }
+
+    /* Header */
+    header {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        padding: 20px 0;
+        transition: all 0.4s ease;
+        background: rgba(0,0,0,0.3);
+    }
+
+    header.scrolled {
+        background: rgba(26, 26, 26, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 15px 0;
+    }
+
+    nav {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+ .logo {
+        color: #C9A961;
+        font-size: 28px;
+        font-weight: 600;
+        letter-spacing: 2px;
+    }
+
+ .menu a {
+        color: white;
+        text-decoration: none;
+        margin-left: 35px;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: color 0.3s;
+    }
+
+ .menu a:hover,.menu a.active { color: #C9A961; }
+
+    /* Hero */
+ .hero {
+        height: 100vh;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        overflow: hidden;
+        background: linear-gradient(135deg, #3D2B1F 0%, #1A1A1A 100%);
+    }
+
+ .hero-bg-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -2;
+    }
+
+ .hero::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6));
+        z-index: 0;
+    }
+
+ .hero-content {
+        max-width: 900px;
+        padding: 0 30px;
+        z-index: 1;
+        position: relative;
+    }
+
+ .hero h1 {
+        font-size: 72px;
+        font-weight: 300;
+        margin-bottom: 25px;
+        line-height: 1.2;
+    }
+
+ .hero h1 span {
+        color: #C9A961;
+        font-weight: 600;
+    }
+
+ .hero p {
+        font-size: 22px;
+        font-weight: 300;
+        margin-bottom: 40px;
+        opacity: 0.9;
+    }
+
+ .btn {
+        background: linear-gradient(135deg, #C9A961 0%, #B89650 100%);
+        color: white;
+        padding: 18px 45px;
+        text-decoration: none;
+        border-radius: 50px;
+        display: inline-block;
+        border: none;
+        cursor: pointer;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 500;
+        transition: all 0.4s;
+        box-shadow: 0 10px 30px rgba(201, 169, 97, 0.3);
+    }
+
+ .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 40px rgba(201, 169, 97, 0.5);
+    }
+
+    /* Content Section */
+ .content {
+        max-width: 1000px;
+        margin: 120px auto;
+        padding: 0 30px;
+    }
+
+ .content h2 {
+        text-align: center;
+        font-size: 48px;
+        font-weight: 300;
+        margin-bottom: 20px;
+        color: #3D2B1F;
+    }
+
+ .intro-text {
+        text-align: center;
+        font-size: 18px;
+        color: #666;
+        margin-bottom: 60px;
+        line-height: 1.8;
+    }
+
+ .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 35px;
+        margin: 60px 0;
+    }
+
+ .feature-box {
+        background: #F8F5F0;
+        padding: 35px;
+        border-radius: 15px;
+        border-left: 4px solid #C9A961;
+        transition: all 0.3s;
+    }
+
+ .feature-box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    }
+
+ .feature-box i {
+        font-size: 36px;
+        color: #C9A961;
+        margin-bottom: 20px;
+    }
+
+ .feature-box h3 {
+        color: #3D2B1F;
+        margin-bottom: 15px;
+        font-size: 24px;
+    }
+
+ .feature-box p {
+        color: #666;
+        line-height: 1.7;
+    }
+
+    /* Widgets Container */
+ .widgets-container {
+        position: fixed;
+        right: 20px;
+        top: 100px;
+        width: 320px;
+        z-index: 999;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    /* Weather Widget */
+ .weather-widget {
+        background: white;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        border-left: 4px solid #C9A961;
+    }
+
+ .weather-widget h3 {
+        color: #3D2B1F;
+        margin-bottom: 15px;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+ .weather-widget h3 i {
+        color: #C9A961;
+    }
+
+ .month-selector {
+        width: 100%;
+        padding: 12px;
+        border: 2px solid #C9A961;
+        border-radius: 8px;
+        font-size: 15px;
+        margin-bottom: 20px;
+        cursor: pointer;
+        background: white;
+    }
+
+ .weather-result {
+        background: #F8F5F0;
+        padding: 18px;
+        border-radius: 10px;
+        display: none;
+    }
+
+ .weather-result.show {
+        display: block;
+        animation: fadeIn 0.4s ease;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+ .weather-stat {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 12px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid #ddd;
+    }
+
+ .weather-stat:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+ .weather-label {
+        color: #666;
+        font-size: 13px;
+    }
+
+ .weather-value {
+        font-weight: 600;
+        color: #3D2B1F;
+        font-size: 14px;
+    }
+
+ .recommendation {
+        margin-top: 15px;
+        padding: 12px;
+        border-radius: 8px;
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+ .recommendation.excellent {
+        background: #d4edda;
+        color: #155724;
+        border-left: 3px solid #28a745;
+    }
+
+ .recommendation.good {
+        background: #fff3cd;
+        color: #856404;
+        border-left: 3px solid #ffc107;
+    }
+
+ .recommendation.poor {
+        background: #f8d7da;
+        color: #721c24;
+        border-left: 3px solid #dc3545;
+    }
+
+    /* Currency Converter Widget */
+ .currency-widget {
+        background: white;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        border-left: 4px solid #C9A961;
+    }
+
+ .currency-widget h3 {
+        color: #3D2B1F;
+        margin-bottom: 15px;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+ .currency-widget h3 i {
+        color: #C9A961;
+    }
+
+ .currency-row {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 12px;
+    }
+
+ .currency-input {
+        flex: 1;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 14px;
+    }
+
+ .currency-select {
+        width: 80px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+ .currency-result {
+        background: #F8F5F0;
+        padding: 12px;
+        border-radius: 8px;
+        text-align: center;
+        font-size: 13px;
+        color: #666;
+        margin-top: 10px;
+    }
+
+    /* CTA Section */
+ .cta {
+        background: linear-gradient(135deg, #3D2B1F 0%, #1A1A1A 100%);
+        color: white;
+        text-align: center;
+        padding: 80px 30px;
+        margin-top: 100px;
+    }
+
+ .cta h2 {
+        font-size: 42px;
+        font-weight: 300;
+        margin-bottom: 20px;
+    }
+
+ .cta p {
+        font-size: 18px;
+        margin-bottom: 35px;
+        opacity: 0.9;
+    }
+
+    /* Footer */
+    footer {
+        background: #1A1A1A;
+        color: #aaa;
+        text-align: center;
+        padding: 60px 30px;
+    }
+
+    footer a { color: #C9A961; text-decoration: none; }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+     .hero h1 { font-size: 40px; }
+     .hero p { font-size: 18px; }
+     .menu { display: none; }
+     .widgets-container {
+            position: relative;
+            width: 100%;
+            right: 0;
+            top: 0;
+            margin: 40px 20px;
+        }
+     .content h2 { font-size: 36px; }
+     .features { grid-template-columns: 1fr; }
+    }
 </style>
-
 </head>
-
 <body>
 
-<nav>
+<!-- Header with full menu linking all pages -->
+<header id="navbar">
+    <nav>
+        <div class="logo">KILIMANJARO</div>
+        <div class="menu">
+            <a href="index.html">Home</a>
+            <a href="kilimanjaro.html">Kilimanjaro</a>
+            <a href="serengeti.html">Serengeti</a>
+            <a href="ngorongoro.html" class="active">Ngorongoro</a>
+            <a href="tarangire.html">Tarangire</a>
+            <a href="ruaha.html">Ruaha</a>
+            <a href="booking.html">Book Now</a>
+        </div>
+    </nav>
+</header>
 
-<div class="logo">
-AMAN SAFARI
-</div>
-
-<ul>
-
-<li><a href="index.html">Home</a></li>
-
-<li><a href="serengeti.html">Serengeti</a></li>
-
-<li><a href="tarangire.html">Tarangire</a></li>
-
-<li><a href="ngorongoro.html">Ngorongoro</a></li>
-
-<li><a href="ruaha.html">Ruaha</a></li>
-
-<li><a href="kilimanjaro.html">Kilimanjaro</a></li>
-
-</ul>
-
-</nav>
-
+<!-- Hero -->
 <section class="hero">
+    <img src="https://images.unsplash.com/photo-1575550959106-5a7defe28b56?q=80&w=2670&auto=format&fit=crop"
+         alt="Ngorongoro Crater"
+         class="hero-bg-image"
+         onerror="this.style.display='none'">
 
-<div class="hero-content">
-
-<h1>
-
-NGORONGORO
-
-<span>
-
-CRATER WONDER
-
-</span>
-
-</h1>
-
-<p>
-
-Explore dramatic crater landscapes, abundant wildlife and one of Africa’s most iconic safari destinations.
-
-</p>
-
-<div class="buttons">
-
-<a class="btn primary" href="ruaha.html">
-
-Next Park
-
-</a>
-
-<a class="btn secondary" href="tarangire.html">
-
-Previous
-
-</a>
-
-</div>
-
-</div>
-
+    <div class="hero-content">
+        <h1>Ngorongoro <span>Crater</span></h1>
+        <p>Descend into the world's largest intact caldera. A UNESCO World Heritage site with 25,000+ large animals.</p>
+        <a href="booking.html?route=Ngorongoro" class="btn">Book Ngorongoro Safari</a>
+    </div>
 </section>
 
-<section class="section">
+<!-- Widgets: Weather + Currency -->
+<div class="widgets-container">
+    <!-- Weather Widget -->
+    <div class="weather-widget">
+        <h3><i class="fas fa-calendar-alt"></i> When to Visit Ngorongoro</h3>
+        <select class="month-selector" id="monthSelect" onchange="updateWeather()">
+            <option value="">Select Month</option>
+            <option value="jan">January</option>
+            <option value="feb">February</option>
+            <option value="mar">March</option>
+            <option value="apr">April</option>
+            <option value="may">May</option>
+            <option value="jun">June</option>
+            <option value="jul">July</option>
+            <option value="aug">August</option>
+            <option value="sep">September</option>
+            <option value="oct">October</option>
+            <option value="nov">November</option>
+            <option value="dec">December</option>
+        </select>
 
-<div class="card">
+        <div class="weather-result" id="weatherResult">
+            <div class="weather-stat">
+                <span class="weather-label">Avg Temperature</span>
+                <span class="weather-value" id="temp">-</span>
+            </div>
+            <div class="weather-stat">
+                <span class="weather-label">Rainfall</span>
+                <span class="weather-value" id="rain">-</span>
+            </div>
+            <div class="weather-stat">
+                <span class="weather-label">Wildlife Viewing</span>
+                <span class="weather-value" id="wildlife">-</span>
+            </div>
+            <div class="recommendation" id="recommendation"></div>
+        </div>
+    </div>
 
-<h2>
-
-Why Ngorongoro?
-
-</h2>
-
-<p>
-
-Home to one of the world’s largest intact volcanic calderas, Ngorongoro offers spectacular scenery and extraordinary wildlife viewing.
-
-</p>
-
+    <!-- Currency Converter Widget -->
+    <div class="currency-widget">
+        <h3><i class="fas fa-exchange-alt"></i> Currency Converter</h3>
+        <div class="currency-row">
+            <input type="number" class="currency-input" id="amount" value="1000" oninput="convertCurrency()">
+            <select class="currency-select" id="fromCurrency" onchange="convertCurrency()">
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="GBP">GBP</option>
+                <option value="TZS">TZS</option>
+            </select>
+        </div>
+        <div class="currency-row">
+            <input type="text" class="currency-input" id="convertedAmount" readonly>
+            <select class="currency-select" id="toCurrency" onchange="convertCurrency()">
+                <option value="TZS">TZS</option>
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="GBP">GBP</option>
+            </select>
+        </div>
+        <div class="currency-result" id="rateInfo">Live rates via exchangerate.host</div>
+    </div>
 </div>
 
+<!-- Content -->
+<section class="content">
+    <h2>The Garden of Eden</h2>
+    <p class="intro-text">
+        The Ngorongoro Crater is a 260 sq km natural amphitheater and UNESCO World Heritage Site.
+        Formed 2-3 million years ago when a giant volcano collapsed, it now hosts the densest concentration
+        of wildlife in Africa. All Big Five species live here year-round, making it the only place in Tanzania
+        where you're almost guaranteed to see black rhino.
+    </p>
+
+    <div class="features">
+        <div class="feature-box">
+            <i class="fas fa-globe-africa"></i>
+            <h3>World's Largest Caldera</h3>
+            <p>600m deep, 20km wide. A self-contained ecosystem with lakes, forests, and grasslands supporting 25,000+ large mammals.</p>
+        </div>
+
+        <div class="feature-box">
+            <i class="fas fa-paw"></i>
+            <h3>Big Five Guaranteed</h3>
+            <p>Lion, leopard, elephant, buffalo, and black rhino all live on the crater floor. Highest predator density in Africa.</p>
+        </div>
+
+        <div class="feature-box">
+            <i class="fas fa-water"></i>
+            <h3>Lake Magadi</h3>
+            <p>Soda lake attracts thousands of flamingos. Hippo pools and Lerai Forest provide year-round water sources.</p>
+        </div>
+
+        <div class="feature-box">
+            <i class="fas fa-users"></i>
+            <h3>Maasai Culture</h3>
+            <p>Visit authentic Maasai villages on the crater rim. Learn traditional customs and support local communities.</p>
+        </div>
+
+        <div class="feature-box">
+            <i class="fas fa-bed"></i>
+            <h3>Rim Lodges</h3>
+            <p>Stay at luxury lodges perched on the crater rim with panoramic views. Wake up to sunrise over the caldera.</p>
+        </div>
+
+        <div class="feature-box">
+            <i class="fas fa-clock"></i>
+            <h3>3-5 Day Itineraries</h3>
+            <p>Perfect as a standalone safari or combined with Serengeti. Half-day crater floor game drives.</p>
+        </div>
+    </div>
 </section>
+
+<!-- CTA -->
+<section class="cta">
+    <h2>Experience the Crater</h2>
+    <p>Descend into Africa's Garden of Eden. Limited permits daily - book early.</p>
+    <a href="booking.html?route=Ngorongoro" class="btn">Start Planning</a>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p><strong>Kilimanjaro Luxury Expeditions</strong></p>
+    <p>Arusha, Tanzania</p>
+    <p>Phone: <a href="tel:+255699004685">+255 699 004 685</a> |
+       Email: <a href="mailto:amannelson824@gmail.com">amannelson824@gmail.com</a> |
+       WhatsApp: <a href="https://wa.me/255699004685">Chat Now</a></p>
+    <p style="margin-top: 20px; font-size: 14px;">&copy; 2026 All rights reserved</p>
+</footer>
+
+<script>
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+        document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Ngorongoro Weather Data by Month
+    const ngorongoroWeather = {
+        jan: { temp: '15-25°C', rain: 'Light', wildlife: 'Excellent', rating: 'excellent',
+               text: 'Dry season. Cool rim temps. Calving season begins. Black rhino visible. BEST TIME.' },
+        feb: { temp: '16-26°C', rain: 'Light', wildlife: 'Excellent', rating: 'excellent',
+               text: 'Peak calving. Predator action intense. Green crater floor. Prime photography.' },
+        mar: { temp: '16-25°C', rain: 'Moderate', wildlife: 'Good', rating: 'good',
+               text: 'Long rains begin. Fewer tourists. Roads to rim can be muddy but crater floor accessible.' },
+        apr: { temp: '15-24°C', rain: 'Heavy', wildlife: 'Fair', rating: 'poor',
+               text: 'Heaviest rains. Many lodges close. Access difficult. Avoid unless experienced.' },
+        may: { temp: '14-23°C', rain: 'Moderate', wildlife: 'Good', rating: 'good',
+               text: 'Rains ending. Lush crater. Migratory birds arrive. Great value, fewer crowds.' },
+        jun: { temp: '12-22°C', rain: 'None', wildlife: 'Excellent', rating: 'excellent',
+               text: 'Dry season starts. Cold on rim. Wildlife concentrates at water. Crystal clear views.' },
+        jul: { temp: '11-21°C', rain: 'None', wildlife: 'Excellent', rating: 'excellent',
+               text: 'Coldest month. Bring layers. Dusty but spectacular. All Big Five active daily.' },
+        aug: { temp: '12-22°C', rain: 'None', wildlife: 'Excellent', rating: 'excellent',
+               text: 'Peak season. Cold mornings, warm days. Permit limits mean book early. Spectacular.' },
+        sep: { temp: '14-24°C', rain: 'None', wildlife: 'Excellent', rating: 'excellent',
+               text: 'Driest month. Water sources critical. Best predator sightings. Dusty conditions.' },
+        oct: { temp: '16-25°C', rain: 'Light', wildlife: 'Excellent', rating: 'excellent',
+               text: 'Short rains may start late month. Still excellent viewing. Last chance before rains.' },
+        nov: { temp: '17-25°C', rain: 'Light-Moderate', wildlife: 'Good', rating: 'good',
+               text: 'Short rains. Crater turns green. Fewer tourists. Good compromise month.' },
+        dec: { temp: '16-25°C', rain: 'Light', wildlife: 'Excellent', rating: 'excellent',
+               text: 'Festive season. Green and beautiful. Calving starts late month. Book early.' }
+    };
+
+    function updateWeather() {
+        const month = document.getElementById('monthSelect').value;
+        const resultDiv = document.getElementById('weatherResult');
+
+        if (!month) {
+            resultDiv.classList.remove('show');
+            return;
+        }
+
+        const data = ngorongoroWeather[month];
+        document.getElementById('temp').textContent = data.temp;
+        document.getElementById('rain').textContent = data.rain;
+        document.getElementById('wildlife').textContent = data.wildlife;
+
+        const recDiv = document.getElementById('recommendation');
+        recDiv.className = 'recommendation ' + data.rating;
+        recDiv.textContent = data.text;
+
+        resultDiv.classList.add('show');
+    }
+
+    // Currency Converter - Uses live rates from exchangerate.host
+    let rates = {};
+
+    async function fetchRates() {
+        try {
+            const res = await fetch('https://api.exchangerate.host/latest?base=USD&symbols=EUR,GBP,TZS');
+            const data = await res.json();
+            rates = { USD: 1,...data.rates };
+            document.getElementById('rateInfo').textContent = 'Live rates updated: ' + new Date().toLocaleDateString();
+        } catch (e) {
+            // Fallback rates if API fails
+            rates = { USD: 1, EUR: 0.92, GBP: 0.79, TZS: 2510 };
+            document.getElementById('rateInfo').textContent = 'Using cached rates (offline)';
+        }
+        convertCurrency();
+    }
+
+    function convertCurrency() {
+        const amount = parseFloat(document.getElementById('amount').value) || 0;
+        const from = document.getElementById('fromCurrency').value;
+        const to = document.getElementById('toCurrency').value;
+
+        if (!rates[from] ||!rates[to]) return;
+
+        const usdAmount = amount / rates[from];
+        const converted = (usdAmount * rates[to]).toFixed(2);
+
+        document.getElementById('convertedAmount').value = converted;
+    }
+
+    // Load rates on page load
+    fetchRates();
+</script>
 
 </body>
-
   </html>
