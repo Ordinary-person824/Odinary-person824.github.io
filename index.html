@@ -61,7 +61,7 @@
     
     .menu a:hover, .menu a.active { color: #C9A961; }
     
-    /* Hero with Video Background */
+    /* Hero with Video + Image Fallback */
     .hero {
         height: 100vh;
         position: relative;
@@ -71,6 +71,18 @@
         text-align: center;
         color: white;
         overflow: hidden;
+        /* Fallback gradient if everything fails */
+        background: linear-gradient(135deg, #3D2B1F 0%, #1A1A1A 100%);
+    }
+    
+    .hero-bg-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -2;
     }
     
     .hero video {
@@ -82,7 +94,7 @@
         width: auto;
         height: auto;
         transform: translate(-50%, -50%);
-        z-index: -2;
+        z-index: -1;
         object-fit: cover;
     }
     
@@ -94,13 +106,14 @@
         width: 100%;
         height: 100%;
         background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6));
-        z-index: -1;
+        z-index: 0;
     }
     
     .hero-content {
         max-width: 900px;
         padding: 0 30px;
         z-index: 1;
+        position: relative;
     }
     
     .hero h1 {
@@ -190,6 +203,7 @@
         width: 100%;
         height: 280px;
         object-fit: cover;
+        background: #F8F5F0;
     }
     
     .card-content {
@@ -230,14 +244,8 @@
         transition: all 0.3s;
     }
     
-    .chat-toggle:hover {
-        transform: scale(1.1);
-    }
-    
-    .chat-toggle i {
-        color: white;
-        font-size: 28px;
-    }
+    .chat-toggle:hover { transform: scale(1.1); }
+    .chat-toggle i { color: white; font-size: 28px; }
     
     .chat-window {
         position: absolute;
@@ -265,16 +273,8 @@
     }
     
     .chat-header i { font-size: 24px; }
-    
-    .chat-header h4 {
-        font-size: 16px;
-        font-weight: 600;
-    }
-    
-    .chat-header p {
-        font-size: 12px;
-        opacity: 0.9;
-    }
+    .chat-header h4 { font-size: 16px; font-weight: 600; }
+    .chat-header p { font-size: 12px; opacity: 0.9; }
     
     .chat-messages {
         flex: 1;
@@ -393,10 +393,17 @@
 </header>
 
 <section class="hero">
-    <!-- Serengeti video background - replace with your own hosted MP4 -->
+    <!-- Fallback image loads first, video overlays if it works -->
+    <img src="https://images.unsplash.com/photo-1516426122078-cd0988402c8b?q=80&w=2670&auto=format&fit=crop" 
+         alt="Serengeti" 
+         class="hero-bg-image"
+         onerror="this.style.display='none'">
+    
+    <!-- Video tries to load - if blocked, image shows instead -->
     <video autoplay muted loop playsinline>
-        <source src="https://cdn.coverr.co/videos/coverr-wildebeest-migration-1837/1080p.mp4" type="video/mp4">
+        <source src="https://cdn.pixabay.com/video/2020/08/26/48133-451135282_large.mp4" type="video/mp4">
     </video>
+    
     <div class="hero-content">
         <h1>Experience <span>Tanzania</span> in Luxury</h1>
         <p>From Kilimanjaro's summit to the Serengeti plains. Bespoke safaris crafted for the discerning traveler.</p>
@@ -410,7 +417,9 @@
     
     <div class="grid">
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1575981841027-53fef6cb2d55?q=80&w=2670" alt="Kilimanjaro">
+            <img src="https://images.unsplash.com/photo-1575981841027-53fef6cb2d55?q=80&w=800&auto=format&fit=crop" 
+                 alt="Kilimanjaro"
+                 onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22280%22%3E%3Crect fill=%22%23C9A961%22 width=%22800%22 height=%22280%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2224%22%3EMt. Kilimanjaro%3C/text%3E%3C/svg%3E'">
             <div class="card-content">
                 <h3>Mt. Kilimanjaro</h3>
                 <p>Conquer Africa's highest peak. 5,895m of challenge and triumph with luxury camp support.</p>
@@ -419,7 +428,9 @@
         </div>
         
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1516426122078-cd0988402c8b?q=80&w=2670" alt="Serengeti">
+            <img src="https://images.unsplash.com/photo-1516426122078-cd0988402c8b?q=80&w=800&auto=format&fit=crop" 
+                 alt="Serengeti"
+                 onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22280%22%3E%3Crect fill=%22%233D2B1F%22 width=%22800%22 height=%22280%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23C9A961%22 font-size=%2224%22%3ESerengeti%3C/text%3E%3C/svg%3E'">
             <div class="card-content">
                 <h3>Serengeti</h3>
                 <p>Witness the Great Migration. 2 million animals across endless plains. Big Five guaranteed.</p>
@@ -428,7 +439,9 @@
         </div>
         
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1575550959106-5a7defe28b56?q=80&w=2670" alt="Ngorongoro">
+            <img src="https://images.unsplash.com/photo-1575550959106-5a7defe28b56?q=80&w=800&auto=format&fit=crop" 
+                 alt="Ngorongoro"
+                 onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22280%22%3E%3Crect fill=%22%23C9A961%22 width=%22800%22 height=%22280%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2224%22%3ENgorongoro%3C/text%3E%3C/svg%3E'">
             <div class="card-content">
                 <h3>Ngorongoro Crater</h3>
                 <p>World's largest intact caldera. Highest density of wildlife in Africa. UNESCO World Heritage.</p>
@@ -437,7 +450,9 @@
         </div>
         
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1615808479999-a41b4db6c317?q=80&w=2670" alt="Tarangire">
+            <img src="https://images.unsplash.com/photo-1615808479999-a41b4db6c317?q=80&w=800&auto=format&fit=crop" 
+                 alt="Tarangire"
+                 onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22280%22%3E%3Crect fill=%22%233D2B1F%22 width=%22800%22 height=%22280%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23C9A961%22 font-size=%2224%22%3ETarangire%3C/text%3E%3C/svg%3E'">
             <div class="card-content">
                 <h3>Tarangire</h3>
                 <p>Ancient baobabs and Tanzania's largest elephant herds. Hidden gem with fewer crowds.</p>
@@ -446,7 +461,9 @@
         </div>
         
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?q=80&w=2670" alt="Ruaha">
+            <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?q=80&w=800&auto=format&fit=crop" 
+                 alt="Ruaha"
+                 onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22280%22%3E%3Crect fill=%22%23C9A961%22 width=%22800%22 height=%22280%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2224%22%3ERuaha%3C/text%3E%3C/svg%3E'">
             <div class="card-content">
                 <h3>Ruaha</h3>
                 <p>Remote wilderness. 10% of Africa's lions. Exclusive fly-in safaris for true adventurers.</p>
@@ -564,36 +581,32 @@
             bookingMode = true;
             response = `Great! Let's plan your safari. What's your full name?`;
         } else if (text.includes('best time') || text.includes('when')) {
-            response = `**Best Times:**<br><br>
-            **Kilimanjaro:** Jan-Mar & Jun-Oct (dry, clear skies)<br>
-            **Serengeti:** Jun-Oct (Great Migration)<br>
-            **Ngorongoro:** Jun-Oct (dry season, wildlife concentrated)<br>
-            **Tarangire:** Jun-Feb (elephant season)<br>
-            **Ruaha:** Jun-Oct (best predator sightings)<br><br>
+            response = `<strong>Best Times:</strong><br><br>
+            <strong>Kilimanjaro:</strong> Jan-Mar & Jun-Oct (dry, clear skies)<br>
+            <strong>Serengeti:</strong> Jun-Oct (Great Migration)<br>
+            <strong>Ngorongoro:</strong> Jun-Oct (dry season)<br>
+            <strong>Tarangire:</strong> Jun-Feb (elephant season)<br>
+            <strong>Ruaha:</strong> Jun-Oct (best predator sightings)<br><br>
             Want me to help you book?`;
         } else if (text.includes('price') || text.includes('cost') || text.includes('how much')) {
-            response = `**Pricing (per person):**<br><br>
-            **Kilimanjaro:** $2,500-$4,500 (7-9 days)<br>
-            **Serengeti Safari:** $400-$800/day<br>
-            **Ngorongoro:** $350-$600/day<br>
-            **Multi-park:** Custom quotes<br><br>
-            Prices include guides, park fees, meals, luxury accommodation. Ready to get a detailed quote?`;
-        } else if (text.includes('pack') || text.includes('bring') || text.includes('wear')) {
-            response = `**Packing List:**<br><br>
-            **Kilimanjaro:** Thermal layers, waterproof jacket, hiking boots, headlamp, daypack<br>
-            **Safari:** Neutral colors, hat, sunscreen, binoculars, camera<br>
-            **Both:** Malaria prophylaxis, yellow fever cert, travel insurance<br><br>
-            Need a detailed PDF list?`;
-        } else if (text.includes('kilimanjaro')) {
-            response = `**Kilimanjaro:** 5,895m, highest in Africa. 7-9 day treks via Machame or Lemosho routes. 95% success rate with our guides. Luxury camps with chef & private toilets. Want to book?`;
-        } else if (text.includes('serengeti')) {
-            response = `**Serengeti:** Home to Great Migration (Jun-Oct). 2M+ wildebeest. Big Five territory. Luxury mobile camps follow the herds. Hot air balloon safaris available. Interested?`;
+            response = `<strong>Pricing (per person):</strong><br><br>
+            <strong>Kilimanjaro:</strong> $2,500-$4,500 (7-9 days)<br>
+            <strong>Serengeti Safari:</strong> $400-$800/day<br>
+            <strong>Ngorongoro:</strong> $350-$600/day<br>
+            <strong>Multi-park:</strong> Custom quotes<br><br>
+            Includes guides, park fees, meals, luxury accommodation. Ready for a detailed quote?`;
+        } else if (text.includes('pack') || text.includes('bring')) {
+            response = `<strong>Packing List:</strong><br><br>
+            <strong>Kilimanjaro:</strong> Thermal layers, waterproof jacket, hiking boots, headlamp<br>
+            <strong>Safari:</strong> Neutral colors, hat, sunscreen, binoculars, camera<br>
+            <strong>Both:</strong> Yellow fever cert, travel insurance<br><br>
+            Need the full PDF list?`;
         } else {
             response = `I can help with:<br>
-            • Best time to visit each park<br>
-            • Pricing & itineraries<br>
-            • Packing lists<br>
-            • Booking your safari<br><br>
+            - Best time to visit each park<br>
+            - Pricing & itineraries<br>
+            - Packing lists<br>
+            - Booking your safari<br><br>
             What would you like to know?`;
         }
         
@@ -616,7 +629,6 @@
         } else if (!bookingData.group) {
             bookingData.group = text;
             
-            // Send to formsubmit.co
             const form = document.createElement('form');
             form.method = 'POST';
             form.action = 'https://formsubmit.co/amannelson824@gmail.com';
@@ -637,7 +649,7 @@
             document.body.appendChild(form);
             form.submit();
             
-            addMessage(`Perfect! I've sent your request to our team. We'll email you at ${bookingData.email} within 24 hours with a custom itinerary for ${bookingData.route}.<br><br>Need immediate help? WhatsApp us: +255 699 004 685`, 'bot');
+            addMessage(`Perfect! I've sent your request to our team. We'll email you at ${bookingData.email} within 24 hours with a custom itinerary for ${bookingData.route}.<br><br>Need immediate help? WhatsApp: +255 699 004 685`, 'bot');
             
             bookingMode = false;
             bookingData = {};
