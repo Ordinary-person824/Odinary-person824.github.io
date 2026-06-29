@@ -1,368 +1,551 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Ruaha | Aman Safari</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-
+<title>Ruaha National Park Safari - Kilimanjaro Luxury Expeditions</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-body{
-font-family:'Montserrat',sans-serif;
-background:#050b08;
-color:#fff;
-overflow-x:hidden;
-}
-
-/* NAV */
-
-nav{
-position:fixed;
-top:0;
-left:0;
-right:0;
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-padding:18px 6%;
-
-background:rgba(0,0,0,.25);
-
-backdrop-filter:blur(14px);
-
-z-index:1000;
-}
-
-.logo{
-font-family:'Playfair Display';
-font-size:22px;
-color:#d4af37;
-}
-
-nav ul{
-display:flex;
-gap:20px;
-list-style:none;
-}
-
-nav a{
-color:#ddd;
-text-decoration:none;
-font-size:14px;
-}
-
-nav a:hover{
-color:#d4af37;
-}
-
-/* HERO */
-
-.hero{
-
-height:100vh;
-
-display:flex;
-
-align-items:center;
-
-padding:0 6%;
-
-position:relative;
-
-background:
-linear-gradient(
-rgba(0,0,0,.35),
-rgba(0,0,0,.78)
-),
-
-url("https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=1800&q=80");
-
-background-size:cover;
-
-background-position:center;
-}
-
-.hero::after{
-
-content:"";
-
-position:absolute;
-
-inset:0;
-
-background:
-radial-gradient(
-circle,
-transparent,
-rgba(0,0,0,.7)
-);
-
-}
-
-.hero-content{
-
-position:relative;
-
-z-index:2;
-
-max-width:700px;
-
-animation:fade 1.4s ease;
-}
-
-@keyframes fade{
-
-from{
-opacity:0;
-transform:translateY(40px);
-}
-
-to{
-opacity:1;
-transform:none;
-}
-
-}
-
-.hero h1{
-
-font-family:'Playfair Display';
-
-font-size:
-clamp(
-48px,
-8vw,
-95px
-);
-
-line-height:1;
-}
-
-.hero span{
-color:#d4af37;
-}
-
-.hero p{
-
-margin-top:22px;
-
-line-height:1.9;
-
-font-size:17px;
-
-color:#ddd;
-
-max-width:560px;
-}
-
-/* BUTTONS */
-
-.buttons{
-
-display:flex;
-
-gap:15px;
-
-margin-top:30px;
-
-flex-wrap:wrap;
-}
-
-.btn{
-
-padding:14px 26px;
-
-border-radius:999px;
-
-text-decoration:none;
-
-font-weight:700;
-
-transition:.3s;
-}
-
-.primary{
-
-background:#d4af37;
-
-color:black;
-}
-
-.secondary{
-
-border:1px solid white;
-
-color:white;
-}
-
-.btn:hover{
-
-transform:
-translateY(-4px);
-}
-
-/* CONTENT */
-
-.section{
-
-padding:90px 6%;
-}
-
-.card{
-
-background:#101915;
-
-padding:35px;
-
-border-radius:22px;
-
-max-width:900px;
-
-box-shadow:
-0 20px 70px rgba(0,0,0,.45);
-}
-
-.card h2{
-
-font-family:'Playfair Display';
-
-margin-bottom:18px;
-
-color:#d4af37;
-}
-
-.card p{
-
-line-height:1.9;
-
-color:#d7d7d7;
-}
-
-/* MOBILE */
-
-@media(max-width:800px){
-
-nav ul{
-display:none;
-}
-
-.hero{
-height:88vh;
-}
-
-.hero p{
-font-size:15px;
-}
-
-}
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+        font-family: 'Montserrat', sans-serif;
+        color: #333;
+        overflow-x: hidden;
+    }
+
+    h1, h2, h3 { font-family: 'Cormorant Garamond', serif; }
+
+    /* Header */
+    header {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        padding: 20px 0;
+        transition: all 0.4s ease;
+        background: rgba(0,0,0,0.3);
+    }
+
+    header.scrolled {
+        background: rgba(26, 26, 26, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 15px 0;
+    }
+
+    nav {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+   .logo {
+        color: #C9A961;
+        font-size: 28px;
+        font-weight: 600;
+        letter-spacing: 2px;
+    }
+
+   .menu a {
+        color: white;
+        text-decoration: none;
+        margin-left: 35px;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: color 0.3s;
+    }
+
+   .menu a:hover,.menu a.active { color: #C9A961; }
+
+    /* Hero */
+   .hero {
+        height: 100vh;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        overflow: hidden;
+        background: linear-gradient(135deg, #3D2B1F 0%, #1A1A1A 100%);
+    }
+
+   .hero-bg-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -2;
+    }
+
+   .hero::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6));
+        z-index: 0;
+    }
+
+   .hero-content {
+        max-width: 900px;
+        padding: 0 30px;
+        z-index: 1;
+        position: relative;
+    }
+
+   .hero h1 {
+        font-size: 72px;
+        font-weight: 300;
+        margin-bottom: 25px;
+        line-height: 1.2;
+    }
+
+   .hero h1 span {
+        color: #C9A961;
+        font-weight: 600;
+    }
+
+   .hero p {
+        font-size: 22px;
+        font-weight: 300;
+        margin-bottom: 40px;
+        opacity: 0.9;
+    }
+
+   .btn {
+        background: linear-gradient(135deg, #C9A961 0%, #B89650 100%);
+        color: white;
+        padding: 18px 45px;
+        text-decoration: none;
+        border-radius: 50px;
+        display: inline-block;
+        border: none;
+        cursor: pointer;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 500;
+        transition: all 0.4s;
+        box-shadow: 0 10px 30px rgba(201, 169, 97, 0.3);
+    }
+
+   .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 40px rgba(201, 169, 97, 0.5);
+    }
+
+    /* Content Section */
+   .content {
+        max-width: 1000px;
+        margin: 120px auto;
+        padding: 0 30px;
+    }
+
+   .content h2 {
+        text-align: center;
+        font-size: 48px;
+        font-weight: 300;
+        margin-bottom: 20px;
+        color: #3D2B1F;
+    }
+
+   .intro-text {
+        text-align: center;
+        font-size: 18px;
+        color: #666;
+        margin-bottom: 60px;
+        line-height: 1.8;
+    }
+
+   .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 35px;
+        margin: 60px 0;
+    }
+
+   .feature-box {
+        background: #F8F5F0;
+        padding: 35px;
+        border-radius: 15px;
+        border-left: 4px solid #C9A961;
+        transition: all 0.3s;
+    }
+
+   .feature-box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    }
+
+   .feature-box i {
+        font-size: 36px;
+        color: #C9A961;
+        margin-bottom: 20px;
+    }
+
+   .feature-box h3 {
+        color: #3D2B1F;
+        margin-bottom: 15px;
+        font-size: 24px;
+    }
+
+   .feature-box p {
+        color: #666;
+        line-height: 1.7;
+    }
+
+    /* Interactive Weather Widget for Ruaha */
+   .weather-widget {
+        position: fixed;
+        right: 20px;
+        top: 100px;
+        background: white;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        width: 320px;
+        border-left: 4px solid #C9A961;
+        z-index: 999;
+    }
+
+   .weather-widget h3 {
+        color: #3D2B1F;
+        margin-bottom: 15px;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+   .weather-widget h3 i {
+        color: #C9A961;
+    }
+
+   .month-selector {
+        width: 100%;
+        padding: 12px;
+        border: 2px solid #C9A961;
+        border-radius: 8px;
+        font-size: 15px;
+        margin-bottom: 20px;
+        cursor: pointer;
+        background: white;
+    }
+
+   .weather-result {
+        background: #F8F5F0;
+        padding: 18px;
+        border-radius: 10px;
+        display: none;
+    }
+
+   .weather-result.show {
+        display: block;
+        animation: fadeIn 0.4s ease;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+   .weather-stat {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 12px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid #ddd;
+    }
+
+   .weather-stat:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+   .weather-label {
+        color: #666;
+        font-size: 13px;
+    }
+
+   .weather-value {
+        font-weight: 600;
+        color: #3D2B1F;
+        font-size: 14px;
+    }
+
+   .recommendation {
+        margin-top: 15px;
+        padding: 12px;
+        border-radius: 8px;
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+   .recommendation.excellent {
+        background: #d4edda;
+        color: #155724;
+        border-left: 3px solid #28a745;
+    }
+
+   .recommendation.good {
+        background: #fff3cd;
+        color: #856404;
+        border-left: 3px solid #ffc107;
+    }
+
+   .recommendation.poor {
+        background: #f8d7da;
+        color: #721c24;
+        border-left: 3px solid #dc3545;
+    }
+
+    /* CTA Section */
+   .cta {
+        background: linear-gradient(135deg, #3D2B1F 0%, #1A1A1A 100%);
+        color: white;
+        text-align: center;
+        padding: 80px 30px;
+        margin-top: 100px;
+    }
+
+   .cta h2 {
+        font-size: 42px;
+        font-weight: 300;
+        margin-bottom: 20px;
+    }
+
+   .cta p {
+        font-size: 18px;
+        margin-bottom: 35px;
+        opacity: 0.9;
+    }
+
+    /* Footer */
+    footer {
+        background: #1A1A1A;
+        color: #aaa;
+        text-align: center;
+        padding: 60px 30px;
+    }
+
+    footer a { color: #C9A961; text-decoration: none; }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+       .hero h1 { font-size: 40px; }
+       .hero p { font-size: 18px; }
+       .menu { display: none; }
+       .weather-widget {
+            position: relative;
+            width: 100%;
+            right: 0;
+            top: 0;
+            margin: 40px 20px;
+        }
+       .content h2 { font-size: 36px; }
+       .features { grid-template-columns: 1fr; }
+    }
 </style>
-
 </head>
-
 <body>
 
-<nav>
+<!-- Header with full menu linking all pages -->
+<header id="navbar">
+    <nav>
+        <div class="logo">RUAHA TRAVEL</div>
+        <div class="menu">
+            <a href="index.html">Home</a>
+            <a href="kilimanjaro.html">Kilimanjaro</a>
+            <a href="serengeti.html">Serengeti</a>
+            <a href="ngorongoro.html">Ngorongoro</a>
+            <a href="tarangire.html">Tarangire</a>
+            <a href="ruaha.html" class="active">Ruaha</a>
+            <a href="booking.html">Book Now</a>
+        </div>
+    </nav>
+</header>
 
-<div class="logo">
-AMAN SAFARI
-</div>
-
-<ul>
-
-<li><a href="index.html">Home</a></li>
-
-<li><a href="serengeti.html">Serengeti</a></li>
-
-<li><a href="tarangire.html">Tarangire</a></li>
-
-<li><a href="ngorongoro.html">Ngorongoro</a></li>
-
-<li><a href="ruaha.html">Ruaha</a></li>
-
-<li><a href="kilimanjaro.html">Kilimanjaro</a></li>
-
-</ul>
-
-</nav>
-
+<!-- Hero -->
 <section class="hero">
+    <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?q=80&w=2670&auto=format&fit=crop"
+         alt="Ruaha National Park"
+         class="hero-bg-image"
+         onerror="this.style.display='none'">
 
-<div class="hero-content">
-
-<h1>
-
-RUAHA
-
-<span>
-
-RAW WILDERNESS
-
-</span>
-
-</h1>
-
-<p>
-
-Experience one of Tanzania’s most remote safari landscapes with dramatic wildlife encounters and untamed beauty.
-
-</p>
-
-<div class="buttons">
-
-<a class="btn primary" href="kilimanjaro.html">
-
-Next Journey
-
-</a>
-
-<a class="btn secondary" href="ngorongoro.html">
-
-Previous
-
-</a>
-
-</div>
-
-</div>
-
+    <div class="hero-content">
+        <h1>Ruaha <span>Wilderness</span></h1>
+        <p>Remote, wild, and exclusive. Home to 10% of Africa's lions and Tanzania's largest elephant population.</p>
+        <a href="booking.html?route=Ruaha" class="btn">Book Ruaha Safari</a>
+    </div>
 </section>
 
-<section class="section">
+<!-- Interactive Weather Widget - Unique to Ruaha Page -->
+<div class="weather-widget">
+    <h3><i class="fas fa-calendar-alt"></i> When to Visit Ruaha</h3>
+    <select class="month-selector" id="monthSelect" onchange="updateWeather()">
+        <option value="">Select Month</option>
+        <option value="jan">January</option>
+        <option value="feb">February</option>
+        <option value="mar">March</option>
+        <option value="apr">April</option>
+        <option value="may">May</option>
+        <option value="jun">June</option>
+        <option value="jul">July</option>
+        <option value="aug">August</option>
+        <option value="sep">September</option>
+        <option value="oct">October</option>
+        <option value="nov">November</option>
+        <option value="dec">December</option>
+    </select>
 
-<div class="card">
-
-<h2>
-
-Why Ruaha?
-
-</h2>
-
-<p>
-
-Ruaha offers huge landscapes, impressive predator sightings, and a quieter premium safari experience far from crowded routes.
-
-</p>
-
+    <div class="weather-result" id="weatherResult">
+        <div class="weather-stat">
+            <span class="weather-label">Avg Temperature</span>
+            <span class="weather-value" id="temp">-</span>
+        </div>
+        <div class="weather-stat">
+            <span class="weather-label">Rainfall</span>
+            <span class="weather-value" id="rain">-</span>
+        </div>
+        <div class="weather-stat">
+            <span class="weather-label">Wildlife Viewing</span>
+            <span class="weather-value" id="wildlife">-</span>
+        </div>
+        <div class="recommendation" id="recommendation"></div>
+    </div>
 </div>
 
+<!-- Content -->
+<section class="content">
+    <h2>Tanzania's Best Kept Secret</h2>
+    <p class="intro-text">
+        Ruaha National Park covers 20,226 sq km of pristine wilderness - Tanzania's largest national park.
+        With only a handful of lodges, you'll have 10,000+ elephants, 574 bird species, and Africa's
+        largest lion population almost to yourself. This is safari as it used to be: wild, remote, exclusive.
+    </p>
+
+    <div class="features">
+        <div class="feature-box">
+            <i class="fas fa-paw"></i>
+            <h3>Predator Paradise</h3>
+            <p>10% of all African lions live here. Plus leopard, cheetah, wild dog, and hyena. Best predator sightings in Tanzania.</p>
+        </div>
+
+        <div class="feature-box">
+            <i class="fas fa-elephant"></i>
+            <h3>Elephant Kingdom</h3>
+            <p>Over 10,000 elephants. Largest population in East Africa. Herds of 200+ common in dry season.</p>
+        </div>
+
+        <div class="feature-box">
+            <i class="fas fa-tree"></i>
+            <h3>Baobab Landscapes</h3>
+            <p>Ancient baobabs dot the Great Ruaha River valley. Dramatic scenery unlike anywhere else in Tanzania.</p>
+        </div>
+
+        <div class="feature-box">
+            <i class="fas fa-plane"></i>
+            <h3>Fly-In Exclusive</h3>
+            <p>90-minute flight from Dar. No long drives. Land at remote airstrips and you're immediately in the wild.</p>
+        </div>
+
+        <div class="feature-box">
+            <i class="fas fa-user-friends"></i>
+            <h3>No Crowds</h3>
+            <p>Less than 1% of Tanzania's tourists visit Ruaha. Often you'll be the only vehicle at a sighting.</p>
+        </div>
+
+        <div class="feature-box">
+            <i class="fas fa-campground"></i>
+            <h3>Luxury Tented Camps</h3>
+            <p>5-star eco-lodges along the Ruaha River. Private plunge pools, gourmet dining, expert guides.</p>
+        </div>
+    </div>
 </section>
+
+<!-- CTA -->
+<section class="cta">
+    <h2>Ready for True Wilderness?</h2>
+    <p>Ruaha is for serious safari lovers. Limited lodges mean early booking is essential.</p>
+    <a href="booking.html?route=Ruaha" class="btn">Plan My Ruaha Safari</a>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p><strong>Kilimanjaro Luxury Expeditions</strong></p>
+    <p>Arusha, Tanzania</p>
+    <p>Phone: <a href="tel:+255699004685">+255 699 004 685</a> |
+       Email: <a href="mailto:amannelson824@gmail.com">amannelson824@gmail.com</a> |
+       WhatsApp: <a href="https://wa.me/255699004685">Chat Now</a></p>
+    <p style="margin-top: 20px; font-size: 14px;">&copy; 2026 All rights reserved</p>
+</footer>
+
+<script>
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+        document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Ruaha Weather Data by Month
+    const ruahaWeather = {
+        jan: { temp: '22-32°C', rain: 'Moderate', wildlife: 'Good', rating: 'good',
+               text: 'Green season. Lush landscapes, birding excellent. Some roads muddy. Fewer tourists, lower rates.' },
+        feb: { temp: '23-33°C', rain: 'Moderate', wildlife: 'Good', rating: 'good',
+               text: 'Green season continues. Great for photography. Elephants disperse but still visible.' },
+        mar: { temp: '22-31°C', rain: 'Heavy', wildlife: 'Fair', rating: 'poor',
+               text: 'Peak rainy season. Many camps close. Roads difficult. Not recommended unless you love storms.' },
+        apr: { temp: '21-29°C', rain: 'Heavy', wildlife: 'Poor', rating: 'poor',
+               text: 'Heaviest rains. Most lodges closed. Animals dispersed. Avoid unless hardcore birder.' },
+        may: { temp: '20-28°C', rain: 'Light', wildlife: 'Fair', rating: 'good',
+               text: 'Rains ending. Landscape transforms green. Great value as season starts. Roads improving.' },
+        jun: { temp: '18-27°C', rain: 'None', wildlife: 'Excellent', rating: 'excellent',
+               text: 'Dry season begins. Animals gather at Ruaha River. Predator action peaks. BEST TIME.' },
+        jul: { temp: '17-26°C', rain: 'None', wildlife: 'Excellent', rating: 'excellent',
+               text: 'Peak dry season. Cool mornings, warm days. Elephants at river daily. Prime game viewing.' },
+        aug: { temp: '18-27°C', rain: 'None', wildlife: 'Excellent', rating: 'excellent',
+               text: 'Peak season. Dusty but spectacular. All predators active. Book 6+ months ahead.' },
+        sep: { temp: '20-30°C', rain: 'None', wildlife: 'Excellent', rating: 'excellent',
+               text: 'Hottest month but best wildlife. River is lifeline. 10,000 elephants concentrated here.' },
+        oct: { temp: '22-33°C', rain: 'Light', wildlife: 'Excellent', rating: 'excellent',
+               text: 'End of dry season. Animals desperate for water = incredible sightings. First rains late month.' },
+        nov: { temp: '23-32°C', rain: 'Light-Moderate', wildlife: 'Good', rating: 'good',
+               text: 'Short rains begin. Landscape greens up. Fewer tourists. Good value month.' },
+        dec: { temp: '23-32°C', rain: 'Moderate', wildlife: 'Good', rating: 'good',
+               text: 'Short rains. Green and beautiful. Bird migration arrives. Festive season busy.' }
+    };
+
+    function updateWeather() {
+        const month = document.getElementById('monthSelect').value;
+        const resultDiv = document.getElementById('weatherResult');
+
+        if (!month) {
+            resultDiv.classList.remove('show');
+            return;
+        }
+
+        const data = ruahaWeather[month];
+        document.getElementById('temp').textContent = data.temp;
+        document.getElementById('rain').textContent = data.rain;
+        document.getElementById('wildlife').textContent = data.wildlife;
+
+        const recDiv = document.getElementById('recommendation');
+        recDiv.className = 'recommendation ' + data.rating;
+        recDiv.textContent = data.text;
+
+        resultDiv.classList.add('show');
+    }
+</script>
 
 </body>
-
   </html>
