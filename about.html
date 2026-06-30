@@ -3,40 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Aman Safari | Licensed Local Guides from Arusha, Tanzania</title>
-    <meta name="description" content="Meet Aman Nelson and the Aman Safari team. Licensed local guides from Arusha with 10+ years experience. Book direct and save $800 vs international agencies.">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230B3D20'/><text x='50' y='58' font-family='Montserrat,Arial,sans-serif' font-size='28' font-weight='700' fill='%23D4AF37' text-anchor='middle'>AMAN</text></svg>">
+    <title>About | Kilimanjaro Luxury Expeditions | Tanzanian-Owned Safari Company</title>
+    <meta name="description" content="Founded by Amani, Form Five student in Arusha. Direct partnerships with licensed guides. Save 40% vs US agencies. 2026 bookings open.">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@200;400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Lato:wght@400;700&display=swap');
-        
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
-        :root {
-            --forest-green: #0B3D20;
-            --gold: #D4AF37;
-            --cream: #F5F1E8;
-            --deep-brown: #4A2C2A;
-        }
-        
         body {
-            font-family: 'Lato', sans-serif;
-            background: var(--cream);
-            color: var(--deep-brown);
-            line-height: 1.8;
+            font-family: 'Inter', sans-serif;
+            background: #FAFAFA;
+            color: #1a1a1a;
+            line-height: 1.7;
+            font-weight: 300;
         }
         
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 5%;
         }
         
-        /* Header */
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 200;
+        }
+        
+        /* Luxury Header */
         header {
-            background: var(--forest-green);
-            padding: 20px 0;
-            border-bottom: 2px solid var(--gold);
+            background: white;
+            padding: 25px 0;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
         
         .nav {
@@ -46,135 +46,212 @@
         }
         
         .logo {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 28px;
-            font-weight: 900;
-            color: var(--gold);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 400;
+            letter-spacing: 3px;
+            color: #000;
             text-decoration: none;
         }
         
         .nav-links a {
-            color: white;
+            color: #333;
             text-decoration: none;
-            margin-left: 25px;
-            font-weight: 700;
+            margin-left: 40px;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: 0.3s;
         }
         
         .nav-links a:hover {
-            color: var(--gold);
+            color: #d4af37;
         }
         
         /* Hero */
-        .page-hero {
-            background: var(--forest-green);
-            color: white;
-            padding: 60px 0;
+        .about-hero {
+            padding: 120px 0 80px 0;
             text-align: center;
-        }
-        
-        h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 48px;
-            font-weight: 900;
-            color: var(--gold);
-            margin-bottom: 15px;
-        }
-        
-        /* Content */
-        .content {
-            padding: 60px 0;
-        }
-        
-        .story {
             background: white;
-            padding: 40px;
-            border-radius: 15px;
-            margin-bottom: 40px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
         }
         
-        h2 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 32px;
-            color: var(--forest-green);
-            margin-bottom: 20px;
+        .about-hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
-        .founder {
+        .about-hero p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Story Section */
+        .story-section {
+            padding: 100px 0;
+            background: #111;
+            color: white;
+        }
+        
+        .founder-grid {
             display: grid;
-            grid-template-columns: 300px 1fr;
-            gap: 40px;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 80px;
             align-items: center;
-            margin: 40px 0;
         }
         
         .founder-img {
             width: 100%;
-            height: 300px;
-            background: url('Genz .png');
-            background-size: cover;
-            background-position: center;
-            border-radius: 15px;
-            border: 4px solid var(--gold);
+            height: 500px;
+            background: url('Genz .png') center/cover no-repeat;
+            border-radius: 2px;
         }
         
-        .stats {
+        .founder-text h2 {
+            font-size: 2.8rem;
+            margin-bottom: 30px;
+            color: white;
+        }
+        
+        .founder-text p {
+            color: #ccc;
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+        
+        .gold-text {
+            color: #d4af37;
+            font-weight: 400;
+        }
+        
+        /* Why Book Section */
+        .why-section {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .section-sub {
+            text-align: center;
+            color: #666;
+            margin-bottom: 70px;
+            font-size: 1.1rem;
+        }
+        
+        .benefits-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin: 50px 0;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 60px;
+        }
+        
+        .benefit h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+        
+        .benefit p {
+            color: #666;
+            font-size: 1rem;
+        }
+        
+        /* Trust Bar */
+        .trust-bar {
+            background: #f8f8f8;
+            padding: 60px 0;
             text-align: center;
         }
         
-        .stat {
-            background: var(--forest-green);
+        .trust-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        
+        .trust-item h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 200;
+            color: #d4af37;
+            margin: 0;
+        }
+        
+        .trust-item p {
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            color: #666;
+            margin: 5px 0 0 0;
+        }
+        
+        /* CTA */
+        .cta-section {
+            padding: 100px 0;
+            background: #000;
             color: white;
-            padding: 30px;
-            border-radius: 15px;
+            text-align: center;
         }
         
-        .stat-number {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 42px;
-            font-weight: 900;
-            color: var(--gold);
+        .cta-section h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
         }
         
-        .btn {
-            background: var(--gold);
-            color: var(--forest-green);
-            padding: 14px 28px;
-            border-radius: 50px;
+        .whatsapp-btn {
+            background: #d4af37;
+            color: #000;
+            padding: 20px 50px;
             text-decoration: none;
-            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
             display: inline-block;
-            margin-top: 20px;
+            margin-top: 30px;
+            transition: 0.3s;
         }
         
-        .whatsapp {
-            background: #25D366;
-            color: white;
-            padding: 16px 35px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 18px;
-            display: inline-block;
-            margin: 20px 0;
+        .whatsapp-btn:hover {
+            background: #c19b2e;
         }
         
+        /* Footer */
         footer {
-            background: #062013;
-            color: white;
-            padding: 40px 0;
+            background: #000;
+            color: #666;
+            padding: 60px 5% 30px 5%;
             text-align: center;
-            border-top: 2px solid var(--gold);
+            font-size: 0.9rem;
+        }
+        
+        /* Sticky WhatsApp */
+        .sticky-wa {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #25D366;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            z-index: 9999;
         }
         
         @media (max-width: 768px) {
-            .founder { grid-template-columns: 1fr; }
-            h1 { font-size: 36px; }
-            .nav { flex-direction: column; gap: 15px; }
+            .founder-grid { grid-template-columns: 1fr; gap: 40px; }
+            .about-hero h1 { font-size: 2.2rem; }
+            .nav { flex-direction: column; gap: 20px; }
+            .nav-links a { margin: 0 15px; }
         }
     </style>
 </head>
@@ -182,82 +259,121 @@
     <header>
         <div class="container">
             <nav class="nav">
-                <a href="index.html" class="logo">AMAN SAFARI</a>
+                <a href="index.html" class="logo">KILIMANJARO LUXURY</a>
                 <div class="nav-links">
-                    <a href="index.html">Home</a>
-                    <a href="kilimanjaro.html">Kilimanjaro</a>
-                    <a href="about.html">About Us</a>
-                    <a href="https://wa.me/255699004685">Contact</a>
+                    <a href="index.html">HOME</a>
+                    <a href="kilimanjaro.html">KILIMANJARO</a>
+                    <a href="serengeti.html">SAFARI</a>
+                    <a href="about.html">ABOUT</a>
+                    <a href="https://wa.me/255635509648">CONTACT</a>
                 </div>
             </nav>
         </div>
     </header>
 
-    <section class="page-hero">
+    <section class="about-hero">
         <div class="container">
-            <h1>We're Not an Agency.<br>We're Your Local Guides.</h1>
-            <p style="font-size: 20px; margin-top: 15px;">Born in Dodoma. Partner with the licensed tour operators.</p>
+            <p style="letter-spacing:4px; font-size:0.8rem; color:#999; margin-bottom:20px;">ARUSHA · TANZANIA</p>
+            <h1>We're Not an Agency.<br>We're Your Tanzanian Host.</h1>
+            <p>Founded by Amani, Form Five student. Direct partnerships with licensed guides. Zero middleman markup.</p>
         </div>
     </section>
 
-    <section class="content">
+    <section class="trust-bar">
         <div class="container">
-            <div class="story">
-                <h2>The Aman Safari Difference</h2>
-                <p>International agencies charge you $3,500 for a Kilimanjaro climb. We charge $2,495 for the exact same guides, same food, same safety standards.</p>
-                <p><strong>Why? Because we live here.</strong> No New York office. No London markup. Just licensed Tanzanian guides running our own company from Arusha.</p>
-                <p>When you book with us, 100% of your money stays in Tanzania. It pays local salaries, maintains our Land Cruisers, and supports conservation. Nothing goes to overseas middlemen.</p>
+            <div class="trust-grid">
+                <div class="trust-item">
+                    <h4>2026</h4>
+                    <p>BOOKINGS OPEN</p>
+                </div>
+                <div class="trust-item">
+                    <h4>100%</h4>
+                    <p>TANZANIAN OWNED</p>
+                </div>
+                <div class="trust-item">
+                    <h4>24hrs</h4>
+                    <p>REPLY TIME</p>
+                </div>
+                <div class="trust-item">
+                    <h4>Direct</h4>
+                    <p>GUIDE RATES</p>
+                </div>
             </div>
+        </div>
+    </section>
 
-            <div class="founder">
+    <section class="story-section">
+        <div class="container">
+            <div class="founder-grid">
                 <div class="founder-img"></div>
-                <div>
-                    <h2>Meet Aman Nelson</h2>
-                    <p><strong>Founder & Lead Guide</strong></p>
-                    <p>I was born in Dodoma and live in Mwanza a form five student age 18 years old. I summited Kilimanjaro for the first time at age 15 and knew I'd found my calling.</p>
-                    <p>After that trip I promised myelf to study and run a website about tourism visiting many national parks as possible. So I started Aman Safari in 2023.</p>
-                    <p><strong>My promise:</strong> I personally oversee every trip. You get my WhatsApp number. I answer within minutes. If there's a problem on your climb, you call me directly, not a call center.</p>
-                    <a href="https://wa.me/255699004685?text=Hello%20Aman,%20I%20read%20your%20story%20and%20want%20to%20book" class="whatsapp">Chat with Aman Direct</a>
+                <div class="founder-text">
+                    <h2>Meet Amani</h2>
+                    <p class="gold-text">Founder, Age 18</p>
+                    <p>I’m Form Five student in Arusha. I climbed Kilimanjaro at 15 and fell in love with sharing Tanzania.</p>
+                    <p><span class="gold-text">The problem:</span> My friends asked for safari help. US agencies quoted them $6,000 for trips I know cost $2,200 here.</p>
+                    <p><span class="gold-text">The solution:</span> I partnered with licensed guides I trust. You pay direct rates. I handle booking + logistics. You save 40%.</p>
+                    <p><span class="gold-text">My promise:</span> I personally reply to every WhatsApp within 24 hours, 7pm EAT daily after school. If there’s an issue on your trip, you call me directly. No call centers.</p>
+                    <p><span class="gold-text">Where your money goes:</span> 100% stays in Tanzania. It pays guide salaries, park fees, and my Form Six + university fees. Your safari funds my education. Asante.</p>
+                    <a href="https://wa.me/255635509648?text=Hi%20Amani,%20I%20read%20your%20story" class="whatsapp-btn">WHATSAPP AMANI DIRECT</a>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="stats">
-                <div class="stat">
-                    <div class="stat-number">500+</div>
-                    <div>Successful Summits</div>
+    <section class="why-section">
+        <div class="container">
+            <p style="text-align:center; letter-spacing:3px; font-size:0.8rem; color:#999; margin-bottom:10px;">THE DIFFERENCE</p>
+            <h2 class="section-title">Why Book With an 18-Year-Old?</h2>
+            <p class="section-sub">You get luxury service. I get to pay school fees. Everyone wins.</p>
+            
+            <div class="benefits-grid">
+                <div class="benefit">
+                    <h3>Direct Local Prices</h3>
+                    <p>No New York office. No London markup. I work with Tanzanian guides directly. You save $800-$2,000 per trip vs international agencies.</p>
                 </div>
-                <div class="stat">
-                    <div class="stat-number">98%</div>
-                    <div>Summit Success Rate</div>
+                <div class="benefit">
+                    <h3>Reply in 24 Hours</h3>
+                    <p>Big companies take 3-5 days. I reply daily 7pm EAT after school. WhatsApp +255 635 509 648 for fastest response.</p>
                 </div>
-                <div class="stat">
-                    <div class="stat-number">10+</div>
-                    <div>Years Experience</div>
+                <div class="benefit">
+                    <h3>Same Guides, Better Price</h3>
+                    <p>Your safari is run by licensed guides with 200+ Kili summits. Same guys the luxury companies use. I just cut out the middleman.</p>
                 </div>
-                <div class="stat">
-                    <div class="stat-number">$800</div>
-                    <div>Average Savings</div>
+                <div class="benefit">
+                    <h3>Safety First</h3>
+                    <p>All climbs include oxygen tanks, pulse oximeters, and AMREF Flying Doctors evacuation coverage. Wilderness First Aid certified crew.</p>
+                </div>
+                <div class="benefit">
+                    <h3>TALA Licensed</h3>
+                    <p>We partner with Tanzania Tourist Board licensed operators. Your deposit is protected. Full compliance, zero risk.</p>
+                </div>
+                <div class="benefit">
+                    <h3>You Fund My University</h3>
+                    <p>100% of profits pay Form Six + university fees. Your safari = my education. You’re not just a client, you’re my sponsor.</p>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="story">
-                <h2>Our Licenses & Safety</h2>
-                <p><strong>Fully Licensed:</strong> Tanzania Tourist Board License #TTL-2024-0892</p>
-                <p><strong>Certified Guides:</strong> All guides hold Wilderness First Responder + KPAP certification</p>
-                <p><strong>Equipment:</strong> We own all our gear. No rentals. Oxygen tanks, pulse oximeters, and satellite phones on every climb.</p>
-                <p><strong>Insurance:</strong> AMREF Flying Doctors evacuation coverage included on all trips.</p>
-                <a href="kilimanjaro.html" class="btn">See Kilimanjaro Routes</a>
-            </div>
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready for 2026?</h2>
+            <p style="opacity:0.8; font-size:1.1rem; max-width:600px; margin:0 auto;">Serengeti, Kilimanjaro, Ngorongoro. I’ll send custom itinerary + exact quote in 24 hours.</p>
+            <a href="https://wa.me/255635509648?text=Park:%20%0AMonth:%20%0APeople:%20%0ABudget:%20" class="whatsapp-btn">GET FREE 2026 QUOTE</a>
+            <p style="margin-top:30px; opacity:0.6; font-size:0.9rem;">WhatsApp: +255 635 509 648 · Arusha, Tanzania</p>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <h3 style="color: var(--gold); font-size: 24px; margin-bottom: 20px;">Ready to Book Direct?</h3>
-            <a href="https://wa.me/255699004685" class="whatsapp">WhatsApp: +255 699 004 685</a>
-            <p style="margin-top: 20px;">Email: amannelson824@gmail.com | Arusha, Tanzania</p>
-            <p style="margin-top: 20px; opacity: 0.7;">© 2026 Aman Safari Tanzania. Licensed Tour Operator.</p>
+            <p>© 2026 Kilimanjaro Luxury Expeditions. Partnered with TALA Licensed Operators.</p>
+            <p style="margin-top:10px; opacity:0.5;">Proudly Tanzanian. Proudly Student-Owned.</p>
         </div>
     </footer>
+
+    <!-- Sticky WhatsApp -->
+    <a href="https://wa.me/255635509648?text=Hi%20Amani!%202026%20quote%20please" class="sticky-wa">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    </a>
 </body>
-</html>
+            </html>
