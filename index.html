@@ -28,7 +28,7 @@
     }
     
     header.scrolled {
-        background: rgba(26, 26, 26, 0.95);
+        background: rgba(26, 26, 26, 0.8);
         backdrop-filter: blur(10px);
         padding: 15px 0;
     }
@@ -61,7 +61,6 @@
     
     .menu a:hover, .menu a.active { color: #C9A961; }
     
-    /* Hero with Video + Image Fallback */
     .hero {
         height: 100vh;
         position: relative;
@@ -72,7 +71,7 @@
         color: white;
         overflow: hidden;
         /* Fallback gradient if everything fails */
-        background: linear-gradient(135deg, #3D2B1F 0%, #1A1A1A 100%);
+        background-img: url("park.jpg")
     }
     
     .hero-bg-image {
@@ -388,6 +387,7 @@
             <a href="tarangire.html">Tarangire</a>
             <a href="ruaha.html">Ruaha</a>
             <a href="booking.html">Book Now</a>
+            <a href="about.html">about us</a>
         </div>
     </nav>
 </header>
@@ -415,7 +415,7 @@
 </section>
 
 <section class="hero">
-    <img src="park.jpg" 
+    <img src="kilimanjaro.jpg" 
          alt="Serengeti" 
          class="hero-bg-image"
          onerror="this.style.display='none'">
