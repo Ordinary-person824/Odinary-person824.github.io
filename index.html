@@ -390,6 +390,7 @@
 <!-- VISITOR + CLICK TRACKER - See who visits your site -->
 <script>
     window.addEventListener('load', function() {
+       if (window.location.href.includes('stats') || document.referrer.includes('amansafaritanzania.github.io')) return;
         const visitorData = {
             time: new Date().toISOString(),
             page: window.location.pathname,
